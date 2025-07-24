@@ -1,0 +1,42 @@
+
+# MIPS Register to C++ Object Reference
+
+This file is a reference for translating MIPS registers to their corresponding C++ objects within the `EmotionEngineState` struct.
+
+Let's assume your `EmotionEngineState` variable is named `context`.
+
+---
+
+## MIPS General-Purpose Register (GPR) to C++ Reference
+
+| Register #     | ABI Name      | Purpose & Common Usage                                                                                  | C++ Access (by Index)                 | C++ Access (by Name)                  |
+| :---           | :---          | :---                                                                                                    | :---                                  | :---                                  |
+| **`$0`**       | `$zero`       | **Constant Zero** - Always reads as 0. Writes are ignored.                                              | `context.cpuRegs.GPR.r[0].UD[0]`      | `context.cpuRegs.GPR.n.r0.UD[0]`      |
+| **`$1`**       | `$at`         | **Assembler Temporary** - Reserved for the assembler.                                                   | `context.cpuRegs.GPR.r[1].UD[0]`      | `context.cpuRegs.GPR.n.at.UD[0]`      |
+| **`$2`**       | `$v0`         | **Return Value 0** - Holds the primary result of a function.                                            | `context.cpuRegs.GPR.r[2].UD[0]`      | `context.cpuRegs.GPR.n.v0.UD[0]`      |
+| **`$3`**       | `$v1`         | **Return Value 1** - Holds the secondary result (e.g., upper 64 bits).                                  | `context.cpuRegs.GPR.r[3].UD[0]`      | `context.cpuRegs.GPR.n.v1.UD[0]`      |
+| **`$4`**       | `$a0`         | **Argument 0** - The first argument passed to a function.                                               | `context.cpuRegs.GPR.r[4].UD[0]`      | `context.cpuRegs.GPR.n.a0.UD[0]`      |
+| **`$5`**       | `$a1`         | **Argument 1** - The second argument passed to a function.                                              | `context.cpuRegs.GPR.r[5].UD[0]`      | `context.cpuRegs.GPR.n.a1.UD[0]`      |
+| **`$6`**       | `$a2`         | **Argument 2** - The third argument passed to a function.                                               | `context.cpuRegs.GPR.r[6].UD[0]`      | `context.cpuRegs.GPR.n.a2.UD[0]`      |
+| **`$7`**       | `$a3`         | **Argument 3** - The fourth argument passed to a function.                                              | `context.cpuRegs.GPR.r[7].UD[0]`      | `context.cpuRegs.GPR.n.a3.UD[0]`      |
+| **`$8`-`$15`** | `$t0`-`$t7`   | **Temporaries** - "Caller-saved." Can be used freely, but are not preserved across function calls.      | `...r[8]...` to `...r[15]...`         | `...n.t0...` to `...n.t7...`          |
+| **`$16`-`$23`**| `$s0`-`$s7`   | **Saved** - "Callee-saved." A function must save their original value before using them and restore it. | `...r[16]...` to `...r[23]...`        | `...n.s0...` to `...n.s7...`          |
+| **`$24`-`$25`**| `$t8`-`$t9`   | **Temporaries** - More "caller-saved" temporary registers.                                              | `...r[24]...` and `...r[25]...`       | `...n.t8...` and `...n.t9...`         |
+| **`$26`-`$27`**| `$k0`-`$k1`   | **Kernel** - Reserved for the operating system (BIOS). Game code should not use these.                  | `...r[26]...` and `...r[27]...`       | `...n.k0...` and `...n.k1...`         |
+| **`$28`**      | `$gp`         | **Global Pointer** - Points to the middle of the global data section for efficient access.              | `context.cpuRegs.GPR.r[28].UD[0]`     | `context.cpuRegs.GPR.n.gp.UD[0]`      |
+| **`$29`**      | `$sp`         | **Stack Pointer** - Points to the top of the current stack. Crucial for local variables.                | `context.cpuRegs.GPR.r[29].UD[0]`     | `context.cpuRegs.GPR.n.sp.UD[0]`      |
+| **`$30`**      | `$s8` / `$fp` | **Saved 8 / Frame Pointer** - Another "callee-saved" register, often used as a stack frame base.        | `context.cpuRegs.GPR.r[30].UD[0]`     | `context.cpuRegs.GPR.n.s8.UD[0]`      |
+| **`$31`**      | `$ra`         | **Return Address** - Stores the address to return to after a function call.                             | `context.cpuRegs.GPR.r[31].UD[0]`     | `context.cpuRegs.GPR.n.ra.UD[0]`      |
+
+---
+
+## Other Important Registers
+
+| Register | Purpose                                                                          | C++ Access                      |
+| :---     | :---                                                                             | :---                            |
+| **`pc`** | **Program Counter** - Holds the address of the next instruction to execute.      | `context.cpuRegs.pc`            |
+| **`HI`** | **Multiplication/Division High** - Holds the high 64 bits of a multiplication result. | `context.cpuRegs.HI.UD[0]`      |
+| **`LO`** | **Multiplication/Division Low** - Holds the low 64 bits of a multiplication result.  | `context.cpuRegs.LO.UD[0]`      |
+| **`fpr`**| **Floating-Point Registers** - An array of 32 registers for `float` values.      | `context.fpuRegs.fpr[index].f`  |
+| **`ACC`**| **FPU Accumulator** - A special register for accumulating floating-point results. | `context.fpuRegs.ACC.f`         |
+
