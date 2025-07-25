@@ -71,13 +71,13 @@ int main(int argc, char* argv[]) {
                     const auto& mips_details = insn[i].detail->mips;
                     
                     // Dest reg
-                    const auto& dest_operand = mips_insn.operand[0];
+                    const auto& dest_operand = mips_details.operands[0];
 
                     // REG1
-                    const auto& reg1_operand = mips_insn.operand[1];
+                    const auto& reg1_operand = mips_details.operands[1];
 
                     // REG2 but since it is ADDIU we want immediate value instead of reg2
-                    const auto& imm_operand = mips_insn.operand[2];
+                    const auto& imm_operand = mips_details.operands[2];
 
                     int dest_val = dest_operand.reg;
                     int reg1_val = reg1_operand.reg;
@@ -92,13 +92,66 @@ int main(int argc, char* argv[]) {
 
             }
 
-            // Example of how to access instruction details:
-            const auto& current_insn = insn[i];
+                case MIPS_INS_JR{
+                    // Jump instruction
 
-            std::cout << "// Unhandled Instruction at 0x" << std::hex << current_insn.address
-                      << ": " << current_insn.mnemonic << " " << current_insn.op_str << std::endl;
+                    const auto& mips_details = insn[i].detail->mips;
+                    
+                    const auto& return_operand = mips_details.operands[0];
+                    
+                    int return_add = return_operand.reg;
 
-            // ==================================================
+                    std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[" << return_add << "].UD[0];" << std::endl;
+                    break;
+                }
+                case MIPS_INS_LW{
+                    //TODO: Create ReadMemory32();
+                    // Putting data from memory into a register
+                    
+
+                    const auto& mips_details = insn[i].detail->mips;
+                    
+                    // Operand 1: Destination register
+                    int dest_reg_id = mips_details.operands[0].reg;
+
+                    // Operand 2: Memory location
+                    const auto& mem_operand = mips_details.operands[1];
+
+                    // Since this is memory there is a base and an offset not a reg
+                    int base_reg = mem_operand.mem.base;
+                    long long offset = mem_operand.mem.disp;
+
+                    std::cout 
+                            << "{"
+                            << "u64 address = context.cpuRegs.GPR.r[" << base_reg<< "].UD[0] + " << offset << ";"
+                            << "context.cpuRegs.GPR.r[" << dest_reg_id<< "].UD[0] = ReadMemory32(address);"
+                            << "}" 
+                    << std::endl;
+                    break;
+                }
+                case MIPS_INS_SW {
+                    // Putting data from register into memory
+                    // TODO create WriteMemory32 
+                    
+
+                    const auto& mips_details = insn[i].detail->mips;
+
+                    int source_reg_id= mips_details.operands[0].reg;
+
+                    const auto& mem_operand = mips_details.operands[1];
+                    
+                    int base = mem_operand.mem.base;
+                    long long offset = mem_operand.disp;
+
+                    std::cout 
+                        << "{"
+                        << "u64 address = context.cpuRegs.GPR.r[" << base << "].UD[0] + " << offset << ";"
+                        << "u64 val = context.cpuRegs.GPR.r[" << source_reg_id << "].UD[0];"
+                        << "WriteMemory32(address, val);"
+                        << "}"
+                    << std::endl;
+                    break;
+            }
         }
 
         cs_free(insn, count);
