@@ -180,8 +180,21 @@ int main(int argc, char* argv[]) {
                     // 3. Inside the if, you need to set the PC to the branch target.
                     //    The target is calculated as: (current_instruction_address + 4) + (offset << 2)
                     // 4. After the if statement, you must handle the delay slot by calling handle_delay_slot_instruction().
+
                     // 5. Remember to advance the loop counter `i++`.
-                    std::cout << "// TODO: MIPS_INS_BEQ" << std::endl;
+                    const auto& rs = current_insn.detail->mips.operands[0].reg;
+                    const auto& rt = current_insn.detail->mips.operands[1].reg;
+                    const auto& off = current_insn.detail->mips.operands[2].imm;
+
+                    if (i + 1 < count){
+                        handle_delay_slot_instruction(insn[i+1]);
+                    }
+                    std::cout << "if (context.cpuRegs.GPR.r[" << rs << "].UD[0] == context.cpuRegs.GPR.r["  << rt  << "].UD[0]) {"<< std::endl;
+                    std::cout << "context.cpuRegs.pc = " << current_insn.address << " +  4 + (" << off << " << 2);" << std::endl;
+                    std::cout << "} else {" << std:: endl;
+                    std::cout << "context.cpuRegs.pc = " << current_insn.address << " +  8;" << std::endl;
+                    std::cout << "}" << std::endl;
+                    ++i;
                     break;
                 }
                 case MIPS_INS_BNE: {
@@ -189,7 +202,19 @@ int main(int argc, char* argv[]) {
                     // MIPS: bne rs, rt, offset
                     // C++: if (rs != rt) { pc = pc + offset; }
                     // Follow the same logic as BEQ.
-                    std::cout << "// TODO: MIPS_INS_BNE" << std::endl;
+                    const auto& rs = current_insn.detail->mips.operands[0].reg;
+                    const auto& rt = current_insn.detail->mips.operands[1].reg;
+                    const auto& off = current_insn.detail->mips.operands[2].imm;
+
+                    if (i + 1 < count){
+                        handle_delay_slot_instruction(insn[i+1]);
+                    }
+                    std::cout << "if (context.cpuRegs.GPR.r[" << rs << "].UD[0] != context.cpuRegs.GPR.r["  << rt  << "].UD[0]) {"<< std::endl;
+                    std::cout << "context.cpuRegs.pc = " << current_insn.address << " +  4 + (" << off << " << 2);" << std::endl;
+                    std::cout << "} else {" << std:: endl;
+                    std::cout << "context.cpuRegs.pc = " << current_insn.address << " +  8;" << std::endl;
+                    std::cout << "}" << std::endl;
+                    ++i;
                     break;
                 }
 
