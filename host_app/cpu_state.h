@@ -74,13 +74,31 @@ union CP0regs {
 
 // A container for the core CPU registers.
 struct cpuRegisters {
-    GPRregs GPR;
-    GPR_reg HI; // Special register for multiplication/division results
-    GPR_reg LO; // Special register for multiplication/division results
-    CP0regs CP0;
-    u32 sa;     // Shift Amount register
-    u32 pc;     // The Program Counter
-    // Emulator-specific fields like IsDelaySlot, code, etc., are omitted.
+	GPRregs GPR;		// GPR regs
+	// NOTE: don't change order since recompiler uses it
+	GPR_reg HI;
+	GPR_reg LO;			// hi & log 128bit wide
+	CP0regs CP0;		// is COP0 32bit?
+	u32 sa;				// shift amount (32bit), needs to be 16 byte aligned
+	u32 IsDelaySlot;	// set true when the current instruction is a delay slot.
+	u32 pc;				// Program counter, when changing offset in struct, check iR5900-X.S to make sure offset is correct
+	u32 code;			// current instruction
+	PERFregs PERF;
+	u32 eCycle[32];
+	u32 sCycle[32];		// for internal counters
+	u32 cycle;			// calculate cpucycles..
+	u32 interrupt;
+	int branch;
+	int opmode;			// operating mode
+	u32 tempcycles;
+	u32 dmastall;
+	u32 pcWriteback;
+
+	// if cpuRegs.cycle is greater than this cycle, should check cpuEventTest for updates
+	u32 nextEventCycle;
+	u32 lastEventCycle;
+	u32 lastCOP0Cycle;
+	u32 lastPERFCycle[2];
 };
 
 // Represents a single 32-bit Floating Point Register (FPR).

@@ -64,98 +64,145 @@ int main(int argc, char* argv[]) {
             // ==================================================
             // TODO: Add your switch statement here to check insn[i].id
             // and generate the appropriate C++ code.
-            switch(insn[i].id){
+            // A variable to hold the current instruction for easier access
+            cs_insn& current_insn = insn[i];
+
+            switch(current_insn.id) {
+                // --- INSTRUCTIONS YOU HAVE COMPLETED ---
                 case MIPS_INS_ADDIU: {
-                    // destination = source reg + immediate value
-                    // Gets that assembly line INSTRUCTION DEST REG1 REG2 
-                    const auto& mips_details = insn[i].detail->mips;
-                    
-                    // Dest reg
-                    const auto& dest_operand = mips_details.operands[0];
-
-                    // REG1
-                    const auto& reg1_operand = mips_details.operands[1];
-
-                    // REG2 but since it is ADDIU we want immediate value instead of reg2
-                    const auto& imm_operand = mips_details.operands[2];
-
-                    int dest_val = dest_operand.reg;
-                    int reg1_val = reg1_operand.reg;
-                    long long imm_val = imm_operand.imm;
-
-                    // Now we parse this into a string
-                    /*
-                    context.cpuRegs.GPR.r[ dest_reg ].UD[0] = context.cpuRegs.GPR.r[ reg_1 ].UD[0] + context.cpuRegs.GPR.r[ imm ].UD[0]
-                    */
-
-                    std::count << "context.cpuRegs.GPR.r[" << dest_val << "].UD[0] = context.cpuRegs.GPR.r[" << reg1_val << "].UD[0] + " << imm_val << ";" std::endl;
-
+                    const auto& dest = current_insn.detail->mips.operands[0].reg;
+                    const auto& source = current_insn.detail->mips.operands[1].reg;
+                    const auto& imm = current_insn.detail->mips.operands[2].imm;
+                    std::cout << "context.cpuRegs.GPR.r[" << dest << "].SD[0] = (s64)(s32)(context.cpuRegs.GPR.r[" << source << "].SD[0] + " << imm << ");" << std::endl;
+                    break;
             }
-
-                case MIPS_INS_JR{
-                    // Jump instruction
-
-                    const auto& mips_details = insn[i].detail->mips;
-                    
-                    const auto& return_operand = mips_details.operands[0];
-                    
-                    int return_add = return_operand.reg;
-
-                    std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[" << return_add << "].UD[0];" << std::endl;
+                case MIPS_INS_LW: {
+                    const auto& dest = current_insn.detail->mips.operands[0].reg;
+                    const auto& base = current_insn.detail->mips.operands[1].mem.base;
+                    const auto& offset = current_insn.detail->mips.operands[1].mem.disp;
+                    std::cout << "{" << std::endl;
+                    std::cout << "    u32 address = context.cpuRegs.GPR.r[" << base << "].UD[0] + " << offset << ";" << std::endl;
+                    std::cout << "    context.cpuRegs.GPR.r[" << dest << "].SD[0] = (s64)(s32)ReadMemory32(address);" << std::endl;
+                    std::cout << "}" << std::endl;
                     break;
                 }
-                case MIPS_INS_LW{
-                    //TODO: Create ReadMemory32();
-                    // Putting data from memory into a register
-                    
-
-                    const auto& mips_details = insn[i].detail->mips;
-                    
-                    // Operand 1: Destination register
-                    int dest_reg_id = mips_details.operands[0].reg;
-
-                    // Operand 2: Memory location
-                    const auto& mem_operand = mips_details.operands[1];
-
-                    // Since this is memory there is a base and an offset not a reg
-                    int base_reg = mem_operand.mem.base;
-                    long long offset = mem_operand.mem.disp;
-
-                    std::cout 
-                            << "{"
-                            << "u64 address = context.cpuRegs.GPR.r[" << base_reg<< "].UD[0] + " << offset << ";"
-                            << "context.cpuRegs.GPR.r[" << dest_reg_id<< "].UD[0] = ReadMemory32(address);"
-                            << "}" 
-                    << std::endl;
+                case MIPS_INS_SW: {
+                    const auto& source = current_insn.detail->mips.operands[0].reg;
+                    const auto& base = current_insn.detail->mips.operands[1].mem.base;
+                    const auto& offset = current_insn.detail->mips.operands[1].mem.disp;
+                    std::cout << "{" << std::endl;
+                    std::cout << "    u32 address = context.cpuRegs.GPR.r[" << base << "].UD[0] + " << offset << ";" << std::endl;
+                    std::cout << "    WriteMemory32(address, (u32)context.cpuRegs.GPR.r[" << source << "].UD[0]);" << std::endl;
+                    std::cout << "}" << std::endl;
                     break;
                 }
-                case MIPS_INS_SW {
-                    // Putting data from register into memory
-                    // TODO create WriteMemory32 
+                case MIPS_INS_JR: {
+                    const auto& target_reg = current_insn.detail->mips.operands[0].reg;
+                    if (i + 1 < count) {
+                        cs_insn& delay_slot_insn = insn[i + 1];
+                        handle_delay_slot_instruction(delay_slot_insn);
+                        std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[" << target_reg << "].UD[0];" << std::endl;
+                        i++;
+                    } else {
+                        std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[" << target_reg << "].UD[0];" << std::endl;
+                    }
+                    break;
+                }
+
+                // --- LOGICAL OPERATIONS ---
+                case MIPS_INS_OR: {
+                    // TODO: Implement OR instruction.
+                    // MIPS: or rd, rs, rt
+                    // C++: rd = rs | rt
+                    // Operation is on 64-bit registers.
+                    // LOGICAL OPERATIONS ARE DONE ON 64 BITS, ARITHMETIC ARE DONE ON 32 BITS
+
+                    const auto& dest = current_insn.detail->mips.operands[0].reg;
+                    const auto& r1 = current_insn.detail->mips.operands[1].reg;
+                    const auto& r2 = current_insn.detail->mips.operands[2].reg;
+
+                    std::cout << "context.cpuRegs.GPR.r[" << dest << "].UD[0] = (context.cpuRegs.GPR.r[" << r1 << "].UD[0] | context.cpuRegs.GPR.r[" << r2 << "].UD[0]);" << std::endl;
+                    break;
+                }
+                case MIPS_INS_AND: {
+                    // TODO: Implement AND instruction.
+                    // MIPS: and rd, rs, rt
+                    // C++: rd = rs & rt
+                    // Operation is on 64-bit registers.
+                    const auto& dest = current_insn.detail->mips.operands[0].reg;
+                    const auto& r1 = current_insn.detail->mips.operands[1].reg;
+                    const auto& r2 = current_insn.detail->mips.operands[2].reg;
+
+                    std::cout << "context.cpuRegs.GPR.r[" << dest << "].UD[0] = (context.cpuRegs.GPR.r[" << r1 << "].UD[0] & context.cpuRegs.GPR.r[" << r2 << "].UD[0]);" << std::endl;
+                    break;
+                }
+                case MIPS_INS_LUI: {
+                    // TODO: Implement LUI (Load Upper Immediate).
+                    // MIPS: lui rt, immediate
+                    // C++: rt = (immediate << 16)
+                    // This is a 32-bit operation, the result must be sign-extended to 64 bits.
+                    // const auto& rt = current_insn.detail->mips.operands[0].reg;
+                    // const auto& imm = current_insn.detail->mips.operands[1].imm;
+
+
+                    const auto& r1 = current_insn.detail->mips.operands[0].reg;
+                    const auto& imm = current_insn.detail->mips.operands[1].imm;
+
+                    //  r1 = s64(imm << 16)
+
+                    std::cout << "context.cpuRegs.GPR.r[" << r1 << "].SD[0] = (s64)(s32)(imm << 16);" << std::endl;
+                    break;
+                }
+
+                // --- SHIFT OPERATIONS ---
+                case MIPS_INS_SLL: {
+                    // TODO: Implement SLL (Shift Left Logical).
+                    // MIPS: sll rd, rt, sa
+                    // C++: rd = rt << sa
+                    // This is a 32-bit operation. The lower 32 bits of rt are shifted.
+                    // The result in rd is sign-extended.
+                    const auto& rd = current_insn.detail->mips.operands[0].reg;
+                    const auto& rt = current_insn.detail->mips.operands[1].reg;
+                    const auto& sa = current_insn.detail->mips.operands[2].imm;
                     
+                    std::cout << "context.cpuRegs.GPR.r[" << rd << "].SD[0] = (s64)(s32)((u32)context.cpuRegs.GPR.r[" << rt << "].UD[0] << " << sa << ");"
+                    break;
+                }
 
-                    const auto& mips_details = insn[i].detail->mips;
+                // --- BRANCH INSTRUCTIONS ---
+                case MIPS_INS_BEQ: {
+                    // TODO: Implement BEQ (Branch on Equal).
+                    // MIPS: beq rs, rt, offset
+                    // C++: if (rs == rt) { pc = pc + offset; }
+                    // Remember the branch delay slot!
+                    // 1. Get the operands rs, rt, and the immediate offset.
+                    // 2. Generate C++ for the comparison: if (context.cpuRegs.GPR.r[rs] == context.cpuRegs.GPR.r[rt]) { ... }
+                    // 3. Inside the if, you need to set the PC to the branch target.
+                    //    The target is calculated as: (current_instruction_address + 4) + (offset << 2)
+                    // 4. After the if statement, you must handle the delay slot by calling handle_delay_slot_instruction().
+                    // 5. Remember to advance the loop counter `i++`.
+                    std::cout << "// TODO: MIPS_INS_BEQ" << std::endl;
+                    break;
+                }
+                case MIPS_INS_BNE: {
+                    // TODO: Implement BNE (Branch on Not Equal).
+                    // MIPS: bne rs, rt, offset
+                    // C++: if (rs != rt) { pc = pc + offset; }
+                    // Follow the same logic as BEQ.
+                    std::cout << "// TODO: MIPS_INS_BNE" << std::endl;
+                    break;
+                }
 
-                    int source_reg_id= mips_details.operands[0].reg;
-
-                    const auto& mem_operand = mips_details.operands[1];
-                    
-                    int base = mem_operand.mem.base;
-                    long long offset = mem_operand.disp;
-
-                    std::cout 
-                        << "{"
-                        << "u64 address = context.cpuRegs.GPR.r[" << base << "].UD[0] + " << offset << ";"
-                        << "u64 val = context.cpuRegs.GPR.r[" << source_reg_id << "].UD[0];"
-                        << "WriteMemory32(address, val);"
-                        << "}"
-                    << std::endl;
+                default:
+                    // This is useful for seeing what you still need to implement.
+                    std::cout << "// Unhandled instruction: " << current_insn.mnemonic << std::endl;
                     break;
             }
         }
 
         cs_free(insn, count);
-    } else {
+    }
+ } else {
         std::cerr << "ERROR: Failed to disassemble any code!" << std::endl;
         return -1;
     }
