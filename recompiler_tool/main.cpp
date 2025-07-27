@@ -657,8 +657,52 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             std::cout << "context.cpuRegs.pc = (" << current_insn.address << "& 0xF0000000) | (" << target_imm << " << 2);" << std::endl;
             return 2;
         }
-        case MIPS_INS_JALR : {}
-        case MIPS_INS_SYSCALL : {}
+        case MIPS_INS_JALR : {
+            std::cerr << "  Operand 0 [rd]: type=" << mips_details.operands[0].type << ", reg=" << mips_details.operands[0].reg << std::endl;
+            std::cerr << "  Operand 1 [rt]: type=" << mips_details.operands[1].type << ", reg=" << mips_details.operands[1].reg << std::endl;
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            /*
+            So when we are jumping, we are jumping somewhere else in that code and then we want to return from that jump we need to know where we want to jump back to.
+            We save this place we want to return in the rd register. We dont save the next instruction because that is already done since J instructions do the next immediate
+            instruction before the jump so we store the one after. 
+
+            context.cpuRegs.GPR.r[rd_index].UD[0] = current_insn.address + 8;
+            context.cpuRegs.pc = context.cpuRegs.GPR.r[rs_index];
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[ "<< rd_index <<" ].UD[0] = current_insn.address + 8;" << std::endl;
+            std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[ "<< rs_index <<" ];" << std::endl;
+
+            break;
+        }
+        case MIPS_INS_SYSCALL : {
+
+            /*
+            
+                SYS operation: v0 -> $2
+                Parameters: a0-a3 ->  $4, $5, $6, $7
+
+
+
+
+                Mode SWITCH
+                context.cpuRegs.CP0.n.EPC = current_insn + 4;
+                context.cpuRegs.CP0.n.Cause = syscall_code;
+
+                // sys_handlers returns the address to go to
+                sys_handler(SYS operation, parameters);
+            
+            */
+        }
         case MIPS_INS_MFC0 : {}
         case MIPS_INS_MTC0 : {}
         default:
