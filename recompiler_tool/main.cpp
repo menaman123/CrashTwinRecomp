@@ -234,7 +234,7 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             const auto& imm = mips_details.operands[1].imm;
             int rt_index = get_gpr_index(rt_capstone);
 
-            std::cout << "context.cpuRegs.GPR.r[" << rt_index << "].SD[0] = (s64)(s32)(imm << 16);" << std::endl;
+            std::cout << "context.cpuRegs.GPR.r[" << rt_index << "].SD[0] = (s64)(s32)(" << imm << " << 16);" << std::endl;
             break;
         }
         case MIPS_INS_SLL: {
@@ -362,10 +362,10 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             }
             */
            std::cout << "{" << std::endl;
-           std::cout << "   s64 num = context.cpuRegs.GPR.r[ " << dest_index << "].SD[0];" << std::endl;
-           std::cout << "   s64 den = context.cpuRegs.GPR.r[ " << source_index <<" ].SD[0];" << std::endl;
+           std::cout << "   s32 num = (s32)context.cpuRegs.GPR.r[ " << dest_index << "].SD[0];" << std::endl;
+           std::cout << "   s32 den = (s32)context.cpuRegs.GPR.r[ " << source_index <<" ].SD[0];" << std::endl;
            std::cout << "   if (den != 0){" << std::endl;
-           std::cout << "       s32 HI_ans = num " << "%" << "den;"  <<std::endl;
+           std::cout << "       s32 HI_ans = num " << "%" << " den;"  <<std::endl;
            std::cout << "       s32 LO_ans = num / den;" << std::endl;
            std::cout << "       context.cpuRegs.LO.SD[0] = (s64)(s32)LO_ans;" << std::endl;
            std::cout << "       context.cpuRegs.HI.SD[0] = (s64)(s32)(HI_ans);" << std::endl;
@@ -391,8 +391,8 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             }
             */
            std::cout << "{" << std::endl;
-           std::cout << "   u64 rs_val = context.cpuRegs.GPR.r[rs_index].UD[0];" << std::endl;
-           std::cout << "   u64 rt_val = context.cpuRegs.GPR.r[rt_index].UD[0];" << std::endl;
+           std::cout << "   u64 rs_val = context.cpuRegs.GPR.r["<< rs_index <<"].UD[0];" << std::endl;
+           std::cout << "   u64 rt_val = context.cpuRegs.GPR.r["<< rt_index <<"].UD[0];" << std::endl;
            std::cout << "   context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = rs_val ^ rt_val;" << std::endl;
            std::cout << "}" << std::endl;
            break;
@@ -415,8 +415,8 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             }
             */
            std::cout << "{" << std::endl;
-           std::cout << "   u64 rs_val = context.cpuRegs.GPR.r[rs_index].UD[0];" << std::endl;
-           std::cout << "   u64 rt_val = context.cpuRegs.GPR.r[rt_index].UD[0];" << std::endl;
+           std::cout << "   u64 rs_val = context.cpuRegs.GPR.r["<< rs_index <<"].UD[0];" << std::endl;
+           std::cout << "   u64 rt_val = context.cpuRegs.GPR.r["<< rt_index <<"].UD[0];" << std::endl;
            std::cout << "   context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = ~(rs_val | rt_val);" << std::endl;
            std::cout << "}" << std::endl;
            break;
@@ -438,7 +438,7 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             }
             */
            std::cout << "{" << std::endl;
-           std::cout << "   u64 rt_val = context.cpuRegs.GPR.r[rt_index].UD[0];" << std::endl;
+           std::cout << "   u64 rt_val = context.cpuRegs.GPR.r[" << rt_index << "].UD[0];" << std::endl;
            std::cout << "   context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = (u64)((u32)rt_val >>" << imm << ");" << std::endl;
            std::cout << "}" << std::endl;
            break;
@@ -460,7 +460,7 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             }
             */
            std::cout << "{" << std::endl;
-           std::cout << "   s64 rt_val = context.cpuRegs.GPR.r[rt_index].UD[0];" << std::endl;
+           std::cout << "   s64 rt_val = context.cpuRegs.GPR.r["<< rt_index <<"].UD[0];" << std::endl;
            std::cout << "   context.cpuRegs.GPR.r[" << rd_index << "].SD[0] = (s64)((s32)(rt_val) >>" << imm << ");" << std::endl;
            std::cout << "}" << std::endl;
            break;
@@ -680,9 +680,9 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             */
 
             std::cout << "context.cpuRegs.GPR.r[ "<< rd_index <<" ].UD[0] = current_insn.address + 8;" << std::endl;
-            std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[ "<< rs_index <<" ];" << std::endl;
+            std::cout << "context.cpuRegs.pc = context.cpuRegs.GPR.r[ "<< rs_index <<" ].UD[0];" << std::endl;
 
-            break;
+            return 2;
         }
         case MIPS_INS_SYSCALL : {
 
@@ -697,14 +697,467 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
                 Mode SWITCH
                 context.cpuRegs.CP0.n.EPC = current_insn + 4;
                 context.cpuRegs.CP0.n.Cause = syscall_code;
+                                              |      | 
+                1111 1111 1111 1111 1111 1111 1000 0011
+                8 =                               01010
+                Need to shift by 2 -> 8 << 2
+
+                                              |      | 
+                1111 1111 1111 1111 1111 1111 1000 0011
+                                              |      |
+                8 =                            010 10__
+
 
                 // sys_handlers returns the address to go to
-                sys_handler(SYS operation, parameters);
+                sys_handler(cs_mips& context_details);
             
             */
+
+            std::cout << "context.cpuRegs.CP0.n.EPC = current_insn.address + 4;" << std::endl;
+            std::cout << "context.cpuRegs.CP0.n.Cause = (context.cpuRegs.CP0.n.Cause & 0xFFFFFF83) | (8 << 2);" << std::endl;
+            std::cout << "sys_handler(context);" << std::endl;
+
+
+            break;
         }
-        case MIPS_INS_MFC0 : {}
-        case MIPS_INS_MTC0 : {}
+        case MIPS_INS_MFC0 : {
+            std::cerr << "  Operand 0 [rt]: type=" << mips_details.operands[0].type << ", reg=" << mips_details.operands[0].reg << std::endl;
+            std::cerr << "  Operand 1 [rd]: type=" << mips_details.operands[1].type << ", reg=" << mips_details.operands[1].reg << std::endl;
+            const auto& rt_reg = mips_details.operands[0].reg;
+            const auto& rd_reg = mips_details.operands[1].reg;
+
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            
+            context.cpuRegs.GPR.r[rt_index].SD[0] = (s64)(s32)context.cpuRegs.CP0.r[rd_reg];
+            */
+
+            std::cout << "context.cpuRegs.GPR.r["<< rt_index <<"].SD[0] = (s64)(s32)context.cpuRegs.CP0.r["<< rd_reg <<"];" << std::endl;
+            break;
+        }
+        case MIPS_INS_MTC0 : {
+            std::cerr << "  Operand 0 [rt]: type=" << mips_details.operands[0].type << ", reg=" << mips_details.operands[0].reg << std::endl;
+            std::cerr << "  Operand 1 [rd]: type=" << mips_details.operands[1].type << ", reg=" << mips_details.operands[1].reg << std::endl;
+            const auto& rt_reg = mips_details.operands[0].reg;
+            const auto& rd_reg = mips_details.operands[1].reg;
+
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+
+            context.cpuRegs.CP0.r[rd_reg] = (s32)context.cpuRegs.GPR.r[rt_index];
+            */
+
+            std::cout << "context.cpuRegs.CP0.r["<< rd_reg <<"] = (u32)context.cpuRegs.GPR.r["<< rt_index <<"].UD[0];" << std::endl;
+            break;
+        }
+
+
+        // --- End of Implemented Instructions ---
+
+        // --- SPECIAL TABLE (Function based) ---
+        case MIPS_INS_SLLV: {
+            // TODO: Implement SLLV (Shift Left Logical Variable)
+            // MIPS: sllv rd, rt, rs
+            break;
+        }
+        case MIPS_INS_SRLV: {
+            // TODO: Implement SRLV (Shift Right Logical Variable)
+            // MIPS: srlv rd, rt, rs
+            break;
+        }
+        case MIPS_INS_SRAV: {
+            // TODO: Implement SRAV (Shift Right Arithmetic Variable)
+            // MIPS: srav rd, rt, rs
+            break;
+        }
+        case MIPS_INS_MOVZ: {
+            // TODO: Implement MOVZ (Move conditional on Zero)
+            // MIPS: movz rd, rs, rt
+            // C++: if (rt == 0) rd = rs
+            break;
+        }
+        case MIPS_INS_MOVN: {
+            // TODO: Implement MOVN (Move conditional on Not Zero)
+            // MIPS: movn rd, rs, rt
+            // C++: if (rt != 0) rd = rs
+            break;
+        }
+        case MIPS_INS_SYNC: {
+            // TODO: Implement SYNC (Synchronize)
+            // This is for memory ordering on multiprocessor systems.
+            // For a single-threaded recompiler, this can often be treated as a NOP.
+            break;
+        }
+        case MIPS_INS_MFHI: {
+            // TODO: Implement MFHI (Move From HI)
+            // MIPS: mfhi rd
+            break;
+        }
+        case MIPS_INS_MTHI: {
+            // TODO: Implement MTHI (Move To HI)
+            // MIPS: mthi rs
+            break;
+        }
+        case MIPS_INS_MFLO: {
+            // TODO: Implement MFLO (Move From LO)
+            // MIPS: mflo rd
+            break;
+        }
+        case MIPS_INS_MTLO: {
+            // TODO: Implement MTLO (Move To LO)
+            // MIPS: mtlo rs
+            break;
+        }
+        case MIPS_INS_DSLLV: {
+            // TODO: Implement DSLLV (Doubleword Shift Left Logical Variable)
+            // MIPS: dsllv rd, rt, rs
+            break;
+        }
+        case MIPS_INS_DSRLV: {
+            // TODO: Implement DSRLV (Doubleword Shift Right Logical Variable)
+            // MIPS: dsrlv rd, rt, rs
+            break;
+        }
+        case MIPS_INS_DSRAV: {
+            // TODO: Implement DSRAV (Doubleword Shift Right Arithmetic Variable)
+            // MIPS: dsrav rd, rt, rs
+            break;
+        }
+        case MIPS_INS_MULTU: {
+            // TODO: Implement MULTU (Multiply Unsigned)
+            // MIPS: multu rs, rt
+            break;
+        }
+        case MIPS_INS_DIVU: {
+            // TODO: Implement DIVU (Divide Unsigned)
+            // MIPS: divu rs, rt
+            break;
+        }
+        case MIPS_INS_ADD: {
+            // TODO: Implement ADD (Add with overflow trap)
+            // For now, can be implemented same as ADDU.
+            break;
+        }
+        case MIPS_INS_SUB: {
+            // TODO: Implement SUB (Subtract with overflow trap)
+            // For now, can be implemented same as SUBU.
+            break;
+        }
+        case MIPS_INS_AND: {
+            // TODO: Implement AND (AND)
+            // MIPS: and rd, rs, rt
+            break;
+        }
+        case MIPS_INS_MFSA: {
+            // TODO: Implement MFSA (Move From SA)
+            // MIPS: mfsa rd
+            // C++: rd = sa
+            break;
+        }
+        case MIPS_INS_MTSA: {
+            // TODO: Implement MTSA (Move To SA)
+            // MIPS: mtsa rs
+            // C++: sa = rs
+            break;
+        }
+        case MIPS_INS_SLTU: {
+            // TODO: Implement SLTU (Set on Less Than Unsigned)
+            // MIPS: sltu rd, rs, rt
+            break;
+        }
+        case MIPS_INS_DADD: {
+            // TODO: Implement DADD (Doubleword Add with overflow trap)
+            // For now, can be implemented same as DADDU.
+            break;
+        }
+        case MIPS_INS_DADDU: {
+            // TODO: Implement DADDU (Doubleword Add Unsigned)
+            // MIPS: daddu rd, rs, rt
+            break;
+        }
+        case MIPS_INS_DSUB: {
+            // TODO: Implement DSUB (Doubleword Subtract with overflow trap)
+            // For now, can be implemented same as DSUBU.
+            break;
+        }
+        case MIPS_INS_DSUBU: {
+            // TODO: Implement DSUBU (Doubleword Subtract Unsigned)
+            // MIPS: dsubu rd, rs, rt
+            break;
+        }
+        case MIPS_INS_TGE: {
+            // TODO: Implement TGE (Trap if Greater than or Equal)
+            // MIPS: tge rs, rt
+            break;
+        }
+        case MIPS_INS_TGEU: {
+            // TODO: Implement TGEU (Trap if Greater than or Equal Unsigned)
+            // MIPS: tgeu rs, rt
+            break;
+        }
+        case MIPS_INS_TLT: {
+            // TODO: Implement TLT (Trap if Less Than)
+            // MIPS: tlt rs, rt
+            break;
+        }
+        case MIPS_INS_TLTU: {
+            // TODO: Implement TLTU (Trap if Less Than Unsigned)
+            // MIPS: tltu rs, rt
+            break;
+        }
+        case MIPS_INS_TEQ: {
+            // TODO: Implement TEQ (Trap if Equal)
+            // MIPS: teq rs, rt
+            break;
+        }
+        case MIPS_INS_TNE: {
+            // TODO: Implement TNE (Trap if Not Equal)
+            // MIPS: tne rs, rt
+            break;
+        }
+        case MIPS_INS_DSLL: {
+            // TODO: Implement DSLL (Doubleword Shift Left Logical)
+            // MIPS: dsll rd, rt, sa
+            break;
+        }
+        case MIPS_INS_DSRL: {
+            // TODO: Implement DSRL (Doubleword Shift Right Logical)
+            // MIPS: dsrl rd, rt, sa
+            break;
+        }
+        case MIPS_INS_DSRA: {
+            // TODO: Implement DSRA (Doubleword Shift Right Arithmetic)
+            // MIPS: dsra rd, rt, sa
+            break;
+        }
+        case MIPS_INS_DSLL32: {
+            // TODO: Implement DSLL32 (Doubleword Shift Left Logical + 32)
+            // MIPS: dsll32 rd, rt, sa
+            break;
+        }
+        case MIPS_INS_DSRL32: {
+            // TODO: Implement DSRL32 (Doubleword Shift Right Logical + 32)
+            // MIPS: dsrl32 rd, rt, sa
+            break;
+        }
+        case MIPS_INS_DSRA32: {
+            // TODO: Implement DSRA32 (Doubleword Shift Right Arithmetic + 32)
+            // MIPS: dsra32 rd, rt, sa
+            break;
+        }
+
+        // --- REGIMM TABLE (rt field based) ---
+        case MIPS_INS_BLTZ: {
+            // TODO: Implement BLTZ (Branch on Less Than Zero)
+            // MIPS: bltz rs, offset
+            break;
+        }
+        case MIPS_INS_BGEZ: {
+            // TODO: Implement BGEZ (Branch on Greater Than or Equal to Zero)
+            // MIPS: bgez rs, offset
+            break;
+        }
+        case MIPS_INS_BLTZL: {
+            // TODO: Implement BLTZL (Branch on Less Than Zero Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_BGEZL: {
+            // TODO: Implement BGEZL (Branch on Greater Than or Equal to Zero Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_TGEI: {
+            // TODO: Implement TGEI (Trap if Greater than or Equal Immediate)
+            // MIPS: tgei rs, immediate
+            break;
+        }
+        case MIPS_INS_TGEIU: {
+            // TODO: Implement TGEIU (Trap if Greater than or Equal Immediate Unsigned)
+            // MIPS: tgeiu rs, immediate
+            break;
+        }
+        case MIPS_INS_TLTI: {
+            // TODO: Implement TLTI (Trap if Less Than Immediate)
+            // MIPS: tlti rs, immediate
+            break;
+        }
+        case MIPS_INS_TLTIU: {
+            // TODO: Implement TLTIU (Trap if Less Than Immediate Unsigned)
+            // MIPS: tltiu rs, immediate
+            break;
+        }
+        case MIPS_INS_TEQI: {
+            // TODO: Implement TEQI (Trap if Equal Immediate)
+            // MIPS: teqi rs, immediate
+            break;
+        }
+        case MIPS_INS_TNEI: {
+            // TODO: Implement TNEI (Trap if Not Equal Immediate)
+            // MIPS: tnei rs, immediate
+            break;
+        }
+        case MIPS_INS_BLTZAL: {
+            // TODO: Implement BLTZAL (Branch on Less Than Zero and Link)
+            // MIPS: bltzal rs, offset
+            break;
+        }
+        case MIPS_INS_BGEZAL: {
+            // TODO: Implement BGEZAL (Branch on Greater Than or Equal to Zero and Link)
+            // MIPS: bgezal rs, offset
+            break;
+        }
+        case MIPS_INS_BLTZALL: {
+            // TODO: Implement BLTZALL (Branch on Less Than Zero and Link Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_BGEZALL: {
+            // TODO: Implement BGEZALL (Branch on Greater Than or Equal to Zero and Link Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_MTSAB: {
+            // TODO: Implement MTSAB (Move To SA/Byte)
+            // MIPS: mtsab rs, immediate
+            break;
+        }
+        case MIPS_INS_MTSAH: {
+            // TODO: Implement MTSAH (Move To SA/Halfword)
+            // MIPS: mtsah rs, immediate
+            break;
+        }
+
+        // --- Normal Opcode Table ---
+        case MIPS_INS_SLTIU: {
+            // TODO: Implement SLTIU (Set on Less Than Immediate Unsigned)
+            // MIPS: sltiu rt, rs, immediate
+            break;
+        }
+        case MIPS_INS_ANDI: {
+            // TODO: Implement ANDI (AND Immediate)
+            // MIPS: andi rt, rs, immediate
+            break;
+        }
+        case MIPS_INS_XORI: {
+            // TODO: Implement XORI (XOR Immediate)
+            // MIPS: xori rt, rs, immediate
+            break;
+        }
+        case MIPS_INS_BEQL: {
+            // TODO: Implement BEQL (Branch on Equal Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_BNEL: {
+            // TODO: Implement BNEL (Branch on Not Equal Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_BLEZL: {
+            // TODO: Implement BLEZL (Branch on Less Than or Equal to Zero Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_BGTZL: {
+            // TODO: Implement BGTZL (Branch on Greater Than or Equal to Zero Likely)
+            // Branch likely instructions are tricky. For now, can treat as normal branch.
+            break;
+        }
+        case MIPS_INS_DADDI: {
+            // TODO: Implement DADDI (Doubleword Add Immediate)
+            // MIPS: daddi rt, rs, immediate
+            break;
+        }
+        case MIPS_INS_DADDIU: {
+            // TODO: Implement DADDIU (Doubleword Add Immediate Unsigned)
+            // MIPS: daddiu rt, rs, immediate
+            break;
+        }
+        case MIPS_INS_ADDI: {
+            // TODO: Implement ADDI (Add Immediate with overflow trap)
+            // For now, can be implemented same as ADDIU.
+            // MIPS: addi rt, rs, immediate
+            break;
+        }
+        case MIPS_INS_LDL: {
+            // TODO: Implement LDL (Load Doubleword Left)
+            // This is for unaligned loads. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_LDR: {
+            // TODO: Implement LDR (Load Doubleword Right)
+            // This is for unaligned loads. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_LQ: {
+            // TODO: Implement LQ (Load Quadword)
+            // MIPS: lq rt, offset(base)
+            break;
+        }
+        case MIPS_INS_SQ: {
+            // TODO: Implement SQ (Store Quadword)
+            // MIPS: sq rt, offset(base)
+            break;
+        }
+        case MIPS_INS_LWL: {
+            // TODO: Implement LWL (Load Word Left)
+            // This is for unaligned loads. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_LWR: {
+            // TODO: Implement LWR (Load Word Right)
+            // This is for unaligned loads. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_LWU: {
+            // TODO: Implement LWU (Load Word Unsigned)
+            // MIPS: lwu rt, offset(base)
+            break;
+        }
+        case MIPS_INS_SWL: {
+            // TODO: Implement SWL (Store Word Left)
+            // This is for unaligned stores. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_SWR: {
+            // TODO: Implement SWR (Store Word Right)
+            // This is for unaligned stores. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_SDL: {
+            // TODO: Implement SDL (Store Doubleword Left)
+            // This is for unaligned stores. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_SDR: {
+            // TODO: Implement SDR (Store Doubleword Right)
+            // This is for unaligned stores. Complex. Can be deferred.
+            break;
+        }
+        case MIPS_INS_CACHE: {
+            // TODO: Implement CACHE (Cache Operation)
+            // For now, this can be a NOP.
+            break;
+        }
+        case MIPS_INS_PREF: {
+            // TODO: Implement PREF (Prefetch)
+            // This is a memory hint. For now, this can be a NOP.
+            break;
+        }
+        case MIPS_INS_LD: {
+            // TODO: Implement LD (Load Doubleword)
+            // MIPS: ld rt, offset(base)
+            break;
+        }
+        case MIPS_INS_SD: {
+            // TODO: Implement SD (Store Doubleword)
+            // MIPS: sd rt, offset(base)
+            break;
+        }
+
         default:
             std::cout << "// Unhandled instruction: " << current_insn.mnemonic << std::endl;
             break;
