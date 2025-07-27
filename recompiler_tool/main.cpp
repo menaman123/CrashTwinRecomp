@@ -624,13 +624,13 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             return 2;
         }
         case MIPS_INS_JAL : {
-            std::cerr << "  Operand 0 [target]: type=" << mips_details.operands[0].type << ", reg=" << mips_details.operands[0].reg << std::endl;
+            std::cerr << "  Operand 0 [target]: type=" << mips_details.operands[0].type << ", imm=" << mips_details.operands[0].imm << std::endl;
             const auto& target_imm = mips_details.operands[0].imm;
 
             if (i + 1 < total_count) {
                 translate_instruction_block(insn, i + 1, total_count);
             }
-            std::cout << "context.cpuRegs.GPR.r[31] = " << current_insn.address << "+ 8;" << std::endl;
+            std::cout << "context.cpuRegs.GPR.r[31].UD[0] = " << current_insn.address << "+ 8;" << std::endl;
             /*                      0xFFFFFFFF                              0x02FFFFFF
                                     0xF0000000                              0x0FFFFFF0
 
@@ -640,7 +640,23 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             std::cout << "context.cpuRegs.pc = (" << current_insn.address << "& 0xF0000000) | (" << target_imm << " << 2);" << std::endl;
             return 2;
         }
-        case MIPS_INS_J : {}
+        case MIPS_INS_J : {
+            std::cerr << "  Operand 0 [target]: type=" << mips_details.operands[0].type << ", imm=" << mips_details.operands[0].imm << std::endl;
+            const auto& target_imm = mips_details.operands[0].imm;
+
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            /*                      0xFFFFFFFF                              0x02FFFFFF
+                                    0xF0000000                              0x0FFFFFF0
+
+
+            context.cpuRegs.pc = (current_insn.address & 0xF0000000) | (target_reg_index << 2);
+            */
+            std::cout << "context.cpuRegs.pc = (" << current_insn.address << "& 0xF0000000) | (" << target_imm << " << 2);" << std::endl;
+            return 2;
+        }
         case MIPS_INS_JALR : {}
         case MIPS_INS_SYSCALL : {}
         case MIPS_INS_MFC0 : {}
