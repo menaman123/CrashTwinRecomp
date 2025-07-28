@@ -758,24 +758,153 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
 
         // --- SPECIAL TABLE (Function based) ---
         case MIPS_INS_SLLV: {
-            // TODO: Implement SLLV (Shift Left Logical Variable)
+            // TODO: Implement SLLV (Shift Left Logical Variable) ONLY CARE ABOUT THE LOWER 5 BITS OF RS
             // MIPS: sllv rd, rt, rs
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+                0000 0000 0000 0000 0000 0000 0001 1111
+                context.cpuRegs.GPR[rd_index].UD[0] = (s64)((s32)context.cpuRegs.GPR[rt_index].UD[0] <<  (s32)(context.cpuRegs.GPR[rs_index].SD[0] & 0x1F));
+            */
+
+            std::cout << "context.cpuRegs.GPR["<< rd_index <<"].UD[0] = (u64)((u32)context.cpuRegs.GPR["<< rt_index <<"].UD[0] << (u32)(context.cpuRegs.GPR["<< rs_index <<"].UD[0] & 0x1F));" << std::endl;
             break;
         }
         case MIPS_INS_SRLV: {
-            // TODO: Implement SRLV (Shift Right Logical Variable)
+            // TODO: Implement SRLV (Shift Right Logical Variable) ONLY CARE ABOUT THE LOWER 5 BITS OF RS
             // MIPS: srlv rd, rt, rs
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+                0000 0000 0000 0000 0000 0000 0001 1111
+                context.cpuRegs.GPR[rd_index].SD[0] = (s64)((s32)context.cpuRegs.GPR[rt_index].UD[0] >>  (s32)(context.cpuRegs.GPR[rs_index].SD[0] & 0x1F));
+            */
+
+            std::cout << "context.cpuRegs.GPR["<< rd_index <<"].UD[0] = (u64)((u32)context.cpuRegs.GPR["<< rt_index <<"].UD[0] >> (u32)(context.cpuRegs.GPR["<< rs_index <<"].UD[0] & 0x1F));" << std::endl;
             break;
         }
         case MIPS_INS_SRAV: {
             // TODO: Implement SRAV (Shift Right Arithmetic Variable)
             // MIPS: srav rd, rt, rs
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+                0000 0000 0000 0000 0000 0000 0011 1111
+                context.cpuRegs.GPR[rd_index].SD[0] = (s64)((s32)context.cpuRegs.GPR[rt_index].UD[0] >>  (s32)(context.cpuRegs.GPR[rs_index].SD[0] & 0x1F));
+            */
+
+            std::cout << "context.cpuRegs.GPR["<< rd_index <<"].SD[0] = (s64)((s32)context.cpuRegs.GPR["<< rt_index <<"].SD[0] >> (s32)(context.cpuRegs.GPR["<< rs_index <<"].SD[0] & 0x1F));" << std::endl;
+            break;
+        }
+        case MIPS_INS_DSLLV: {
+            // TODO: Implement DSLLV (Doubleword Shift Left Logical Variable) Im guessing its 8 bits of rs
+            // MIPS: dsllv rd, rt, rs
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+                0000 0000 0000 0000 0000 0000 1111 1111
+                context.cpuRegs.GPR[rd_index].UD[0] = (s64)((s32)context.cpuRegs.GPR[rt_index].UD[0] <<  (s32)(context.cpuRegs.GPR[rs_index].SD[0] & 0x3F));
+            */
+
+            std::cout << "context.cpuRegs.GPR["<< rd_index <<"].UD[0] = (u64)((u32)context.cpuRegs.GPR["<< rt_index <<"].UD[0] << (u32)(context.cpuRegs.GPR["<< rs_index <<"].UD[0] & 0x3F));" << std::endl;
+            break;
+        }
+        case MIPS_INS_DSRLV: {
+            // TODO: Implement DSRLV (Doubleword Shift Right Logical Variable)
+            // MIPS: dsrlv rd, rt, rs
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+                0000 0000 0000 0000 0000 0000 0001 1111
+                context.cpuRegs.GPR[rd_index].SD[0] = (s64)((s32)context.cpuRegs.GPR[rt_index].UD[0] >>  (s32)(context.cpuRegs.GPR[rs_index].SD[0] & 0x1F));
+            */
+
+            std::cout << "context.cpuRegs.GPR["<< rd_index <<"].UD[0] = (u64)((u32)context.cpuRegs.GPR["<< rt_index <<"].UD[0] >> (u32)(context.cpuRegs.GPR["<< rs_index <<"].UD[0] & 0x3F));" << std::endl;
+            break;
+            break;
+        }
+        case MIPS_INS_DSRAV: {
+            // TODO: Implement DSRAV (Doubleword Shift Right Arithmetic Variable)
+            // MIPS: dsrav rd, rt, rs
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+                0000 0000 0000 0000 0000 0000 0011 1111
+                context.cpuRegs.GPR[rd_index].SD[0] = (s64)((s32)context.cpuRegs.GPR[rt_index].UD[0] >>  (s32)(context.cpuRegs.GPR[rs_index].SD[0] & 0x1F));
+            */
+
+            std::cout << "context.cpuRegs.GPR["<< rd_index <<"].SD[0] = (s64)((s32)context.cpuRegs.GPR["<< rt_index <<"].SD[0] >> (s32)(context.cpuRegs.GPR["<< rs_index <<"].SD[0] & 0x3F));" << std::endl;
+            break;
             break;
         }
         case MIPS_INS_MOVZ: {
             // TODO: Implement MOVZ (Move conditional on Zero)
             // MIPS: movz rd, rs, rt
             // C++: if (rt == 0) rd = rs
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            {
+                if (context.cpuRegs.GPR.r[rt_index].UD[0] == 0){
+                    context.cpuRegs.GPR.r[rd_index].UD[0] = context.cpuRegs.GPR.r[rs_index].UD[0];
+                }
+            }
+            */
+           
+            std::cout << "{" << std::endl;
+            std::cout << "  if (context.cpuRegs.GPR.r["<< rt_index <<"].UD[0] == 0){" << std::endl;
+            std::cout << "      context.cpuRegs.GPR.r["<< rd_index <<"].UD[0] = context.cpuRegs.GPR.r["<< rs_index <<"].UD[0];" << std::endl;
+            std::cout << "  }" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_MOVN: {
@@ -808,21 +937,6 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_MTLO: {
             // TODO: Implement MTLO (Move To LO)
             // MIPS: mtlo rs
-            break;
-        }
-        case MIPS_INS_DSLLV: {
-            // TODO: Implement DSLLV (Doubleword Shift Left Logical Variable)
-            // MIPS: dsllv rd, rt, rs
-            break;
-        }
-        case MIPS_INS_DSRLV: {
-            // TODO: Implement DSRLV (Doubleword Shift Right Logical Variable)
-            // MIPS: dsrlv rd, rt, rs
-            break;
-        }
-        case MIPS_INS_DSRAV: {
-            // TODO: Implement DSRAV (Doubleword Shift Right Arithmetic Variable)
-            // MIPS: dsrav rd, rt, rs
             break;
         }
         case MIPS_INS_MULTU: {
