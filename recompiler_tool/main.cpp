@@ -911,6 +911,28 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             // TODO: Implement MOVN (Move conditional on Not Zero)
             // MIPS: movn rd, rs, rt
             // C++: if (rt != 0) rd = rs
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& rs_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            {
+                if (context.cpuRegs.GPR.r[rt_index].UD[0] != 0){
+                    context.cpuRegs.GPR.r[rd_index].UD[0] = context.cpuRegs.GPR.r[rs_index].UD[0];
+                }
+            }
+            */
+           
+            std::cout << "{" << std::endl;
+            std::cout << "  if (context.cpuRegs.GPR.r["<< rt_index <<"].UD[0] != 0){" << std::endl;
+            std::cout << "      context.cpuRegs.GPR.r["<< rd_index <<"].UD[0] = context.cpuRegs.GPR.r["<< rs_index <<"].UD[0];" << std::endl;
+            std::cout << "  }" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_SYNC: {
@@ -922,26 +944,64 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_MFHI: {
             // TODO: Implement MFHI (Move From HI)
             // MIPS: mfhi rd
+            const auto& rd_reg = mips_details.operands[0].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = context.cpuRegs.HI.UD[0];
+            */
+            std::cout << "context.cpuRegs.GPR.r["<< rd_index <<"].UD[0] = context.cpuRegs.HI.UD[0];" << std::endl;
             break;
         }
         case MIPS_INS_MTHI: {
             // TODO: Implement MTHI (Move To HI)
             // MIPS: mthi rs
+            const auto& rd_reg = mips_details.operands[0].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            /*
+            context.cpuRegs.HI.UD[0] = (u32)context.cpuRegs.GPR.[ rd_index ].UD[0];
+            */
+
+            std::cout << "context.cpuRegs.HI.UD[0] = (u32)context.cpuRegs.GPR.["<< rd_index <<"].UD[0];" << std::endl;
             break;
         }
         case MIPS_INS_MFLO: {
             // TODO: Implement MFLO (Move From LO)
             // MIPS: mflo rd
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = context.cpuRegs.LO.UD[0];
+            */
+            std::cout << "context.cpuRegs.GPR.r["<< rd_index <<"].UD[0] = context.cpuRegs.LO.UD[0];" << std::endl;
             break;
         }
         case MIPS_INS_MTLO: {
             // TODO: Implement MTLO (Move To LO)
             // MIPS: mtlo rs
+            const auto& rd_reg = mips_details.operands[0].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            /*
+            context.cpuRegs.LO.UD[0] = (u32)context.cpuRegs.GPR.[ rd_index ].UD[0];
+            */
+
+            std::cout << "context.cpuRegs.LO.UD[0] = (u32)context.cpuRegs.GPR.["<< rd_index <<"].UD[0];" << std::endl;
             break;
         }
         case MIPS_INS_MULTU: {
             // TODO: Implement MULTU (Multiply Unsigned)
             // MIPS: multu rs, rt
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
             break;
         }
         case MIPS_INS_DIVU: {
