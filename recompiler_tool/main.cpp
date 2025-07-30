@@ -1002,6 +1002,21 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
 
             int rs_index = get_gpr_index(rs_reg);
             int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            u32 op1 = (u32)context.cpuRegs.GPR.r[rs_index].UD[0];
+            u32 op2 = (u32)context.cpuRegs.GPR.r[rt_index].UD[0];
+            u64 product = (u64)op1 * op2;
+            context.cpuRegs.LO.UD[0] = (u64)(u32)product;
+            context.cpuRegs.HI.UD[0] = (u64)(u32)(product >> 32);
+            */
+
+            std::cout << "u32 op1 = (u32)context.cpuRegs.GPR.r["<< rs_index <<"].UD[0];" << std::endl;
+            std::cout << "u32 op2 = (u32)context.cpuRegs.GPR.r["<< rt_index <<"].UD[0];" << std::endl;
+            std::cout << "u64 product = (u64)op1 * op2;" << std::endl;
+            std::cout << "context.cpuRegs.LO.UD[0] = (u64)(u32)product;" << std::endl;
+            std::cout << "context.cpuRegs.HI.UD[0] = (u64)(u32)(product >> 32);" << std::endl;
+
             break;
         }
         case MIPS_INS_DIVU: {

@@ -1,0 +1,40 @@
+Hello Gemini,
+
+This is a bootstrap prompt to get you up to speed on the PS2 recompiler project. Your first task is to read and understand all the files and directories listed below to gain full context on the project's goals, established patterns, and current status. Do not provide advice or take action until you have synthesized all of this information.
+
+**1. Read Key Documentation:**
+
+First, read the following high-level documents. They contain the project roadmap, core principles, and technical specifications.
+
+- `/home/amena/Desktop/recomp_context.txt`
+- `/home/amena/Desktop/CrashRecomp/docs/ps2_docs.txt`
+
+**2. Analyze Project and Reference Codebases:**
+
+Next, read the contents of the following files to understand the current state of the implementation and the ground-truth reference code.
+
+*   **The User's Project (`CrashRecomp`):**
+    *   `/home/amena/Desktop/CrashRecomp/README.md`
+    *   `/home/amena/Desktop/CrashRecomp/TESTING.md`
+    *   `/home/amena/Desktop/CrashRecomp/register_reference.txt`
+    *   `/home/amena/Desktop/CrashRecomp/host_app/cpu_state.h`
+    *   `/home/amena/Desktop/CrashRecomp/host_app/memory.h`
+    *   `/home/amena/Desktop/CrashRecomp/host_app/memory.cpp`
+    *   `/home/amena/Desktop/CrashRecomp/recompiler_tool/main.cpp`
+    *   `/home/amena/Desktop/CrashRecomp/recompiler_tool/test.asm`
+
+*   **The Primary Reference (`pcsx2`):**
+    *   `/home/amena/Desktop/pcsx2/pcsx2/R5900.h`
+    *   `/home/amena/Desktop/pcsx2/pcsx2/R5900OpcodeImpl.cpp`
+
+**3. High-Level Directory Structure (for context):**
+
+Be aware of the structure of these three directories:
+
+-   `/home/amena/Desktop/CrashRecomp/` (The user's active project)
+-   `/home/amena/Desktop/pcsx2/` (The primary reference for instruction implementation)
+-   `/home/amena/Desktop/sonic_unleashed/` (A high-level inspirational project)
+
+**4. Your First Action:**
+
+Once you have read and analyzed all of the above, your first response should be to articulate what you have gathered, the project's current progress compared to its roadmap, and what the immediate next steps should be. This will confirm you are fully up to speed.
