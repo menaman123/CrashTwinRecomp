@@ -2392,11 +2392,11 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             // This is for unaligned loads. Complex. Can be deferred.
             const auto& dest_reg_capstone = mips_details.operands[0].reg;
             int dest_index = get_gpr_index(dest_reg_capstone);
-                    
+
             const auto& base_reg_capstone = mips_details.operands[1].mem.base;
             const auto& offset = mips_details.operands[1].mem.disp;
             int base_index = get_gpr_index(base_reg_capstone);
-                    
+
             // Generate the C++ code for the unaligned load logic
             std::cout << "{" << std::endl;
             std::cout << "    u32 addr = (u32)context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
@@ -2418,36 +2418,137 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_LWU: {
             // TODO: Implement LWU (Load Word Unsigned)
             // MIPS: lwu rt, offset(base)
+            const auto& dest_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int dest_index = get_gpr_index(dest_capstone);
+            int base_index = get_gpr_index(base_capstone);
+
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 address = context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            // LWU zero-extends the 32-bit memory value into the 64-bit register.
+            // Casting the u32 result of ReadMemory32 to u64 achieves this.
+            std::cout << "    context.cpuRegs.GPR.r[" << dest_index << "].UD[0] = (u64)ReadMemory32(address);" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_SWL: {
             // TODO: Implement SWL (Store Word Left)
             // This is for unaligned stores. Complex. Can be deferred.
+            const auto& rt_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int rt_index = get_gpr_index(rt_capstone);
+            int base_index = get_gpr_index(base_capstone);
+
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 address = context.cpuRegs.GPR.r[" << base_index << "].UL[0] + " << offset << ";" << std::endl;
+            std::cout << "    u32 shift = address & 3;" << std::endl;
+            std::cout << "    u32 aligned_address = address & ~3;" << std::endl;
+            std::cout << "    u32 mem = ReadMemory32(aligned_address);" << std::endl;
+            std::cout << "    u32 reg_val = context.cpuRegs.GPR.r[" << rt_index << "].UL[0];" << std::endl;
+            std::cout << "    switch (shift) {" << std::endl;
+            std::cout << "        case 0: WriteMemory32(aligned_address, (mem & 0xFFFFFF00) | (reg_val >> 24)); break;" << std::endl;
+            std::cout << "        case 1: WriteMemory32(aligned_address, (mem & 0xFFFF0000) | (reg_val >> 16)); break;" << std::endl;
+            std::cout << "        case 2: WriteMemory32(aligned_address, (mem & 0xFF000000) | (reg_val >> 8)); break;" << std::endl;
+            std::cout << "        case 3: WriteMemory32(aligned_address, reg_val); break;" << std::endl;
+            std::cout << "    }" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_SWR: {
             // TODO: Implement SWR (Store Word Right)
             // This is for unaligned stores. Complex. Can be deferred.
+
+            const auto& rt_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int rt_index = get_gpr_index(rt_capstone);
+            int base_index = get_gpr_index(base_capstone);
+                    
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 address = context.cpuRegs.GPR.r[" << base_index << "].UL[0] + " << offset << ";" << std::endl;
+            std::cout << "    u32 shift = address & 3;" << std::endl;
+            std::cout << "    u32 aligned_address = address & ~3;" << std::endl;
+            std::cout << "    u32 mem = ReadMemory32(aligned_address);" << std::endl;
+            std::cout << "    u32 reg_val = context.cpuRegs.GPR.r[" << rt_index << "].UL[0];" << std::endl;
+            std::cout << "    switch (shift) {" << std::endl;
+            std::cout << "        case 0: WriteMemory32(aligned_address, reg_val); break;" << std::endl;
+            std::cout << "        case 1: WriteMemory32(aligned_address, (mem & 0x000000FF) | (reg_val << 8)); break;" << std::endl;
+            std::cout << "        case 2: WriteMemory32(aligned_address, (mem & 0x0000FFFF) | (reg_val << 16)); break;" << std::endl;
+            std::cout << "        case 3: WriteMemory32(aligned_address, (mem & 0x00FFFFFF) | (reg_val << 24)); break;" << std::endl;
+            std::cout << "    }" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_SDL: {
             // TODO: Implement SDL (Store Doubleword Left)
             // This is for unaligned stores. Complex. Can be deferred.
+            const auto& rt_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int rt_index = get_gpr_index(rt_capstone);
+            int base_index = get_gpr_index(base_capstone);
+
+            std::cout << "{" << std::endl;
+            std::cout << "    u64 address = context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            std::cout << "    u64 shift = address & 7;" << std::endl;
+            std::cout << "    u64 aligned_address = address & ~7;" << std::endl;
+            std::cout << "    u64 mem = ReadMemory64(aligned_address);" << std::endl;
+            std::cout << "    u64 reg_val = context.cpuRegs.GPR.r[" << rt_index << "].UD[0];" << std::endl;
+            std::cout << "    switch (shift) {" << std::endl;
+            std::cout << "        case 0: WriteMemory64(aligned_address, (mem & 0xFFFFFFFFFFFFFF00ULL) | (reg_val >> 56)); break;" << std::endl;
+            std::cout << "        case 1: WriteMemory64(aligned_address, (mem & 0xFFFFFFFFFFFF0000ULL) | (reg_val >> 48)); break;" << std::endl;
+            std::cout << "        case 2: WriteMemory64(aligned_address, (mem & 0xFFFFFFFFFF000000ULL) | (reg_val >> 40)); break;" << std::endl;
+            std::cout << "        case 3: WriteMemory64(aligned_address, (mem & 0xFFFFFFFF00000000ULL) | (reg_val >> 32)); break;" << std::endl;
+            std::cout << "        case 4: WriteMemory64(aligned_address, (mem & 0xFFFFFF0000000000ULL) | (reg_val >> 24)); break;" << std::endl;
+            std::cout << "        case 5: WriteMemory64(aligned_address, (mem & 0xFFFF000000000000ULL) | (reg_val >> 16)); break;" << std::endl;
+            std::cout << "        case 6: WriteMemory64(aligned_address, (mem & 0xFF00000000000000ULL) | (reg_val >> 8)); break;" << std::endl;
+            std::cout << "        case 7: WriteMemory64(aligned_address, reg_val); break;" << std::endl;
+            std::cout << "    }" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_SDR: {
             // TODO: Implement SDR (Store Doubleword Right)
             // This is for unaligned stores. Complex. Can be deferred.
+
+            const auto& rt_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int rt_index = get_gpr_index(rt_capstone);
+            int base_index = get_gpr_index(base_capstone);
+                    
+            std::cout << "{" << std::endl;
+            std::cout << "    u64 address = context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            std::cout << "    u64 shift = address & 7;" << std::endl;
+            std::cout << "    u64 aligned_address = address & ~7;" << std::endl;
+            std::cout << "    u64 mem = ReadMemory64(aligned_address);" << std::endl;
+            std::cout << "    u64 reg_val = context.cpuRegs.GPR.r[" << rt_index << "].UD[0];" << std::endl;
+            std::cout << "    switch (shift) {" << std::endl;
+            std::cout << "        case 0: WriteMemory64(aligned_address, reg_val); break;" << std::endl;
+            std::cout << "        case 1: WriteMemory64(aligned_address, (mem & 0xFF00000000000000ULL) | (reg_val << 8)); break;" << std::endl;
+            std::cout << "        case 2: WriteMemory64(aligned_address, (mem & 0xFFFF000000000000ULL) | (reg_val << 16)); break;" << std::endl;
+            std::cout << "        case 3: WriteMemory64(aligned_address, (mem & 0xFFFFFF0000000000ULL) | (reg_val << 24)); break;" << std::endl;
+            std::cout << "        case 4: WriteMemory64(aligned_address, (mem & 0xFFFFFFFF00000000ULL) | (reg_val << 32)); break;" << std::endl;
+            std::cout << "        case 5: WriteMemory64(aligned_address, (mem & 0xFFFFFFFFFF000000ULL) | (reg_val << 40)); break;" << std::endl;
+            std::cout << "        case 6: WriteMemory64(aligned_address, (mem & 0xFFFFFFFFFFFF0000ULL) | (reg_val << 48)); break;" << std::endl;
+            std::cout << "        case 7: WriteMemory64(aligned_address, (mem & 0xFFFFFFFFFFFFFF00ULL) | (reg_val << 56)); break;" << std::endl;
+            std::cout << "    }" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_CACHE: {
             // TODO: Implement CACHE (Cache Operation)
-            // For now, this can be a NOP.
+            //
+            std::cout << "// CACHE instruction (NOP)" << std::endl;
             break;
         }
         case MIPS_INS_PREF: {
             // TODO: Implement PREF (Prefetch)
-            // This is a memory hint. For now, this can be a NOP.
+            // This is a memory hint. 
+
+            std::cout << "// PREF (Prefetch) instruction (NOP)" << std::endl;
             break;
         }
         case MIPS_INS_LD: {
