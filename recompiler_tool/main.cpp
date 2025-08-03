@@ -2294,13 +2294,56 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             break;
         }
         case MIPS_INS_LDL: {
-            // TODO: Implement LDL (Load Doubleword Left)
-            // This is for unaligned loads. Complex. Can be deferred.
+
+            const auto& dest_reg_capstone = mips_details.operands[0].reg;
+            int dest_index = get_gpr_index(dest_reg_capstone);
+
+            // Operand 1 is the memory structure
+            // It contains the base register 'base' and the offset 'offset'
+            const auto& base_reg_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int base_index = get_gpr_index(base_reg_capstone);
+            // This is the magic merge operation, taken from PCSX2's logic.
+            // It combines the shifted memory data with the existing register data using masks.
+            // LDL_MASK preserves the lower bytes of the register.
+            // LDL_SHIFT moves the relevant bytes from memory to the most-significant side.
+            // Note: You would need to define the LDL_MASK and LDL_SHIFT arrays as seen in R5900OpcodeImpl.cpp
+            // For this explanation, we'll represent it conceptually.
+        
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 addr = (u32)context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            std::cout << "    u32 shift = addr & 7;" << std::endl;
+            std::cout << "    u64 mem = ReadMemory64(addr & ~7);" << std::endl;
+            std::cout << "    u64 mask = 0x00FFFFFFFFFFFFFF >> (shift * 8);" << std::endl;
+            std::cout << "    u64 data = mem << (56 - (shift * 8));" << std::endl;
+            std::cout << "    context.cpuRegs.GPR.r[" << dest_index << "].UD[0] = (context.cpuRegs.GPR.r[" << dest_index << "].UD[0] & mask) | data;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_LDR: {
             // TODO: Implement LDR (Load Doubleword Right)
             // This is for unaligned loads. Complex. Can be deferred.
+            const auto& dest_reg_capstone = mips_details.operands[0].reg;
+            int dest_index = get_gpr_index(dest_reg_capstone);
+                    
+            const auto& base_reg_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int base_index = get_gpr_index(base_reg_capstone);
+                    
+            // Generate the C++ code for the unaligned load logic
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 addr = (u32)context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            // 'shift' is how many bytes we are into the 8-byte aligned block
+            std::cout << "    u32 shift = addr & 7;" << std::endl;
+            // Read the full 8-byte aligned block that contains our address
+            std::cout << "    u64 mem = ReadMemory64(addr & ~7);" << std::endl;
+            // Create a mask to preserve the upper bytes of the destination register
+            std::cout << "    u64 mask = 0xFFFFFFFFFFFFFFFF << ((shift + 1) * 8);" << std::endl;
+            // Shift the data from memory to align it to the right side of the register
+            std::cout << "    u64 data = mem >> (56 - (shift * 8));" << std::endl;
+            // Merge the new data with the preserved part of the destination register
+            std::cout << "    context.cpuRegs.GPR.r[" << dest_index << "].UD[0] = (context.cpuRegs.GPR.r[" << dest_index << "].UD[0] & mask) | data;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
 
@@ -2319,11 +2362,57 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_LWL: {
             // TODO: Implement LWL (Load Word Left)
             // This is for unaligned loads. Complex. Can be deferred.
+            const auto& dest_reg_capstone = mips_details.operands[0].reg;
+            int dest_index = get_gpr_index(dest_reg_capstone);
+
+            const auto& base_reg_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int base_index = get_gpr_index(base_reg_capstone);
+
+            // Generate the C++ code for the unaligned load logic
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 addr = (u32)context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            // 'shift' is how many bytes we are into the 4-byte aligned block (0-3)
+            std::cout << "    u32 shift = addr & 3;" << std::endl;
+            // Read the full 4-byte aligned word from memory
+            std::cout << "    u32 mem = ReadMemory32(addr & ~3);" << std::endl;
+            // Create a mask to preserve the lower bytes of the destination register
+            std::cout << "    u32 mask = 0x00FFFFFF >> (shift * 8);" << std::endl;
+            // Shift the data from memory to align it to the left side of the register
+            std::cout << "    u32 data = mem << (24 - (shift * 8));" << std::endl;
+            // Merge the new data with the preserved part of the destination register
+            // The result is then sign-extended into the 64-bit GPR.
+            std::cout << "    u32 result = (context.cpuRegs.GPR.r[" << dest_index << "].UL[0] & mask) | data;" << std::endl;
+            std::cout << "    context.cpuRegs.GPR.r[" << dest_index << "].SD[0] = (s64)(s32)result;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_LWR: {
             // TODO: Implement LWR (Load Word Right)
             // This is for unaligned loads. Complex. Can be deferred.
+            const auto& dest_reg_capstone = mips_details.operands[0].reg;
+            int dest_index = get_gpr_index(dest_reg_capstone);
+                    
+            const auto& base_reg_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int base_index = get_gpr_index(base_reg_capstone);
+                    
+            // Generate the C++ code for the unaligned load logic
+            std::cout << "{" << std::endl;
+            std::cout << "    u32 addr = (u32)context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            // 'shift' is how many bytes we are into the 4-byte aligned block
+            std::cout << "    u32 shift = addr & 3;" << std::endl;
+            // Read the full 4-byte aligned word from memory
+            std::cout << "    u32 mem = ReadMemory32(addr & ~3);" << std::endl;
+            // Create a mask to preserve the upper bytes of the destination register
+            std::cout << "    u32 mask = 0xFFFFFF00 << (24 - (shift * 8));" << std::endl;
+            // Shift the data from memory to align it to the right side of the register
+            std::cout << "    u32 data = mem >> (shift * 8);" << std::endl;
+            // Merge the new data with the preserved part of the destination register
+            // The result is then sign-extended into the 64-bit GPR.
+            std::cout << "    u32 result = (context.cpuRegs.GPR.r[" << dest_index << "].UL[0] & mask) | data;" << std::endl;
+            std::cout << "    context.cpuRegs.GPR.r[" << dest_index << "].SD[0] = (s64)(s32)result;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_LWU: {
