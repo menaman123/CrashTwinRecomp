@@ -2554,11 +2554,44 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_LD: {
             // TODO: Implement LD (Load Doubleword)
             // MIPS: ld rt, offset(base)
+
+            const auto& rt_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int rt_index = get_gpr_index(rt_capstone);
+            int base_index = get_gpr_index(base_capstone);
+
+            std::cout << "{" << std::endl;
+            std::cout << "    u64 address = context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            // LD requires the address to be 8-byte aligned.
+            std::cout << "    if (address & 7) {" << std::endl;
+            std::cout << "        std::cerr << \"FATAL ERROR: Unaligned memory access for LD at address: 0x\" << std::hex << address << std::endl;" << std::endl;
+            std::cout << "        exit(1);" << std::endl;
+            std::cout << "    }" << std::endl;
+            // LD is a direct 64-bit load. No sign/zero extension is needed.
+            std::cout << "    context.cpuRegs.GPR.r[" << rt_index << "].UD[0] = ReadMemory64(address);" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_SD: {
             // TODO: Implement SD (Store Doubleword)
             // MIPS: sd rt, offset(base)
+            const auto& rt_capstone = mips_details.operands[0].reg;
+            const auto& base_capstone = mips_details.operands[1].mem.base;
+            const auto& offset = mips_details.operands[1].mem.disp;
+            int rt_index = get_gpr_index(rt_capstone);
+            int base_index = get_gpr_index(base_capstone);
+                    
+            std::cout << "{" << std::endl;
+            std::cout << "    u64 address = context.cpuRegs.GPR.r[" << base_index << "].UD[0] + " << offset << ";" << std::endl;
+            // SD requires the address to be 8-byte aligned.
+            std::cout << "    if (address & 7) {" << std::endl;
+            std::cout << "        std::cerr << \"FATAL ERROR: Unaligned memory access for SD at address: 0x\" << std::hex << address << std::endl;" << std::endl;
+            std::cout << "        exit(1);" << std::endl;
+            std::cout << "    }" << std::endl;
+            // SD is a direct 64-bit store. No truncation is needed.
+            std::cout << "    WriteMemory64(address, context.cpuRegs.GPR.r[" << rt_index << "].UD[0]);" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
 
