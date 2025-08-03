@@ -274,7 +274,7 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             int reg1_index = get_gpr_index(reg1);
             int reg2_index = get_gpr_index(reg2);
 
-            std::cout << "context.cpuRegs.GPR.r[" << dest_index << "].SD[0] = (s64)(s32)(context.cpuRegs.GPR.r[" << reg1_index << "].SD[0] + context.cpuRegs.GPR.r["<< reg2_index << "].SD[0]);"<< std::endl;
+            std::cout << "context.cpuRegs.GPR.r[" << dest_index << "].UD[0] = (u64)(u32)(context.cpuRegs.GPR.r[" << reg1_index << "].UD[0] + context.cpuRegs.GPR.r["<< reg2_index << "].UD[0]);"<< std::endl;
             break;
 
         }
@@ -287,7 +287,7 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             int reg1_index = get_gpr_index(reg1);
             int reg2_index = get_gpr_index(reg2);
 
-            std::cout << "context.cpuRegs.GPR.r[" << dest_index << "].SD[0] = (s64)(s32)(context.cpuRegs.GPR.r[" << reg1_index << "].SD[0] - context.cpuRegs.GPR.r["<< reg2_index << "].SD[0]);"<< std::endl;
+            std::cout << "context.cpuRegs.GPR.r[" << dest_index << "].UD[0] = (u64)(u32)(context.cpuRegs.GPR.r[" << reg1_index << "].UD[0] - context.cpuRegs.GPR.r["<< reg2_index << "].UD[0]);"<< std::endl;
             break;
 
         }
@@ -1022,11 +1022,83 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_DIVU: {
             // TODO: Implement DIVU (Divide Unsigned)
             // MIPS: divu rs, rt
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            {
+                u32 num = context.cpuRegs.GPR.r[rs_index].UD[0];
+                u32 den = context.cpuRegs.GPR.r[rt_index].UD[0];
+
+                if (den != 0){
+                    u32 HI_ans = num % den;
+                    u32 LO_ans = num / den;
+                    context.cpuRegs.LO.UD[0] = (u64)(u32)(LO_ans);
+                    context.cpuRegs.HI.UD[0] = (u64)(u32)(HI_ans);
+                }
+            
+            }
+            */
+
+            std::cout << "{" << std::endl;
+            std::cout << "u32 num = context.cpuRegs.GPR.r[" << rs_index << "].UD[0];"<< std::endl;
+            std::cout << "u32 den = context.cpuRegs.GPR.r[" << rt_index << "].UD[0];"<< std::endl;
+            std::cout << "  if (den != 0){"<< std::endl;
+            std::cout << "      u32 HI_ans = num " << "%" << " den;" << std::endl;
+            std::cout << "      u32 LO_ans = num " << "/" << " den;" << std::endl;
+            std::cout << "      context.cpuRegs.LO.UD[0] = (u64)(u32)(LO_ans);"<< std::endl;
+            std::cout << "      context.cpuRegs.HI.UD[0] = (u64)(u32)(HI_ans);"<< std::endl;
+            std::cout <<"   }"<< std::endl;
+            std::cout <<"}"<< std::endl;
             break;
         }
         case MIPS_INS_ADD: {
             // TODO: Implement ADD (Add with overflow trap)
             // For now, can be implemented same as ADDU.
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            s32 op1 = (s32)context.cpuRegs.GPR.r[rs_index].SD[0];
+            s32 op2 = (s32)context.cpuRegs.GPR.r[rt_index].SD[0];
+
+
+            s64 sum = (s64)op1 + (s64)op2;
+
+            0000 0000 0000 0000 0000 0000 0000 0000 | 0000 0000 0000 0000 0000 0000 0000 0000
+
+            if (sum != (s64)(s32)sum){
+
+                handle_overflow();
+
+            }
+            else{
+                context.cpuRegs.GPR.r[rd_index].SD[0] = sum;
+            }
+
+            */
+
+            std::cout << "s32 op1 = (s32)context.cpuRegs.GPR.r[rs_index].SD[0];" << std::endl;
+            std::cout << "s32 op2 = (s32)context.cpuRegs.GPR.r[rt_index].SD[0];" << std::endl;
+            std::cout << "s64 sum = (s64)op1 + (s64)op2;" << std::endl;
+            std::cout << "if (sum != (s64)(s32)sum){" << std::endl;
+            std::cout << "  handle_overflow();" << std::endl;
+            std::cout << "}" << std::endl;
+            std::cout << "else{" << std::endl;
+            std::cout << "  context.cpuRegs.GPR.r[rd_index].SD[0] = sum;" << std::endl;
+            std::cout << "}" << std::endl;
+
+
+
             break;
         }
         case MIPS_INS_SUB: {
