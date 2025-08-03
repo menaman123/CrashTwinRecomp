@@ -1104,108 +1104,513 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_SUB: {
             // TODO: Implement SUB (Subtract with overflow trap)
             // For now, can be implemented same as SUBU.
+            // rd = rs - rt
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+                s32 op1 = (s32)context.cpuRegs.GPR.r[rs_index].SD[0];
+                s32 op2 = (s32)context.cpuRegs.GPR.r[rt_index].SD[0];
+
+                s64 diff = (s64)op1 - (s64)op2;
+
+                if (diff != (s64)(s32)diff){
+                    handle_overflow();
+                }
+                else{
+                    context.cpuRegs.GPR.r[rd_index].SD[0] = diff;
+                }
+            
+            */
+
+            std::cout << "s32 op1 = (s32)context.cpuRegs.GPR.r[rs_index].SD[0];" << std::endl;
+            std::cout << "s32 op2 = (s32)context.cpuRegs.GPR.r[rt_index].SD[0];" << std::endl;
+            std::cout << "s64 diff = (s64)op1 - (s64)op2;" << std::endl;
+            std::cout << "if (diff != (s64)(s32)diff){" << std::endl;
+            std::cout << "  handle_overflow();" << std::endl;
+            std::cout << "}" << std::endl;
+            std::cout << "else{" << std::endl;
+            std::cout << "  context.cpuRegs.GPR.r[rd_index].SD[0] = diff;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_AND: {
             // TODO: Implement AND (AND)
             // MIPS: and rd, rs, rt
+ 
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+ 
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+ 
+             /*
+             {
+                 u64 rs = context.cpuRegs.GPR.r[rs_index].UD[0];
+                 u64 rt = context.cpuRegs.GPR.r[rt_index].UD[0];
+                 context.cpuRegs.GPT.r[rd_index].UD[0] = rs & rt;
+             
+             }
+             */
+            std::cout << "{" << std::endl;
+            std::cout << "   u64 rs_val = context.cpuRegs.GPR.r["<< rs_index <<"].UD[0];" << std::endl;
+            std::cout << "   u64 rt_val = context.cpuRegs.GPR.r["<< rt_index <<"].UD[0];" << std::endl;
+            std::cout << "   context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = rs_val & rt_val;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
-        case MIPS_INS_MFSA: {
-            // TODO: Implement MFSA (Move From SA)
-            // MIPS: mfsa rd
-            // C++: rd = sa
-            break;
-        }
+        /*case MIPS_INS_MFSA: {
+           // TODO: Implement MFSA (Move From SA)
+           // MIPS: mfsa rd
+           // C++: rd = sa
+           break;
+        
         case MIPS_INS_MTSA: {
-            // TODO: Implement MTSA (Move To SA)
-            // MIPS: mtsa rs
-            // C++: sa = rs
-            break;
-        }
+           // TODO: Implement MTSA (Move To SA)
+           // MIPS: mtsa rs
+           // C++: sa = rs
+           break;
+        */
         case MIPS_INS_SLTU: {
             // TODO: Implement SLTU (Set on Less Than Unsigned)
             // MIPS: sltu rd, rs, rt
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = (u64)((u32)context.cpuRegs.GPR.r[" << rs_index << "].UD[0] < (u32)context.cpuRegs.GPR.r[" << rt_index << "].UD[0] ? 1 : 0);"<< std::endl;
             break;
         }
         case MIPS_INS_DADD: {
             // TODO: Implement DADD (Doubleword Add with overflow trap)
             // For now, can be implemented same as DADDU.
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            /*
+            s64 rs = (s64)context.cpuRegs.GPR.r[rs_index].SD[0];
+            s64 rt = (s64)context.cpuRegs.GPR.r[rt_index].SD[0];
+
+
+            s64 sum = (s64)rs + (s64)rt;
+
+            0000 0000 0000 0000 0000 0000 0000 0000 | 0000 0000 0000 0000 0000 0000 0000 0000
+
+            if (((rs > 0 && rt > 0) && sum < 0) || ((rs < 0 && rt < 0) && sum > 0)) {
+
+                handle_overflow();
+
+            }
+            else{
+                context.cpuRegs.GPR.r[rd_index].SD[0] = sum;
+            }
+            */
+
+            std::cout << "{" << std::endl;
+            std::cout << "    s64 rs = context.cpuRegs.GPR.r[" << rs_index << "].SD[0];" << std::endl;
+            std::cout << "    s64 rt = context.cpuRegs.GPR.r[" << rt_index << "].SD[0];" << std::endl;
+            std::cout << "    s64 sum = rs + rt;" << std::endl;
+            std::cout << "    if (((rs > 0 && rt > 0) && sum < 0) || ((rs < 0 && rt < 0) && sum > 0)) {" << std::endl;
+            std::cout << "        // TODO: Trigger Overflow Exception" << std::endl;
+            std::cout << "    } else {" << std::endl;
+            std::cout << "        context.cpuRegs.GPR.r[" << rd_index << "].SD[0] = sum;" << std::endl;
+            std::cout << "    }" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_DADDU: {
             // TODO: Implement DADDU (Doubleword Add Unsigned)
             // MIPS: daddu rd, rs, rt
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            /*
+            u64 rs = (u64)context.cpuRegs.GPR.r[rs_index].UD[0];
+            u64 rt = (u64)context.cpuRegs.GPR.r[rt_index].UD[0];
+
+
+            u64 sum = (u64)rs + (u64)rt;
+
+            0000 0000 0000 0000 0000 0000 0000 0000 | 0000 0000 0000 0000 0000 0000 0000 0000
+
+            if (rs > sum || rt > sum) {
+
+                handle_overflow();
+
+            }
+            else{
+                context.cpuRegs.GPR.r[rd_index].UD[0] = sum;
+            }
+            */
+
+            std::cout << "{" << std::endl;
+            std::cout << "    u64 rs = context.cpuRegs.GPR.r[" << rs_index << "].UD[0];" << std::endl;
+            std::cout << "    u64 rt = context.cpuRegs.GPR.r[" << rt_index << "].UD[0];" << std::endl;
+            std::cout << "    u64 sum = rs + rt;" << std::endl;
+            std::cout << "    context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = sum;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_DSUB: {
             // TODO: Implement DSUB (Doubleword Subtract with overflow trap)
             // For now, can be implemented same as DSUBU.
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            /*
+            s64 rs = (s64)context.cpuRegs.GPR.r[rs_index].SD[0];
+            s64 rt = (s64)context.cpuRegs.GPR.r[rt_index].SD[0];
+
+
+            s64 sum = (s64)rs + (s64)rt;
+
+            0000 0000 0000 0000 0000 0000 0000 0000 | 0000 0000 0000 0000 0000 0000 0000 0000
+
+            if (((rs > 0 && rt > 0) && sum < 0) || ((rs < 0 && rt < 0) && sum > 0)) {
+
+                handle_overflow();
+
+            }
+            else{
+                context.cpuRegs.GPR.r[rd_index].SD[0] = sum;
+            }
+            */
+
+            std::cout << "{" << std::endl;
+            std::cout << "    s64 rs = context.cpuRegs.GPR.r[" << rs_index << "].SD[0];" << std::endl;
+            std::cout << "    s64 rt = context.cpuRegs.GPR.r[" << rt_index << "].SD[0];" << std::endl;
+            std::cout << "    s64 diff = rs - rt;" << std::endl;
+            std::cout << "    if (((rs > 0 && rt < 0) && diff < 0) || ((rs < 0 && rt > 0) && diff > 0)) {" << std::endl;
+            std::cout << "        // TODO: Trigger Overflow Exception" << std::endl;
+            std::cout << "    } else {" << std::endl;
+            std::cout << "        context.cpuRegs.GPR.r[" << rd_index << "].SD[0] = sum;" << std::endl;
+            std::cout << "    }" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_DSUBU: {
             // TODO: Implement DSUBU (Doubleword Subtract Unsigned)
             // MIPS: dsubu rd, rs, rt
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& rt_reg = mips_details.operands[2].reg;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+            /*
+            s64 rs = (s64)context.cpuRegs.GPR.r[rs_index].SD[0];
+            s64 rt = (s64)context.cpuRegs.GPR.r[rt_index].SD[0];
+
+
+            s64 sum = (s64)rs + (s64)rt;
+
+            0000 0000 0000 0000 0000 0000 0000 0000 | 0000 0000 0000 0000 0000 0000 0000 0000
+
+            if (((rs > 0 && rt > 0) && sum < 0) || ((rs < 0 && rt < 0) && sum > 0)) {
+
+                handle_overflow();
+
+            }
+            else{
+                context.cpuRegs.GPR.r[rd_index].SD[0] = sum;
+            }
+            */
+
+            std::cout << "{" << std::endl;
+            std::cout << "    u64 rs = context.cpuRegs.GPR.r[" << rs_index << "].UD[0];" << std::endl;
+            std::cout << "    u64 rt = context.cpuRegs.GPR.r[" << rt_index << "].UD[0];" << std::endl;
+            std::cout << "    u64 diff = rs - rt;" << std::endl;
+            std::cout << "    context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = diff;" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_TGE: {
             // TODO: Implement TGE (Trap if Greater than or Equal)
             // MIPS: tge rs, rt
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] >= context.cpuRegs.GPR.r[" << rt_index <<"].SD[0]){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TGEU: {
             // TODO: Implement TGEU (Trap if Greater than or Equal Unsigned)
             // MIPS: tgeu rs, rt
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].UD[0] >= context.cpuRegs.GPR.r[" << rt_index <<"].UD[0]){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TLT: {
             // TODO: Implement TLT (Trap if Less Than)
             // MIPS: tlt rs, rt
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] < context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] < context.cpuRegs.GPR.r[" << rt_index <<"].SD[0]){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TLTU: {
             // TODO: Implement TLTU (Trap if Less Than Unsigned)
             // MIPS: tltu rs, rt
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].UD[0] < context.cpuRegs.GPR.r[" << rt_index <<"].UD[0]){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
+
             break;
         }
         case MIPS_INS_TEQ: {
             // TODO: Implement TEQ (Trap if Equal)
             // MIPS: teq rs, rt
+
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] == context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] == context.cpuRegs.GPR.r[" << rt_index <<"].SD[0]){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TNE: {
             // TODO: Implement TNE (Trap if Not Equal)
             // MIPS: tne rs, rt
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+
+            int rs_index = get_gpr_index(rs_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] == context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] != context.cpuRegs.GPR.r[" << rt_index <<"].SD[0]){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_DSLL: {
             // TODO: Implement DSLL (Doubleword Shift Left Logical)
             // MIPS: dsll rd, rt, sa
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& sa = mips_details.operands[2].imm;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = (u64)(context.cpuRegs.GPR.r[rt_index].UD[0] << context.cpuRegs.GPR.sa);
+            
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = context.cpuRegs.GPR.r[" << rt_index << "].UD[0] << " << sa << ";" << std::endl;
+
             break;
         }
         case MIPS_INS_DSRL: {
             // TODO: Implement DSRL (Doubleword Shift Right Logical)
             // MIPS: dsrl rd, rt, sa
+
+            
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& sa = mips_details.operands[2].imm;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = (u64)(context.cpuRegs.GPR.r[rt_index].UD[0] >> context.cpuRegs.GPR.sa);
+            
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = context.cpuRegs.GPR.r[" << rt_index << "].UD[0] >> " << sa << ";" << std::endl;
+
             break;
         }
         case MIPS_INS_DSRA: {
             // TODO: Implement DSRA (Doubleword Shift Right Arithmetic)
             // MIPS: dsra rd, rt, sa
+
+            
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& sa = mips_details.operands[2].imm;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = (u64)(context.cpuRegs.GPR.r[rt_index].UD[0] >> context.cpuRegs.GPR.sa);
+            
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].SD[0] = context.cpuRegs.GPR.r[" << rt_index << "].SD[0] >> " << sa << ";" << std::endl;
+
             break;
         }
         case MIPS_INS_DSLL32: {
             // TODO: Implement DSLL32 (Doubleword Shift Left Logical + 32)
             // MIPS: dsll32 rd, rt, sa
+
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& sa = mips_details.operands[2].imm;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = (u64)(context.cpuRegs.GPR.r[rt_index].UD[0] << context.cpuRegs.GPR.sa);
+            
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = context.cpuRegs.GPR.r[" << rt_index << "].UD[0] << (32 + " << sa << ");" << std::endl;
+
             break;
         }
         case MIPS_INS_DSRL32: {
             // TODO: Implement DSRL32 (Doubleword Shift Right Logical + 32)
             // MIPS: dsrl32 rd, rt, sa
+
+            
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& sa = mips_details.operands[2].imm;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = context.cpuRegs.GPR.r[rt_index].UD[0] >> (32 + sa);
+            
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].UD[0] = context.cpuRegs.GPR.r[" << rt_index << "].UD[0] >> (32 + " << sa << ");" << std::endl;
+
             break;
         }
         case MIPS_INS_DSRA32: {
             // TODO: Implement DSRA32 (Doubleword Shift Right Arithmetic + 32)
             // MIPS: dsra32 rd, rt, sa
+
+            
+            const auto& rd_reg = mips_details.operands[0].reg;
+            const auto& rt_reg = mips_details.operands[1].reg;
+            const auto& sa = mips_details.operands[2].imm;
+
+            int rd_index = get_gpr_index(rd_reg);
+            int rt_index = get_gpr_index(rt_reg);
+
+            /*
+            context.cpuRegs.GPR.r[rd_index].UD[0] = (u64)(context.cpuRegs.GPR.r[rt_index].UD[0] >> context.cpuRegs.GPR.sa);
+            
+            */
+
+            std::cout << "context.cpuRegs.GPR.r[" << rd_index << "].SD[0] = context.cpuRegs.GPR.r[" << rt_index << "].SD[0] >> (32 + " << sa << ");" << std::endl;
+
+
             break;
         }
 
@@ -1213,73 +1618,360 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
         case MIPS_INS_BLTZ: {
             // TODO: Implement BLTZ (Branch on Less Than Zero)
             // MIPS: bltz rs, offset
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] < 0) {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_BGEZ: {
             // TODO: Implement BGEZ (Branch on Greater Than or Equal to Zero)
             // MIPS: bgez rs, offset
-            break;
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] >= 0) {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_BLTZL: {
             // TODO: Implement BLTZL (Branch on Less Than Zero Likely)
             // Branch likely instructions are tricky. For now, can treat as normal branch.
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] < 0) {" << std::endl;
+
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_BGEZL: {
             // TODO: Implement BGEZL (Branch on Greater Than or Equal to Zero Likely)
             // Branch likely instructions are tricky. For now, can treat as normal branch.
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] >= 0) {" << std::endl;
+
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_TGEI: {
             // TODO: Implement TGEI (Trap if Greater than or Equal Immediate)
             // MIPS: tgei rs, immediate
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& imm = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] >= " << imm <<"){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TGEIU: {
             // TODO: Implement TGEIU (Trap if Greater than or Equal Immediate Unsigned)
             // MIPS: tgeiu rs, immediate
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& imm = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].UD[0] >= " << imm <<"){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TLTI: {
             // TODO: Implement TLTI (Trap if Less Than Immediate)
             // MIPS: tlti rs, immediate
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& imm = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] < context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] < " << imm <<"){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TLTIU: {
             // TODO: Implement TLTIU (Trap if Less Than Immediate Unsigned)
             // MIPS: tltiu rs, immediate
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& imm = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] < context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].UD[0] < " << imm <<"){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TEQI: {
             // TODO: Implement TEQI (Trap if Equal Immediate)
             // MIPS: teqi rs, immediate
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& imm = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] = " << imm <<"){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
+
             break;
         }
         case MIPS_INS_TNEI: {
             // TODO: Implement TNEI (Trap if Not Equal Immediate)
             // MIPS: tnei rs, immediate
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& imm = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+
+            /*
+            if (context.cpuRegs.GPR.r[rs_index] >= context.cpuRegs.GPR.r[rt_index]){
+                // TODO HANDLE TRAP
+            }
+            */
+
+            std::cout << "if (context.cpuRegs.GPR.r[" << rs_index <<"].SD[0] != " << imm <<"){" << std::endl;
+            std::cout << "// TODO HANDLE TRAP" << std::endl;
+            std::cout << "}" << std::endl;
             break;
         }
         case MIPS_INS_BLTZAL: {
             // TODO: Implement BLTZAL (Branch on Less Than Zero and Link)
             // MIPS: bltzal rs, offset
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+            std::cout << "context.cpuRegs.GPR.r[31] = "<< current_insn.address <<" + 8;" << std::endl;
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] < 0) {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_BGEZAL: {
             // TODO: Implement BGEZAL (Branch on Greater Than or Equal to Zero and Link)
             // MIPS: bgezal rs, offset
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+            std::cout << "context.cpuRegs.GPR.r[31] = "<< current_insn.address <<" + 8;" << std::endl;
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] >= 0) {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_BLTZALL: {
             // TODO: Implement BLTZALL (Branch on Less Than Zero and Link Likely)
             // Branch likely instructions are tricky. For now, can treat as normal branch.
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+            std::cout << "context.cpuRegs.GPR.r[31] = "<< current_insn.address <<" + 8;" << std::endl;
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] < 0) {" << std::endl;
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
         case MIPS_INS_BGEZALL: {
             // TODO: Implement BGEZALL (Branch on Greater Than or Equal to Zero and Link Likely)
             // Branch likely instructions are tricky. For now, can treat as normal branch.
-            break;
+
+            const auto& rs_reg = mips_details.operands[0].reg;
+            const auto& offset = mips_details.operands[1].imm;
+
+            int rs_index = get_gpr_index(rs_reg);
+            std::cout << "context.cpuRegs.GPR.r[31] = "<< current_insn.address <<" + 8;" << std::endl;
+            /*
+            
+            if (context.cpuRegs.GPR.r[rs_index].SD[0] < 0){
+                context.cpuRegs.GPR.pc = current_insn.address + 4 + (offset << 2);
+            }
+            else{
+                context.cpuRegs.GPR.pc = current_insn.address + 8;
+            }
+            */
+            std::cout << "if ((s64)context.cpuRegs.GPR.r[" << rs_index << "].SD[0] >= 0) {" << std::endl;
+            if (i + 1 < total_count) {
+                translate_instruction_block(insn, i + 1, total_count);
+            }
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 4 + (" << offset << " << 2);" << std::endl;
+            std::cout << "} else {" << std::endl;
+            std::cout << "    context.cpuRegs.pc = " << current_insn.address << " + 8;" << std::endl;
+            std::cout << "}" << std::endl;
+            return 2;
         }
+        /*
         case MIPS_INS_MTSAB: {
             // TODO: Implement MTSAB (Move To SA/Byte)
             // MIPS: mtsab rs, immediate
@@ -1290,11 +1982,20 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             // MIPS: mtsah rs, immediate
             break;
         }
+        */
 
         // --- Normal Opcode Table ---
         case MIPS_INS_SLTIU: {
             // TODO: Implement SLTIU (Set on Less Than Immediate Unsigned)
             // MIPS: sltiu rt, rs, immediate
+            const auto& rt_reg = mips_details.operands[0].reg;
+            const auto& rs_reg = mips_details.operands[1].reg;
+            const auto& imm = mips_details.operands[2].imm;
+
+            int rt_index = get_gpr_index(rt_reg);
+            int rs_index = get_gpr_index(rs_reg);
+
+            std::cout << "context.cpuRegs.GPR.r[" << rt_index << "].UD[0] = (u64)((u32)context.cpuRegs.GPR.r[" << rs_index << "].UD[0] < (u32)" << imm << " ? 1 : 0);"<< std::endl;
             break;
         }
         case MIPS_INS_ANDI: {
@@ -1353,6 +2054,8 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             // This is for unaligned loads. Complex. Can be deferred.
             break;
         }
+
+        /*
         case MIPS_INS_LQ: {
             // TODO: Implement LQ (Load Quadword)
             // MIPS: lq rt, offset(base)
@@ -1363,6 +2066,7 @@ int translate_instruction_block(cs_insn* insn, size_t i, size_t total_count) {
             // MIPS: sq rt, offset(base)
             break;
         }
+        */
         case MIPS_INS_LWL: {
             // TODO: Implement LWL (Load Word Left)
             // This is for unaligned loads. Complex. Can be deferred.
