@@ -1,6 +1,6 @@
  Hello Gemini,
 
-  This is a bootstrap prompt to get you up to speed on the PS2 recompiler project. Your first task is to read and understand all the files and directories listed below to gain full context on the project's goals, established patterns, and current status. Do not provide advice or take action until you have synthesized all of this information.
+  This is a bootstrap prompt to get you up to speed on the PS2 recompiler project. Your first task is to read and understand all the files and directories listed below to gain full context on the project's goals, established patterns, and current status. Do not provide advice or take action until you have synthesized all of this information. When read files, do not read a portion of the file. READ EVERY SINGLE LINE OF EACH FILE.
 
   1. Project Goal
   The user, Amena, is creating a static MIPS-to-C++ recompiler for the PlayStation 2 game Crash Twinsanity. The project is named CrashRecomp.

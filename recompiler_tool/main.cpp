@@ -7,6 +7,9 @@
 #include <capstone/capstone.h>
 #include "cpu_state.h"
 #include <fstream>
+#include <algorithm> // For std::sort
+#include <map>       // For std::map
+
 /*
 Need to create functions based on this
 
@@ -16,6 +19,20 @@ Collect the beginning of every function and put it in a set, have meta data for 
 
 
 */
+
+// Forward declarations
+struct basic_block;
+bool is_control_flow_instruction(const cs_insn& insn);
+bool is_direct_jump(cs_insn& insn);
+bool is_direct_branch(cs_insn& insn);
+u32 calculate_target(cs_insn& insn);
+std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count);
+struct basic_block;                                                                                                                                                                                                                                                                                                                                                          │
+bool is_control_flow_instruction(const cs_insn& insn);                                                                                                                                                                                                                                                                                                                       │
+bool is_direct_jump(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                          │
+bool is_direct_branch(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                        │
+u32 calculate_target(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                         │
+std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count); 
 
 // Helper function to map Capstone's register enum to the correct 0-31 GPR index.
 // This function should be placed in main.cpp, typically above the main() function.
@@ -2762,7 +2779,7 @@ int translate_instruction_block(std::ofstream& outFile,cs_insn* insn, size_t i, 
     // Default case: we consumed one instruction.
     return 1;
 }
-std::set<basic_block> collection_function_entries(cs_insn* insns, size_t count){
+std::set<basic_block> collect_function_entries(cs_insn* insns, size_t count){
     std::set<basic_block> block_entries;
 
     if (count == 0){
