@@ -1,0 +1,71 @@
+ Hello Gemini,
+
+  This is a bootstrap prompt to get you up to speed on the PS2 recompiler project. Your first task is to read and understand all the files and directories listed below to gain full context on the project's goals, established patterns, and current status. Do not provide advice or take action until you have synthesized all of this information.
+
+  1. Project Goal
+  The user, Amena, is creating a static MIPS-to-C++ recompiler for the PlayStation 2 game Crash Twinsanity. The project is named CrashRecomp.
+
+  2. Project Directory Structure
+   - Project Root: /home/amena/Desktop/CrashRecomp/
+   - Recompiler Tool: CrashRecomp/recompiler_tool/
+   - Host Application: CrashRecomp/host_app/
+
+  3. Key Reference Codebases
+
+  This project relies on a dual-reference system. It is critical to understand the distinct role of each:
+
+   * `XenonRecomp` (in `/home/amena/Desktop/sonic_unleashed/`) - The Architectural Blueprint:
+       * This is the most important reference for high-level design and implementation. It is a successful, real-world static recompiler for a complex console and provides proven solutions to the difficult problems of recompilation.
+       * ALWAYS refer to this project first for any architectural or implementation questions, such as:
+           * How to structure the analysis and generation passes.
+           * How to represent basic blocks and functions.
+           * How to handle control flow (indirect jumps, function calls).
+           * How the recompiled code should interface with the host application.
+
+   * `PCSX2` (in `/home/amena/Desktop/pcsx2/`) - The Instruction-Level Ground Truth:
+       * This reference is used to ensure the correctness of individual MIPS instruction translations.
+       * /home/amena/Desktop/pcsx2/pcsx2/R5900OpcodeImpl.cpp is the definitive source for the precise behavior of any single MIPS instruction.
+       * /home/amena/Desktop/pcsx2/pcsx2/R5900.h is the reference for the cpu_state.h data structures.
+
+  4. Core Recompilation Principles (Non-Negotiable)
+
+   - Fetch vs. Interpret: Memory functions (ReadMemory32, etc.) only fetch raw, unsigned bytes and handle endianness. The instruction handlers are solely responsible for interpreting those raw bits.
+   - Sign Extension for 32-bit Operations: For MIPS instructions performing 32-bit operations (ADDIU, LW, SLL), the C++ pattern dest.SD[0] = (s64)(s32)(...); must be used to ensure correct sign extension into a 64-bit register.
+   - Truncation for Memory Stores: For MIPS instructions storing the lower 32 bits of a 64-bit register (SW), the value must be truncated with a (u32) cast before writing.
+   - Branch Delay Slots: The recompiler is responsible for correct execution order. The established pattern is to generate the C++ for the delay slot instruction first, followed by the C++ for the branch/jump instruction itself.
+
+  5. Core Architectural Strategy (Based on XenonRecomp)
+
+  The project is implementing a function-based recompilation model. This is the primary focus of current development.
+
+   * The "Why": A simple linear translation is not viable. The correct, scalable approach is to identify "basic blocks" in the MIPS code and recompile each block into a separate C++ function.
+
+   * The "How" (The Plan):
+       1. Analysis Pass (Finding All Entry Points): The recompiler will first perform a full analysis of the MIPS binary to identify all basic block entry points. The complete set of rules for finding an entry point is:
+           * Rule 1: Direct Jump/Branch Target: The address specified as the target of a direct jump (j, jal) or branch (beq, bne, etc.).
+           * Rule 2: Fall-Through Path: The instruction immediately following a conditional branch.
+           * Rule 3: Function Prologue Scanning: The address of any instruction sequence that matches a common MIPS function prologue pattern (e.g., addiu $sp, $sp, -X; sw $ra, Y($sp)). This is the primary method for finding functions that are only ever called indirectly.
+
+       2. Basic Block Representation: To manage the program's structure, the recompiler will use a struct to define a basic block. This cleanly separates the analysis phase from the generation phase.
+           * Conceptual C++ Struct:
+
+   1             struct BasicBlock {
+   2                 uint64_t start_address;
+   3                 uint64_t end_address;
+   4                 std::vector<cs_insn*> instructions; // Pointers to the instructions in this block
+   5             };
+           * The analysis pass will produce a std::vector<BasicBlock> that represents the entire program.
+
+       3. Generation Pass: The recompiler iterates through the std::vector<BasicBlock> and generates a discrete C++ function for each block (e.g., void func_0x001A2F00()).
+
+       4. Control-Flow Translation: MIPS jumps and branches are translated into C++ function calls to the corresponding recompiled function for the target basic block.
+
+   * Indirect Jump Handling (Runtime Dispatcher): Indirect jumps (e.g., jr $ra) are handled via a two-part system:
+       1. Recompiler-Side: Translates an indirect jump into a C++ call to a generic host function (e.g., host::dispatch_jump(target_address)).
+       2. Host-Side: The host implements host::dispatch_jump. At startup, the host creates a lookup table (e.g., std::unordered_map<uint64_t, void(*)()>) mapping every block's start address to its function pointer. The dispatch_jump function uses this table to call the correct function at runtime.
+
+   * Output File Structure: For the current phase, the recompiler will generate a single C++ source file containing all recompiled functions to simplify the build process.
+
+  6. Your First Action:
+
+  Once you have read and analyzed all of the above, your first response should be to articulate what you have gathered, the project's current progress compared to its roadmap, and what the immediate next steps should be. This will confirm you are fully up to speed and ready to assist.

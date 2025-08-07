@@ -2762,18 +2762,40 @@ int translate_instruction_block(std::ofstream& outFile,cs_insn* insn, size_t i, 
     // Default case: we consumed one instruction.
     return 1;
 }
-std::set<u32> collection_function_entries(cs_insn* insns, size_t count){
+std::set<basic_block> collection_function_entries(cs_insn* insns, size_t count){
+    std::set<basic_block> block_entries;
 
-    std::set<u32> function_entries;
-    for(int i = 0; i < count; i++){
-        cs_insn insn = insns[i];
-        if(is_direct_branch(insn) || is_direct_jump(insn)){
-            function_entries.insert(calculate_target(insn));
-            function_entries.insert(insn.address + 8);
-        }
+    if (count == 0){
+        return block_entries;
     }
 
-    return function_entries;
+    basic_block block;
+    block.start_address = insns[0].address;
+    for(int i = 0; i < count; i++){
+        cs_insn* insn = &insns[i];
+        block.instructions.emplace_back(*insn);
+
+        if(is_control_flow_instruction(*insn)){
+            block.end_address = insn->address;
+
+            block_entries.emplace(block);
+            block = {};
+
+            if (i + 1 < count){
+                block.start_address = insns[i+1].address;
+            }
+            
+        }
+
+        
+    
+    }
+    if (!block.instructions.empty()){
+        block.end_address = block.instructions.back()->address;
+        block_entries.emplace(block);
+    }
+
+    return block_entries;
 }
 void generate_function(std::ofstream& outFile, u32 start_addr, std::set<u32>& function_entries, std::set<u32>& generated, cs_insn* insns, size_t count){
 
@@ -2875,3 +2897,21 @@ bool is_direct_jump(cs_insn& insn){
     }
     return false;
 }
+
+bool is_control_flow_instruction(const cs_insn& insn) {
+    for (int i = 0; i < insn.detail->groups_count; ++i) {
+        // Check if the instruction belongs to the "JUMP" group...
+        if (insn.detail->groups[i] == CS_GRP_JUMP ||
+            // ...or the "RELATIVE BRANCH" group.
+            insn.detail->groups[i] == CS_GRP_BRANCH_RELATIVE) {
+            return true; // If it's in either group, it's a control flow instruction.
+        }
+    }
+    return false;
+}
+
+struct basic_block{
+    u64 start_address;
+    u64 end_address;
+    std::vector<cs_insn*> instructions;
+};
