@@ -26,6 +26,7 @@ bool is_direct_jump(cs_insn& insn);
 bool is_direct_branch(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                       
 u32 calculate_target(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                         
 std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count); 
+void generate_functions_from_block(std::vector<basic_block>, std::ofstream out_file);
 
 // Helper function to map Capstone's register enum to the correct 0-31 GPR index.
 // This function should be placed in main.cpp, typically above the main() function.
@@ -2773,47 +2774,105 @@ int translate_instruction_block(std::ofstream& outFile,cs_insn* insn, size_t i, 
     return 1;
 }
 
-std::set<basic_block> collect_function_entries(cs_insn* insns, size_t count){
+std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count){
     std::set<basic_block> block_entries;
 
     if (count == 0){
         return block_entries;
     }
 
-    basic_block block;
     block.start_address = insns[0].address;
-    for(int i = 0; i < count; i++){
-        cs_insn* insn = &insns[i];
-        block.instructions.emplace_back(*insn);
 
-        if(is_control_flow_instruction(*insn)){
-            block.end_address = insn->address;
 
-            block_entries.emplace(block);
-            block = {};
+    // Collect entry points
+    std::set<u64> entries;
+    std::map<u64, size_t> addr_to_idx;
+    entries.insert(insns[0].address);
+    
+    for(size_t i = 0; i < count; i++){
+        // Direct Jump add its destination as the entry of a new function
+        if (is_direct_jump(insns[i]) || is_direct_branch(insns[i])) {
+            entries.insert(calculate_target(insns[i]));
+        }
+
+        if(is_control_flow_instruction(insns[i])){
 
             if (i + 1 < count){
-                block.start_address = insns[i+1].address;
+                entries.insert(insns[i].address + 8);
             }
             
         }
 
-        
-    
     }
-    if (!block.instructions.empty()){
-        block.end_address = block.instructions.back()->address;
-        block_entries.emplace(block);
+    std::cout << "// Found " << entries.size() << " unique entry points." << std::endl; 
+
+    //Map entries to index
+    // Build blocks
+
+    /*
+        For each of these entries start adding the instructions till the address of the instruction exists in the entries that means this is a new function
+
+    */
+    size_t current_idx = 0;
+    while(current_idx < count) {
+        
+        if (entry_points.count(insns[current_idx].address)) {
+            basic_block block;
+            block.start_address = insns[current_idx].address;
+
+            while (current_idx < count) {
+                block.instructions.emplace_back(insns[current_idx]);
+                block.end_address = insns[current_idx]->address;
+
+                // Now add the delay slot before transition
+                if(is_control_flow_instruction(insns[current_idx])){
+                    if (current_idx + 1 < count){
+                        block.instruction.emplace_back(insns[current_idx + 1]);
+                        block.end_address = insns[current_idx + 1].address;
+                        current_idx++;
+                        
+                    }
+                    break;
+                }
+                if ((current_idx + 1 < count) && entry_points.count(insns[current_idx + 1].address)) {
+                    break;
+                }
+                current_idx++;
+
+            }
+            block_entries.emplace_back(block);
+        }
+        current_idx++;
+        
     }
 
+
+    std::cout << "// Successfully created " << block_entries.size() << " basic blocks." << std::endl;
     return block_entries;
 }
 void generate_function(std::ofstream& outFile, u32 start_addr, std::set<u32>& function_entries, std::set<u32>& generated, cs_insn* insns, size_t count){
+    /*
+        So this would be called after the function entries are collected
+        1. Create function name based on the entry address -> void function0x1234()
+        2. Then we translate line by line of the current basic block instruction using -> Translate block
+        3. What do we do with the return address? Do we jump into that function at that address?
+    */
+
 
     
 }
 
-void collect_generate_functions(std::ofstream& outFile, u32 start_addr, std::set<u32>& function_entries, std::set<u32>& generated, cs_insn* insns, size_t count){}
+void generate_functions_from_block(std::vector<basic_block>k& blocks, std::ofstream& out_file){
+    for(const auto& block : blocks){
+
+        out_file << "func_" << std::hex << block.start_address << "(){"<<std::endl;
+        for(int i = 0; i < blocks.instructions.size() - 1; ++i){
+            translate_instruction_block(out_file, block.instructions[i]);
+        }
+
+        
+    }
+}
 
 
 u32 calculate_target(cs_insn& insn){
