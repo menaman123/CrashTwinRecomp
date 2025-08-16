@@ -1,35 +1,4 @@
-
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <set>
-#include <iomanip>
-#include <capstone/capstone.h>
-#include "cpu_state.h"
-#include <fstream>
-#include <algorithm> // For std::sort
-#include <map>       // For std::map
-#include "recompiler.h"
-
-/*
-Need to create functions based on this
-
-Collect the beginning of every function and put it in a set, have meta data for this function like 
-    - Branch
-    - Jump
-
-
-*/
-
-struct basic_block;                                                                                                                                                                                                                                                                                      
-bool is_control_flow_instruction(const cs_insn& insn);                                                                                                                                                                                                                                                                                                                       
-bool is_direct_jump(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                          
-bool is_direct_branch(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                       
-u32 calculate_target(cs_insn& insn);                                                                                                                                                                                                                                                                                                                                         
-std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count); 
-void translate_instruction_block(std::ofstream& outfile, cs_insn* insn);
-void generate_functions_from_block(std::vector<basic_block>, std::ofstream out_file);
-void translate_likely_instructions(std::ofstream& out_file, cs_insn* insn, cs_insn* delay_slot_insn)
+#include "./recompiler.h"
 
 // Helper function to map Capstone's register enum to the correct 0-31 GPR index.
 // This function should be placed in main.cpp, typically above the main() function.
@@ -150,7 +119,7 @@ int main(int argc, char* argv[]) {
  }
 
 // This is the single source of truth for translating any MIPS instruction.
-void translate_instruction_block(std::ofstream& outFile, cs_insn* insn) {
+void translate_instruction_block(std::ofstream& out_file, cs_insn* insn) {
     cs_mips& mips_details = insn->detail->mips;
 
     std::cerr << "DEBUG [" << insn->mnemonic << "]: " << mips_details.op_count << " operands." << std::endl;
@@ -3140,8 +3109,3 @@ bool is_control_flow_instruction(const cs_insn& insn) {
     return false;
 }
 
-struct basic_block{
-    u64 start_address;
-    u64 end_address;
-    std::vector<cs_insn*> instructions;
-};

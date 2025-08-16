@@ -1,3 +1,3 @@
-/home/amena/Desktop/CrashRecomp/recompiler_tool/build/CMakeFiles/recompiler_tool.dir
-/home/amena/Desktop/CrashRecomp/recompiler_tool/build/CMakeFiles/edit_cache.dir
-/home/amena/Desktop/CrashRecomp/recompiler_tool/build/CMakeFiles/rebuild_cache.dir
+C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build/CMakeFiles/recompiler_tool.dir
+C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build/CMakeFiles/ZERO_CHECK.dir

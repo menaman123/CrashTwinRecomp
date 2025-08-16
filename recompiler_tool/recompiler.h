@@ -1,0 +1,29 @@
+#ifndef RECOMPILER_H
+#define RECOMPILER_H
+
+#include <vector>
+#include <fstream>
+#include <capstone/capstone.h>
+#include "cpu_state.h"
+
+struct basic_block {
+    uint64_t start_address;
+    uint64_t end_address;
+    std::vector<cs_insn*> instructions;
+};
+
+bool is_control_flow_instruction(const cs_insn& insn);
+bool is_direct_jump(cs_insn& insn);
+bool is_direct_branch(cs_insn& insn);
+bool is_branch_likely(cs_insn& insn);
+uint32_t calculate_target(cs_insn& insn);
+std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count);
+
+void generate_functions_from_block(const std::vector<basic_block>& blocks, std::ofstream& out_file);
+int translate_instruction_block(std::ofstream& outFile, const std::vector<cs_insn*>& instructions, size_t index);
+void translate_single_instruction(std::ofstream& outFile, cs_insn* insn, cs_insn* delay_slot_insn);
+void translate_likely_instructions(std::ofstream& outFile, cs_insn* branch_insn, cs_insn* delay_slot_insn);
+
+int get_gpr_index(mips_reg capstone_reg);
+
+#endif // RECOMPILER_H
