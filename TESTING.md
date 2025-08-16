@@ -94,3 +94,57 @@ Let's say you want to add support for the `AND` instruction.
     *   This time, there should be **no output**. The test now **PASSES** because your `current` and `golden` files are identical.
 
 You have now successfully added a new instruction to your recompiler and integrated it into your test suite. You can repeat this process for every new instruction you implement.
+
+
+# TESTING ON WINDOWS
+
+  Building the Project
+
+  This process will compile recompiler.cpp, recompiler.h, and main.cpp into the recompiler_tool.exe executable. It will also compile recompiler_test.cpp into the RecompilerTests.exe executable.
+
+   1. Generate the Visual Studio Solution:
+      First, you need to run CMake to generate the project files. You only need to do this once, or whenever you change CMakeLists.txt.
+       * Create a build directory inside recompiler_tool.
+       * Open a command prompt or PowerShell, navigate into the build directory, and run CMake.
+
+   1     cd C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\recompiler_tool
+   2     mkdir build
+   3     cd build
+   4     cmake ..
+      This will create a Ps2Recomp.sln file inside the build directory.
+
+   2. Compile the Code:
+      You can now build the project in one of two ways:
+
+       * Option A (Command Line): From the same command prompt inside the build directory, run:
+
+   1         # To build in Debug mode
+   2         cmake --build . --config Debug
+   3 
+   4         # Or to build in Release mode
+   5         cmake --build . --config Release
+
+       * Option B (Visual Studio IDE):
+           * Open the Ps2Recomp.sln file (located in the build directory) with Visual Studio.
+           * In the Solution Explorer, you will see your targets (recompiler_tool, RecompilerTests).
+           * Build the entire solution by going to the menu and selecting Build > Build Solution.
+
+  After this, you will find your compiled executables inside the build\Debug or build\Release directory.
+
+  Testing recompiler_test.cpp
+
+  Because you've set up GoogleTest correctly in your CMakeLists.txt, running your tests is very simple.
+
+   1. Build the `RecompilerTests` target using either of the build methods described above. This is done automatically if you "Build Solution".
+
+   2. Run the tests:
+
+       * Option A (Command Line): From the command prompt in the build directory, run CTest. It will automatically find and run your tests.
+   1         # Make sure you are in the 'build' directory
+   2         ctest
+          It will print a summary of which tests passed or failed.
+
+       * Option B (Visual Studio IDE - Recommended):
+           * With the solution open, go to the menu and select Test > Test Explorer.
+           * A "Test Explorer" window will open and automatically discover the tests from your recompiler_test.cpp file (e.g., AnalysisHelpers.IsBranchLikely).
+           * Click the "Run All Tests In View" button (a green play icon) in the Test Explorer to run the tests and see the results directly in the IDE.

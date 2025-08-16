@@ -26,8 +26,8 @@ uint32_t calculate_target(cs_insn& insn);
 std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count);
 
 void generate_functions_from_block(const std::vector<basic_block>& blocks, std::ofstream& out_file);
-void translate_instruction_block(std::ofstream& outFile, cs_insn* insn);
-void translate_likely_instructions(std::ofstream& outFile, cs_insn* branch_insn, cs_insn* delay_slot_insn);
+void translate_instruction_block(std::ofstream& out_file, cs_insn* insn);
+void translate_likely_instructions(std::ofstream& out_file, cs_insn* branch_insn, cs_insn* delay_slot_insn);
 
 int get_gpr_index(mips_reg capstone_reg);
 
