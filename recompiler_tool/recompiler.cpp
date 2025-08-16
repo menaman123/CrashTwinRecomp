@@ -2382,25 +2382,25 @@ std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count){
     size_t current_idx = 0;
     while(current_idx < count) {
         
-        if (entry_points.count(insns[current_idx].address)) {
+        if (entries.count(insns[current_idx].address)) {
             basic_block block;
             block.start_address = insns[current_idx].address;
 
             while (current_idx < count) {
                 block.instructions.emplace_back(insns[current_idx]);
-                block.end_address = insns[current_idx]->address;
+                block.end_address = insns[current_idx].address;
 
                 // Now add the delay slot before transition
                 if(is_control_flow_instruction(insns[current_idx])){
                     if (current_idx + 1 < count){
-                        block.instruction.emplace_back(insns[current_idx + 1]);
+                        block.instructions.emplace_back(insns[current_idx + 1]);
                         block.end_address = insns[current_idx + 1].address;
                         current_idx++;
                         
                     }
                     break;
                 }
-                if ((current_idx + 1 < count) && entry_points.count(insns[current_idx + 1].address)) {
+                if ((current_idx + 1 < count) && entries.count(insns[current_idx + 1].address)) {
                     break;
                 }
                 current_idx++;
@@ -2417,7 +2417,7 @@ std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count){
     return block_entries;
 }
 
-void generate_functions_from_block(std::vector<basic_block>k& blocks, std::ofstream& out_file){
+void generate_functions_from_block(std::vector<basic_block>& blocks, std::ofstream& out_file){
     /*
         So this would be called after the function entries are collected
         1. Create function name based on the entry address -> void function0x1234()
@@ -2429,8 +2429,9 @@ void generate_functions_from_block(std::vector<basic_block>k& blocks, std::ofstr
         out_file << "void func_" << std::hex << block.start_address << "(){"<<std::endl;
 
 
-        for(int i = 0; i < blocks.instructions.size() - 1; ++i){
-            if(is_branch_likely(block.instructions[i])){
+        for(int i = 0; i < block.instructions.size() - 1; ++i){
+
+            if(is_branch_likely(*block.instructions[i])){
                 if(i + 1 >= blocks.instructions.size()){
                     outGile << " // ERROR: Branch-likely at end of block" << std::endl;
                     return; 
