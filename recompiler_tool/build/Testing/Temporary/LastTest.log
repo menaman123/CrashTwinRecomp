@@ -1,0 +1,30 @@
+Start testing: Aug 15 23:40 Eastern Daylight Time
+----------------------------------------------------------
+1/1 Testing: AnalysisHelpers.IsBranchLikely
+1/1 Test: AnalysisHelpers.IsBranchLikely
+Command: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build/Debug/RecompilerTests.exe" "--gtest_filter=AnalysisHelpers.IsBranchLikely" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build
+"AnalysisHelpers.IsBranchLikely" start time: Aug 15 23:40 Eastern Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\recompiler_tool\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = AnalysisHelpers.IsBranchLikely
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from AnalysisHelpers
+[ RUN      ] AnalysisHelpers.IsBranchLikely
+[       OK ] AnalysisHelpers.IsBranchLikely (0 ms)
+[----------] 1 test from AnalysisHelpers (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"AnalysisHelpers.IsBranchLikely" end time: Aug 15 23:40 Eastern Daylight Time
+"AnalysisHelpers.IsBranchLikely" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 15 23:40 Eastern Daylight Time
