@@ -1,0 +1,12 @@
+GprMapping.CorrectIndexReturned 3 0.00228143
+AnalysisHelpers.IsBranchLikely 3 0.00202837
+AnalysisHelpers.JumpIsControlFlow 0 0
+AnalysisHelpers.BranchesIsControlFlow 0 0
+AnalysisHelpers.NotIsControlFlow 2 0.00281945
+AnalysisHelpers.IsDirectJump 3 0.0019388
+AnalysisHelpers.IsDirectBranch 3 0.0019737
+AnalysisHelpers.CalculateTarget 3 0.00192243
+BlockCollection.CorrectlyIdentifiesBlocks 0 0
+AnalysisHelpers.IsControlFlow 1 0.0059187
+---
+BlockCollection.CorrectlyIdentifiesBlocks

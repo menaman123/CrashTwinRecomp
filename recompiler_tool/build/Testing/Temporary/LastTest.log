@@ -1,0 +1,41 @@
+Start testing: Aug 17 14:26 Eastern Daylight Time
+----------------------------------------------------------
+7/7 Testing: BlockCollection.CorrectlyIdentifiesBlocks
+7/7 Test: BlockCollection.CorrectlyIdentifiesBlocks
+Command: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build/Debug/RecompilerTests.exe" "--gtest_filter=BlockCollection.CorrectlyIdentifiesBlocks" "--gtest_also_run_disabled_tests"
+Directory: C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/recompiler_tool/build
+"BlockCollection.CorrectlyIdentifiesBlocks" start time: Aug 17 14:26 Eastern Daylight Time
+Output:
+----------------------------------------------------------
+Running main() from C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\recompiler_tool\build\_deps\googletest-src\googletest\src\gtest_main.cc
+Note: Google Test filter = BlockCollection.CorrectlyIdentifiesBlocks
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from BlockCollection
+[ RUN      ] BlockCollection.CorrectlyIdentifiesBlocks
+// Found 2 unique entry points.
+// Successfully created 2 basic blocks.
+C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\recompiler_tool\recompiler_test.cpp(185): error: Expected equality of these values:
+  blocks.size()
+    Which is: 2
+  1
+
+[  FAILED  ] BlockCollection.CorrectlyIdentifiesBlocks (0 ms)
+[----------] 1 test from BlockCollection (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 0 tests.
+[  FAILED  ] 1 test, listed below:
+[  FAILED  ] BlockCollection.CorrectlyIdentifiesBlocks
+
+ 1 FAILED TEST
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Failed.
+"BlockCollection.CorrectlyIdentifiesBlocks" end time: Aug 17 14:26 Eastern Daylight Time
+"BlockCollection.CorrectlyIdentifiesBlocks" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Aug 17 14:26 Eastern Daylight Time
