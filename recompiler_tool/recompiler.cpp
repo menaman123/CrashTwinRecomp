@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 #include "recompiler.h"
 // Helper function to map Capstone's register enum to the correct 0-31 GPR index.
 // This function should be placed in main.cpp, typically above the main() function.
@@ -49,8 +50,6 @@ int get_gpr_index(mips_reg capstone_reg) {
 }
 
 // This function is now the heart of the recompiler.
-// It translates an instruction and returns the number of instructions consumed (1 for normal, 2 for branch-with-delay-slot).
-
 // This is the single source of truth for translating any MIPS instruction.
 void translate_instruction_block(std::ofstream& out_file, cs_insn* insn) {
     cs_mips& mips_details = insn->detail->mips;
@@ -2340,37 +2339,44 @@ void translate_instruction_block(std::ofstream& out_file, cs_insn* insn) {
     // Default case: we consumed one instruction.
 }
 
+/* 
+Input: All machine code instructions from the PS2 file
+Output: Set of blocks, each block containing all the instructions tied to that block
+1. Collects all function entries
+2. Each function entry is the beginning of a basic block
+3. After block is finished being built insert into block_entries
+*/
+std::set<uint64_t> collect_function_entries(cs_insn* insns, size_t count){
+        // Collect entry points
+    std::set<uint64_t> entries;
+    entries.emplace(insns[0].address);
+    
+    for(size_t i = 0; i < count; i++){
+        if(is_direct_function_call(insns[i])){
+            entries.emplace(insns[i].address);
+        }
+        if(is_return(insns[i])){
+            if(i + 2 < count){
+                entries.emplace(insns[i+2].address);
+            }
+        }
+    }
+    std::cout << "// Found " << entries.size() << " unique entry points." << std::endl;
+    for (u64 entry : entries) {
+        std::cout << "// ENTRY: " << entry << " (0x" << std::hex << entry << ")" << std::dec << std::endl;
+    }
+    return entries;
+}
+
 std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count){
     std::vector<basic_block> block_entries;
-    basic_block block;
 
     if (count == 0){
         return block_entries;
     }
 
-    block.start_address = insns[0].address;
-
-
     // Collect entry points
-    std::set<u64> entries;
-    std::map<u64, size_t> addr_to_idx;
-    entries.emplace(insns[0].address);
-    
-    for(size_t i = 0; i < count; i++){
-        // Direct Jump add its destination as the entry of a new function
-        if (is_direct_jump(insns[i]) || is_direct_branch(insns[i])) {
-            entries.emplace(calculate_target(insns[i]));
-        }
-
-        if(is_control_flow_instruction(insns[i])){
-
-            if (i + 1 < count){
-                entries.emplace(insns[i].address + 8);
-            }
-            
-        }
-
-    }
+    std::set<u64> entries = collect_function_entries(insns, count);
     std::cout << "// Found " << entries.size() << " unique entry points." << std::endl; 
 
     //Map entries to index
@@ -2379,45 +2385,59 @@ std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count){
     /*
         For each of these entries start adding the instructions till the address of the instruction exists in the entries that means this is a new function
     */
-    size_t current_idx = 0;
-    while(current_idx < count) {
-        
-        if (entries.count(insns[current_idx].address)) {
-            basic_block block;
-            block.start_address = insns[current_idx].address;
+    //Map entries to index
+    // Build blocks
 
-            while (current_idx < count) {
-                block.instructions.emplace_back(insns[current_idx]);
-                block.end_address = insns[current_idx].address;
+    /*
+        For each of these entries start adding the instructions till the address of the instruction exists in the entries that means this is a new function
+    */
 
-                // Now add the delay slot before transition
-                if(is_control_flow_instruction(insns[current_idx])){
-                    if (current_idx + 1 < count){
-                        block.instructions.emplace_back(insns[current_idx + 1]);
-                        block.end_address = insns[current_idx + 1].address;
-                        current_idx++;
-                        
-                    }
-                    break;
-                }
-                if ((current_idx + 1 < count) && entries.count(insns[current_idx + 1].address)) {
-                    break;
-                }
-                current_idx++;
-
+    for(u64 start_addr : entries){
+        basic_block current_block;
+        size_t current_idx = -1;
+        for(int i = 0; i < count; i++){
+            if(insns[i].address == start_addr){
+                current_idx = i;
+                break;
             }
-            block_entries.emplace_back(block);
         }
-        current_idx++;
+
+        if (current_idx == -1){continue;}
+        current_block.start_address = start_addr;
+
+
+        while (current_idx < count){
+            current_block.instructions.push_back(&insns[current_idx]);
+            current_block.end_address = insns[current_idx].address;
+
+            if (is_control_flow_instruction(insns[current_idx])) {
+                // Include the delay slot instruction
+                if (current_idx + 1 < count) {
+                    current_block.instructions.push_back(&insns[current_idx + 1]);
+                    current_block.end_address = insns[current_idx + 1].address;
+                    current_idx++;
+                }
+                break; // End the block after a control flow instruction and its delay slot
+            }
         
+            // Check if the NEXT instruction is an entry point
+            if ((current_idx + 1 < count) && entries.count(insns[current_idx + 1].address)) {
+                break; // End the block before the next entry point
+            }
+        
+            current_idx++;
+        }
+        block_entries.emplace_back(current_block);
     }
-
-
     std::cout << "// Successfully created " << block_entries.size() << " basic blocks." << std::endl;
+    std::sort(block_entries.begin(), block_entries.end(), 
+        [](const basic_block& a, const basic_block& b) {
+            return a.start_address < b.start_address;
+        });
     return block_entries;
 }
 
-void generate_functions_from_block(std::vector<basic_block>& blocks, std::ofstream& out_file){
+void generate_functions_from_block(const std::vector<basic_block>& blocks, std::ofstream& out_file){
     /*
         So this would be called after the function entries are collected
         1. Create function name based on the entry address -> void function0x1234()
@@ -2432,8 +2452,8 @@ void generate_functions_from_block(std::vector<basic_block>& blocks, std::ofstre
         for(int i = 0; i < block.instructions.size() - 1; ++i){
 
             if(is_branch_likely(*block.instructions[i])){
-                if(i + 1 >= blocks.instructions.size()){
-                    outGile << " // ERROR: Branch-likely at end of block" << std::endl;
+                if(i + 1 >= block.instructions.size()){
+                    out_file << " // ERROR: Branch-likely at end of block" << std::endl;
                     return; 
                 }
                 translate_likely_instructions(out_file, block.instructions[i], block.instructions[i+1]);
@@ -2549,6 +2569,7 @@ bool is_branch_likely(cs_insn& insn) {
 }
 
 void translate_likely_instructions(std::ofstream& out_file, cs_insn* insn, cs_insn* delay_slot_insn){
+    cs_mips& mips_details = insn->detail->mips;
     switch(insn->id){
         case MIPS_INS_BEQL: {
             // TODO: Implement BEQL (Branch on Equal Likely)
@@ -2769,11 +2790,29 @@ void translate_likely_instructions(std::ofstream& out_file, cs_insn* insn, cs_in
     }
 }
 
-bool is_direct_jump(cs_insn& insn){
+bool is_return(cs_insn& insn){
     switch (insn.id){
-        case MIPS_INS_J:{
+        case MIPS_INS_JR:{
             return true;
         }
+    }
+    return false;
+}
+
+bool is_function_call(cs_insn& insn){
+        switch (insn.id){
+        case MIPS_INS_JAL:{
+            return true;
+        }
+        case MIPS_INS_JALR:{
+            return true;
+        }
+    }
+    return false;
+}
+
+bool is_direct_function_call(cs_insn& insn){
+        switch (insn.id){
         case MIPS_INS_JAL:{
             return true;
         }
@@ -2787,6 +2826,7 @@ bool is_control_flow_instruction(const cs_insn& insn) {
         if (insn.detail->groups[i] == CS_GRP_JUMP ||
             // ...or the "RELATIVE BRANCH" group.
             insn.detail->groups[i] == CS_GRP_BRANCH_RELATIVE) {
+            std::cout << insn.detail->groups[i] << std::endl;
             return true; // If it's in either group, it's a control flow instruction.
         }
     }

@@ -45,75 +45,52 @@ TEST(AnalysisHelpers, IsBranchLikely) {
     EXPECT_FALSE(is_branch_likely(insn));
 }
 
-TEST(AnalysisHelpers, JumpIsControlFlow) {
+TEST(AnalysisHelpers, IsControlFlow) {
     cs_insn insn;
     cs_detail detail;
 
-    // Jumps
+    // --- Test Jumps (should be TRUE) ---
     setup_mock_instruction(insn, detail, MIPS_INS_J);
+    detail.groups[0] = CS_GRP_JUMP; // Manually set the group
+    detail.groups_count = 1;
     EXPECT_TRUE(is_control_flow_instruction(insn));
+
     setup_mock_instruction(insn, detail, MIPS_INS_JAL);
+    detail.groups[0] = CS_GRP_JUMP; // Manually set the group
+    detail.groups_count = 1;
     EXPECT_TRUE(is_control_flow_instruction(insn));
+
     setup_mock_instruction(insn, detail, MIPS_INS_JR);
+    detail.groups[0] = CS_GRP_JUMP; // Manually set the group
+    detail.groups_count = 1;
     EXPECT_TRUE(is_control_flow_instruction(insn));
-}
 
-TEST(AnalysisHelpers, BranchesIsControlFlow) {
-    cs_insn insn;
-    cs_detail detail;
-
-    // Branches
+    // --- Test Branches (should be TRUE) ---
     setup_mock_instruction(insn, detail, MIPS_INS_BEQ);
+    detail.groups[0] = CS_GRP_BRANCH_RELATIVE; // Manually set the group
+    detail.groups_count = 1;
     EXPECT_TRUE(is_control_flow_instruction(insn));
+
     setup_mock_instruction(insn, detail, MIPS_INS_BNE);
+    detail.groups[0] = CS_GRP_BRANCH_RELATIVE; // Manually set the group
+    detail.groups_count = 1;
     EXPECT_TRUE(is_control_flow_instruction(insn));
+
     setup_mock_instruction(insn, detail, MIPS_INS_BEQL);
+    detail.groups[0] = CS_GRP_BRANCH_RELATIVE; // Manually set the group
+    detail.groups_count = 1;
     EXPECT_TRUE(is_control_flow_instruction(insn));
-}
 
-TEST(AnalysisHelpers, NotIsControlFlow) {
-    cs_insn insn;
-    cs_detail detail;
-
-    // Not control flow
+    // --- Test Non-Control Flow Instructions (should be FALSE) ---
     setup_mock_instruction(insn, detail, MIPS_INS_ADDU);
+    // No groups are set, so groups_count is 0 from setup_mock_instruction
     EXPECT_FALSE(is_control_flow_instruction(insn));
+
     setup_mock_instruction(insn, detail, MIPS_INS_LW);
     EXPECT_FALSE(is_control_flow_instruction(insn));
-}
 
-TEST(AnalysisHelpers, IsDirectJump) {
-    cs_insn insn;
-    cs_detail detail;
-
-    setup_mock_instruction(insn, detail, MIPS_INS_J);
-    EXPECT_TRUE(is_direct_jump(insn));
-    setup_mock_instruction(insn, detail, MIPS_INS_JAL);
-    EXPECT_TRUE(is_direct_jump(insn));
-
-    setup_mock_instruction(insn, detail, MIPS_INS_JR);
-    EXPECT_FALSE(is_direct_jump(insn));
-    setup_mock_instruction(insn, detail, MIPS_INS_BEQ);
-    EXPECT_FALSE(is_direct_jump(insn));
-}
-
-TEST(AnalysisHelpers, IsDirectBranch) {
-    cs_insn insn;
-    cs_detail detail;
-
-    setup_mock_instruction(insn, detail, MIPS_INS_BEQ);
-    EXPECT_TRUE(is_direct_branch(insn));
-    setup_mock_instruction(insn, detail, MIPS_INS_BNE);
-    EXPECT_TRUE(is_direct_branch(insn));
-    setup_mock_instruction(insn, detail, MIPS_INS_BGTZ);
-    EXPECT_TRUE(is_direct_branch(insn));
-    setup_mock_instruction(insn, detail, MIPS_INS_BEQL);
-    EXPECT_TRUE(is_direct_branch(insn));
-
-    setup_mock_instruction(insn, detail, MIPS_INS_J);
-    EXPECT_FALSE(is_direct_branch(insn));
-    setup_mock_instruction(insn, detail, MIPS_INS_JR);
-    EXPECT_FALSE(is_direct_branch(insn));
+    setup_mock_instruction(insn, detail, MIPS_INS_SLL);
+    EXPECT_FALSE(is_control_flow_instruction(insn));
 }
 
 TEST(AnalysisHelpers, CalculateTarget) {
@@ -136,67 +113,121 @@ TEST(AnalysisHelpers, CalculateTarget) {
     detail.mips.operands[0].imm = 256; // Capstone provides the target address for jumps
     EXPECT_EQ(calculate_target(insn), 0x400);
 }
-
-TEST(BlockCollection, CorrectlyIdentifiesBlocks) {
-    // Create a mock stream of instructions
-    const size_t num_insns = 8;
+// Test suite for the function entry collection logic
+TEST(FunctionEntryCollection, CorrectlyIdentifiesSyscallWrappers) {
+    // --- Test Setup ---
+    // Four small syscall wrapper functions like _EnableIntc, etc.
+    const size_t num_insns = 16;
     cs_insn insns[num_insns];
     cs_detail details[num_insns];
 
-    // Block 1: 0x100 -> 0x108
-    setup_mock_instruction(insns[0], details[0], MIPS_INS_ADDIU, 0x100);
-    setup_mock_instruction(insns[1], details[1], MIPS_INS_ADDIU, 0x104);
-    setup_mock_instruction(insns[2], details[2], MIPS_INS_BEQ, 0x108); // Branch to 0x114
-    details[2].mips.op_count = 3;
-    details[2].mips.operands[2].type = MIPS_OP_IMM;
-    details[2].mips.operands[2].imm = 2; // Target: 0x108 + 4 + (2 << 2) = 0x114
+    // Function 1: _EnableIntc @ 0x200
+    setup_mock_instruction(insns[0], details[0], MIPS_INS_ORI, 0x200);   // li v1,0x14 (pseudo)
+    setup_mock_instruction(insns[1], details[1], MIPS_INS_SYSCALL, 0x204);
+    setup_mock_instruction(insns[2], details[2], MIPS_INS_JR, 0x208);
+    details[2].groups[0] = CS_GRP_JUMP;
+    details[2].groups_count = 1;
+    setup_mock_instruction(insns[3], details[3], MIPS_INS_NOP, 0x20C);
 
-    // Block 2 (Fallthrough): 0x10C -> 0x10C
-    setup_mock_instruction(insns[3], details[3], MIPS_INS_ADDIU, 0x10C);
-    
-    // Block 3 (Jump Target): 0x110 -> 0x114
-    setup_mock_instruction(insns[4], details[4], MIPS_INS_J, 0x110); // Jump to 0x100
-    details[4].mips.op_count = 1;
-    details[4].mips.operands[0].type = MIPS_OP_IMM;
-    details[4].mips.operands[0].imm = 0x100 >> 2;
+    // Function 2: _DisableIntc @ 0x210
+    setup_mock_instruction(insns[4], details[4], MIPS_INS_ORI, 0x210);   // li v1,0x15
+    setup_mock_instruction(insns[5], details[5], MIPS_INS_SYSCALL, 0x214);
+    setup_mock_instruction(insns[6], details[6], MIPS_INS_JR, 0x218);
+    details[6].groups[0] = CS_GRP_JUMP;
+    details[6].groups_count = 1;
+    setup_mock_instruction(insns[7], details[7], MIPS_INS_NOP, 0x21C);
 
-    // Block 4 (Branch Target): 0x114 -> 0x11C
-    setup_mock_instruction(insns[5], details[5], MIPS_INS_LW, 0x114);
-    setup_mock_instruction(insns[6], details[6], MIPS_INS_JR, 0x118);
-    setup_mock_instruction(insns[7], details[7], MIPS_INS_ADDIU, 0x11C); // Delay slot
+    // Function 3: _EnableDmac @ 0x220
+    setup_mock_instruction(insns[8],  details[8],  MIPS_INS_ORI, 0x220); // li v1,0x16
+    setup_mock_instruction(insns[9],  details[9],  MIPS_INS_SYSCALL, 0x224);
+    setup_mock_instruction(insns[10], details[10], MIPS_INS_JR, 0x228);
+    details[10].groups[0] = CS_GRP_JUMP;
+    details[10].groups_count = 1;
+    setup_mock_instruction(insns[11], details[11], MIPS_INS_NOP, 0x22C);
 
-    // Since collect_basic_blocks is not fully implemented, this test will fail.
-    // This structure is a placeholder for when the implementation is ready.
-    // For now, we test the current stub implementation.
+    // Function 4: _DisableDmac @ 0x230
+    setup_mock_instruction(insns[12], details[12], MIPS_INS_ORI, 0x230); // li v1,0x17
+    setup_mock_instruction(insns[13], details[13], MIPS_INS_SYSCALL, 0x234);
+    setup_mock_instruction(insns[14], details[14], MIPS_INS_JR, 0x238);
+    details[14].groups[0] = CS_GRP_JUMP;
+    details[14].groups_count = 1;
+    setup_mock_instruction(insns[15], details[15], MIPS_INS_NOP, 0x23C);
+
+    // --- Run the Function ---
+    std::set<u64> entries = collect_function_entries(insns, num_insns);
+
+    // --- Assertions ---
+    // We expect 4 unique entry points (start of each syscall wrapper).
+    ASSERT_EQ(entries.size(), 4);
+
+    EXPECT_TRUE(entries.count(0x200)); // _EnableIntc
+    EXPECT_TRUE(entries.count(0x210)); // _DisableIntc
+    EXPECT_TRUE(entries.count(0x220)); // _EnableDmac
+    EXPECT_TRUE(entries.count(0x230)); // _DisableDmac
+
+    // Check that the syscall and jr addresses are NOT treated as entry points
+    EXPECT_FALSE(entries.count(0x204));
+    EXPECT_FALSE(entries.count(0x208));
+    EXPECT_FALSE(entries.count(0x214));
+    EXPECT_FALSE(entries.count(0x218));
+}
+
+
+
+
+TEST(BlockCollection, CorrectlyIdentifiesSyscallWrapperBlocks) {
+    // Create a mock stream of instructions based on the syscall wrapper functions
+    const size_t num_insns = 16; // 4 functions × 4 instructions each
+    cs_insn insns[num_insns];
+    cs_detail details[num_insns];
+
+    // --- Function 1: _EnableIntc at 0x200 ---
+    setup_mock_instruction(insns[0], details[0], MIPS_INS_LI, 0x200);       // li v1, 0x14
+    setup_mock_instruction(insns[1], details[1], MIPS_INS_SYSCALL, 0x204);  // syscall
+    setup_mock_instruction(insns[2], details[2], MIPS_INS_JR, 0x208);       // jr ra
+    setup_mock_instruction(insns[3], details[3], MIPS_INS_NOP, 0x20C);      // nop
+
+    // --- Function 2: _DisableIntc at 0x210 ---
+    setup_mock_instruction(insns[4], details[4], MIPS_INS_LI, 0x210);       // li v1, 0x15
+    setup_mock_instruction(insns[5], details[5], MIPS_INS_SYSCALL, 0x214);  // syscall
+    setup_mock_instruction(insns[6], details[6], MIPS_INS_JR, 0x218);       // jr ra
+    setup_mock_instruction(insns[7], details[7], MIPS_INS_NOP, 0x21C);      // nop
+
+    // --- Function 3: _EnableDmac at 0x220 ---
+    setup_mock_instruction(insns[8],  details[8],  MIPS_INS_LI, 0x220);     // li v1, 0x16
+    setup_mock_instruction(insns[9],  details[9],  MIPS_INS_SYSCALL, 0x224);// syscall
+    setup_mock_instruction(insns[10], details[10], MIPS_INS_JR, 0x228);     // jr ra
+    setup_mock_instruction(insns[11], details[11], MIPS_INS_NOP, 0x22C);    // nop
+
+    // --- Function 4: _DisableDmac at 0x230 ---
+    setup_mock_instruction(insns[12], details[12], MIPS_INS_LI, 0x230);     // li v1, 0x17
+    setup_mock_instruction(insns[13], details[13], MIPS_INS_SYSCALL, 0x234);// syscall
+    setup_mock_instruction(insns[14], details[14], MIPS_INS_JR, 0x238);     // jr ra
+    setup_mock_instruction(insns[15], details[15], MIPS_INS_NOP, 0x23C);    // nop
+
+    // --- Run block collector ---
     std::vector<basic_block> blocks = collect_basic_blocks(insns, num_insns);
 
-    // Current stub implementation should return 1 block with all instructions.
-    ASSERT_EQ(blocks.size(), 1);
-    EXPECT_EQ(blocks[0].start_address, 0x100);
-    EXPECT_EQ(blocks[0].end_address, 0x11C);
-    EXPECT_EQ(blocks[0].instructions.size(), 8);
-
-    /* --- EXPECTED BEHAVIOR FOR WHEN THE FUNCTION IS IMPLEMENTED ---
+    // We expect 4 blocks, one per syscall wrapper
     ASSERT_EQ(blocks.size(), 4);
 
-    // Block 1
-    EXPECT_EQ(blocks[0].start_address, 0x100);
-    EXPECT_EQ(blocks[0].end_address, 0x108);
-    EXPECT_EQ(blocks[0].instructions.size(), 3);
+    // Block 1: _EnableIntc
+    EXPECT_EQ(blocks[0].start_address, 0x200);
+    EXPECT_EQ(blocks[0].end_address,   0x20C);
+    EXPECT_EQ(blocks[0].instructions.size(), 4);
 
-    // Block 2
-    EXPECT_EQ(blocks[1].start_address, 0x10C);
-    EXPECT_EQ(blocks[1].end_address, 0x10C);
-    EXPECT_EQ(blocks[1].instructions.size(), 1);
+    // Block 2: _DisableIntc
+    EXPECT_EQ(blocks[1].start_address, 0x210);
+    EXPECT_EQ(blocks[1].end_address,   0x21C);
+    EXPECT_EQ(blocks[1].instructions.size(), 4);
 
-    // Block 3
-    EXPECT_EQ(blocks[2].start_address, 0x110);
-    EXPECT_EQ(blocks[2].end_address, 0x110);
-    EXPECT_EQ(blocks[2].instructions.size(), 1);
+    // Block 3: _EnableDmac
+    EXPECT_EQ(blocks[2].start_address, 0x220);
+    EXPECT_EQ(blocks[2].end_address,   0x22C);
+    EXPECT_EQ(blocks[2].instructions.size(), 4);
 
-    // Block 4
-    EXPECT_EQ(blocks[3].start_address, 0x114);
-    EXPECT_EQ(blocks[3].end_address, 0x11C);
-    EXPECT_EQ(blocks[3].instructions.size(), 3);
-    */
+    // Block 4: _DisableDmac
+    EXPECT_EQ(blocks[3].start_address, 0x230);
+    EXPECT_EQ(blocks[3].end_address,   0x23C);
+    EXPECT_EQ(blocks[3].instructions.size(), 4);
 }

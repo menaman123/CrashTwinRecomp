@@ -19,10 +19,15 @@ struct basic_block {
 // Function Declarations
 
 bool is_control_flow_instruction(const cs_insn& insn);
-bool is_direct_jump(cs_insn& insn);
+bool is_return(cs_insn& insn);
+bool is_function_call(cs_insn& insn);
+bool is_direct_function_call(cs_insn& insn);
 bool is_direct_branch(cs_insn& insn);
 bool is_branch_likely(cs_insn& insn);
 uint32_t calculate_target(cs_insn& insn);
+
+std::set<uint64_t> collect_function_entries(cs_insn* insns, size_t count);
+
 std::vector<basic_block> collect_basic_blocks(cs_insn* insns, size_t count);
 
 void generate_functions_from_block(const std::vector<basic_block>& blocks, std::ofstream& out_file);
