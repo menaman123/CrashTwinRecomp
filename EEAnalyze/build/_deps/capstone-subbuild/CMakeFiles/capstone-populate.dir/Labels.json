@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/capstone-populate"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/e42d1db08e38f149998780dcdbd524e7/capstone-populate.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b98814ad0eb906a4cdfbff027d1573b1/capstone-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/CMakeFiles/b349070e19467f2d5f49db5b9058d5cc/capstone-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"capstone-populate"
+		],
+		"name" : "capstone-populate"
+	}
+}

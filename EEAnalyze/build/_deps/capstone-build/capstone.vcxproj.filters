@@ -1,0 +1,899 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\cs.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\Mapping.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCInst.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCInstrDesc.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCRegisterInfo.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\SStream.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\utils.c">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMDisassembler.c">
+      <Filter>Source\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMInstPrinter.c">
+      <Filter>Source\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMMapping.c">
+      <Filter>Source\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMModule.c">
+      <Filter>Source\ARM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64BaseInfo.c">
+      <Filter>Source\ARM64</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64Disassembler.c">
+      <Filter>Source\ARM64</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64InstPrinter.c">
+      <Filter>Source\ARM64</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64Mapping.c">
+      <Filter>Source\ARM64</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64Module.c">
+      <Filter>Source\ARM64</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsDisassembler.c">
+      <Filter>Source\Mips</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsInstPrinter.c">
+      <Filter>Source\Mips</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsMapping.c">
+      <Filter>Source\Mips</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsModule.c">
+      <Filter>Source\Mips</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCDisassembler.c">
+      <Filter>Source\PowerPC</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCInstPrinter.c">
+      <Filter>Source\PowerPC</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCMapping.c">
+      <Filter>Source\PowerPC</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCModule.c">
+      <Filter>Source\PowerPC</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86Disassembler.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86DisassemblerDecoder.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86IntelInstPrinter.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86InstPrinterCommon.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86Mapping.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86Module.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86ATTInstPrinter.c">
+      <Filter>Source\X86</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcDisassembler.c">
+      <Filter>Source\Sparc</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcInstPrinter.c">
+      <Filter>Source\Sparc</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcMapping.c">
+      <Filter>Source\Sparc</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcModule.c">
+      <Filter>Source\Sparc</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZDisassembler.c">
+      <Filter>Source\SystemZ</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZInstPrinter.c">
+      <Filter>Source\SystemZ</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZMapping.c">
+      <Filter>Source\SystemZ</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZModule.c">
+      <Filter>Source\SystemZ</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZMCTargetDesc.c">
+      <Filter>Source\SystemZ</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreDisassembler.c">
+      <Filter>Source\XCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreInstPrinter.c">
+      <Filter>Source\XCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreMapping.c">
+      <Filter>Source\XCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreModule.c">
+      <Filter>Source\XCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M68K\M68KDisassembler.c">
+      <Filter>Source\M68K</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M68K\M68KInstPrinter.c">
+      <Filter>Source\M68K</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M68K\M68KModule.c">
+      <Filter>Source\M68K</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xDisassembler.c">
+      <Filter>Source\TMS320C64x</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xInstPrinter.c">
+      <Filter>Source\TMS320C64x</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xMapping.c">
+      <Filter>Source\TMS320C64x</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xModule.c">
+      <Filter>Source\TMS320C64x</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M680X\M680XDisassembler.c">
+      <Filter>Source\M680X</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M680X\M680XInstPrinter.c">
+      <Filter>Source\M680X</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M680X\M680XModule.c">
+      <Filter>Source\M680X</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMDisassembler.c">
+      <Filter>Source\EVM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMInstPrinter.c">
+      <Filter>Source\EVM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMMapping.c">
+      <Filter>Source\EVM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMModule.c">
+      <Filter>Source\EVM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMDisassembler.c">
+      <Filter>Source\WASM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMInstPrinter.c">
+      <Filter>Source\WASM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMMapping.c">
+      <Filter>Source\WASM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMModule.c">
+      <Filter>Source\WASM</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\MOS65XX\MOS65XXModule.c">
+      <Filter>Source\MOS65XX</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\MOS65XX\MOS65XXDisassembler.c">
+      <Filter>Source\MOS65XX</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFDisassembler.c">
+      <Filter>Source\BPF</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFInstPrinter.c">
+      <Filter>Source\BPF</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFMapping.c">
+      <Filter>Source\BPF</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFModule.c">
+      <Filter>Source\BPF</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVDisassembler.c">
+      <Filter>Source\RISCV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVInstPrinter.c">
+      <Filter>Source\RISCV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVMapping.c">
+      <Filter>Source\RISCV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVModule.c">
+      <Filter>Source\RISCV</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHDisassembler.c">
+      <Filter>Source\SH</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHInstPrinter.c">
+      <Filter>Source\SH</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHModule.c">
+      <Filter>Source\SH</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreDisassembler.c">
+      <Filter>Source\TriCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreInstPrinter.c">
+      <Filter>Source\TriCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreMapping.c">
+      <Filter>Source\TriCore</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreModule.c">
+      <Filter>Source\TriCore</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\arm64.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\arm.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\capstone.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\evm.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\wasm.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\mips.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\ppc.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\x86.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\sparc.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\systemz.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\xcore.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\m68k.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\tms320c64x.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\m680x.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\mos65xx.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\bpf.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\riscv.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\sh.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\tricore.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include\capstone\platform.h">
+      <Filter>Include\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\cs_simple_types.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\cs_priv.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\LEB128.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\Mapping.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MathExtras.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCDisassembler.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCFixedLenDisassembler.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCInst.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCInstrDesc.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\MCRegisterInfo.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\SStream.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\utils.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMAddressingModes.h">
+      <Filter>Include\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMBaseInfo.h">
+      <Filter>Include\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMDisassembler.h">
+      <Filter>Include\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMInstPrinter.h">
+      <Filter>Include\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMMapping.h">
+      <Filter>Include\ARM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64AddressingModes.h">
+      <Filter>Include\ARM64</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64BaseInfo.h">
+      <Filter>Include\ARM64</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64Disassembler.h">
+      <Filter>Include\ARM64</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64InstPrinter.h">
+      <Filter>Include\ARM64</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64Mapping.h">
+      <Filter>Include\ARM64</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsDisassembler.h">
+      <Filter>Include\Mips</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsInstPrinter.h">
+      <Filter>Include\Mips</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsMapping.h">
+      <Filter>Include\Mips</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCDisassembler.h">
+      <Filter>Include\PowerPC</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCInstPrinter.h">
+      <Filter>Include\PowerPC</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCMapping.h">
+      <Filter>Include\PowerPC</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCPredicates.h">
+      <Filter>Include\PowerPC</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86BaseInfo.h">
+      <Filter>Include\X86</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86Disassembler.h">
+      <Filter>Include\X86</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86DisassemblerDecoder.h">
+      <Filter>Include\X86</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86DisassemblerDecoderCommon.h">
+      <Filter>Include\X86</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86InstPrinter.h">
+      <Filter>Include\X86</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86Mapping.h">
+      <Filter>Include\X86</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\Sparc.h">
+      <Filter>Include\Sparc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcDisassembler.h">
+      <Filter>Include\Sparc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcInstPrinter.h">
+      <Filter>Include\Sparc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcMapping.h">
+      <Filter>Include\Sparc</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZDisassembler.h">
+      <Filter>Include\SystemZ</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZInstPrinter.h">
+      <Filter>Include\SystemZ</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZMapping.h">
+      <Filter>Include\SystemZ</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZMCTargetDesc.h">
+      <Filter>Include\SystemZ</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreDisassembler.h">
+      <Filter>Include\XCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreInstPrinter.h">
+      <Filter>Include\XCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreMapping.h">
+      <Filter>Include\XCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M68K\M68KDisassembler.h">
+      <Filter>Include\M68K</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xDisassembler.h">
+      <Filter>Include\TMS320C64x</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xInstPrinter.h">
+      <Filter>Include\TMS320C64x</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xMapping.h">
+      <Filter>Include\TMS320C64x</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M680X\M680XInstPrinter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M680X\M680XDisassembler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\M680X\M680XDisassemblerInternals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMDisassembler.h">
+      <Filter>Include\EVM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMInstPrinter.h">
+      <Filter>Include\EVM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMMapping.h">
+      <Filter>Include\EVM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMDisassembler.h">
+      <Filter>Include\WASM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMInstPrinter.h">
+      <Filter>Include\WASM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\WASM\WASMMapping.h">
+      <Filter>Include\WASM</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFConstants.h">
+      <Filter>Include\BPF</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFDisassembler.h">
+      <Filter>Include\BPF</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFInstPrinter.h">
+      <Filter>Include\BPF</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFMapping.h">
+      <Filter>Include\BPF</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\BPF\BPFModule.h">
+      <Filter>Include\BPF</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVBaseInfo.h">
+      <Filter>Include\RISCV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVDisassembler.h">
+      <Filter>Include\RISCV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVInstPrinter.h">
+      <Filter>Include\RISCV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVMapping.h">
+      <Filter>Include\RISCV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVModule.h">
+      <Filter>Include\RISCV</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHDisassembler.h">
+      <Filter>Include\SH</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHInstPrinter.h">
+      <Filter>Include\SH</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHModule.h">
+      <Filter>Include\SH</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreDisassembler.h">
+      <Filter>Include\TriCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreLinkage.h">
+      <Filter>Include\TriCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreMapping.h">
+      <Filter>Include\TriCore</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreModule.h">
+      <Filter>Include\TriCore</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenAsmWriter.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenDisassemblerTables.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenInstrInfo.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenRegisterInfo.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenSubtargetInfo.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMMappingInsn.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMMappingInsnOp.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenRegisterName.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenRegisterName_digit.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMGenSystemRegister.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\ARM\ARMMappingInsnName.inc">
+      <Filter>Include\ARM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenAsmWriter.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenDisassemblerTables.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenInstrInfo.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenRegisterInfo.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenRegisterName.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenRegisterV.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenSubtargetInfo.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenSystemOperands.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64GenSystemOperands_enum.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64MappingInsn.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64MappingInsnName.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\AArch64\AArch64MappingInsnOp.inc">
+      <Filter>Include\ARM64</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsGenAsmWriter.inc">
+      <Filter>Include\Mips</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsGenDisassemblerTables.inc">
+      <Filter>Include\Mips</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsGenInstrInfo.inc">
+      <Filter>Include\Mips</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsGenRegisterInfo.inc">
+      <Filter>Include\Mips</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Mips\MipsGenSubtargetInfo.inc">
+      <Filter>Include\Mips</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCGenAsmWriter.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCGenRegisterName.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCGenDisassemblerTables.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCMappingInsn.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCMappingInsnName.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCGenSubtargetInfo.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCGenRegisterInfo.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\PowerPC\PPCGenInstrInfo.inc">
+      <Filter>Include\PowerPC</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenAsmWriter.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenAsmWriter1.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenAsmWriter1_reduce.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenAsmWriter_reduce.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenDisassemblerTables.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenDisassemblerTables_reduce.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenInstrInfo.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenInstrInfo_reduce.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\X86\X86GenRegisterInfo.inc">
+      <Filter>Include\X86</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcGenAsmWriter.inc">
+      <Filter>Include\Sparc</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcGenDisassemblerTables.inc">
+      <Filter>Include\Sparc</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcGenInstrInfo.inc">
+      <Filter>Include\Sparc</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcGenRegisterInfo.inc">
+      <Filter>Include\Sparc</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcGenSubtargetInfo.inc">
+      <Filter>Include\Sparc</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\Sparc\SparcMappingInsn.inc">
+      <Filter>Include\Sparc</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZGenAsmWriter.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZGenDisassemblerTables.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZGenInsnNameMaps.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZGenInstrInfo.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZGenRegisterInfo.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZGenSubtargetInfo.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SystemZ\SystemZMappingInsn.inc">
+      <Filter>Include\SystemZ</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreGenAsmWriter.inc">
+      <Filter>Include\XCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreGenDisassemblerTables.inc">
+      <Filter>Include\XCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreGenInstrInfo.inc">
+      <Filter>Include\XCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreGenRegisterInfo.inc">
+      <Filter>Include\XCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\XCore\XCoreMappingInsn.inc">
+      <Filter>Include\XCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xGenAsmWriter.inc">
+      <Filter>Include\TMS320C64x</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xGenDisassemblerTables.inc">
+      <Filter>Include\TMS320C64x</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xGenInstrInfo.inc">
+      <Filter>Include\TMS320C64x</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TMS320C64x\TMS320C64xGenRegisterInfo.inc">
+      <Filter>Include\TMS320C64x</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\EVM\EVMMappingInsn.inc">
+      <Filter>Include\EVM</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVGenAsmWriter.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVGenDisassemblerTables.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVGenInsnNameMaps.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVGenInstrInfo.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVGenRegisterInfo.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVGenSubtargetInfo.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\RISCV\RISCVMappingInsn.inc">
+      <Filter>Include\RISCV</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\SH\SHInsnTable.inc">
+      <Filter>Include\SH</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreGenAsmWriter.inc">
+      <Filter>Include\TriCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreGenDisassemblerTables.inc">
+      <Filter>Include\TriCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreGenInstrInfo.inc">
+      <Filter>Include\TriCore</Filter>
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-src\arch\TriCore\TriCoreGenRegisterInfo.inc">
+      <Filter>Include\TriCore</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{03CAB0B1-973E-3D25-A5FC-FA4985ABEF8A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include">
+      <UniqueIdentifier>{542E13D4-2D9D-3086-A11E-AAAB2AD1A502}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\ARM">
+      <UniqueIdentifier>{542CC03A-05C6-39B8-BD86-A3EC6956C804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\ARM64">
+      <UniqueIdentifier>{94066AE0-C590-3839-BE6F-FCCEBF827072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\BPF">
+      <UniqueIdentifier>{BBFC6334-2A9D-3C06-8A33-D3F93EB900F4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Common">
+      <UniqueIdentifier>{406AA8B0-EE70-3780-977E-C57D39F12773}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\EVM">
+      <UniqueIdentifier>{03A2B462-9F7F-3040-95A6-3529BBDF82B0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Engine">
+      <UniqueIdentifier>{2F2ECD77-372B-3682-888D-3A3EC164AE46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\M68K">
+      <UniqueIdentifier>{2AFC40C1-7CE1-3093-9E8E-F1C444642F13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Mips">
+      <UniqueIdentifier>{12CB82CA-DFCA-3D35-9009-BC93B70C3CEE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\PowerPC">
+      <UniqueIdentifier>{E0332BAD-8C85-3012-85FF-FC06E2506C6D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\RISCV">
+      <UniqueIdentifier>{FEF01E08-860B-38F6-AE30-FBC7FD3B2204}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\SH">
+      <UniqueIdentifier>{680A3AF0-2D0F-3ABC-A141-0896F9EF068D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Sparc">
+      <UniqueIdentifier>{8F549E37-3B0F-3B1B-B394-2E93B8A66844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\SystemZ">
+      <UniqueIdentifier>{7F7951FE-68EF-3C36-AB0C-6D2D4873C56D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\TMS320C64x">
+      <UniqueIdentifier>{60A7240F-BF7A-3FB4-A418-F4B71452E6B4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\TriCore">
+      <UniqueIdentifier>{8086ADD3-B8B1-3AA6-B984-E64DE3A8AF1B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\WASM">
+      <UniqueIdentifier>{8F02BF22-7280-31D7-B2B7-B9F8AA1E9B19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\X86">
+      <UniqueIdentifier>{11F8D0A3-96AD-3669-8E6B-66F46156C5A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\XCore">
+      <UniqueIdentifier>{59120121-0BE6-3F3E-A53E-B5590E110535}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{B3CED534-9592-3A26-8DC5-C5EF1C2A6EC6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ARM">
+      <UniqueIdentifier>{1326EAC9-C391-30A7-967A-8E0970831E92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\ARM64">
+      <UniqueIdentifier>{2BAE1FE7-F1C3-3FA2-BC6B-C2A533C5E343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\BPF">
+      <UniqueIdentifier>{11B08D07-B6CF-3A05-A85B-10629EFD3911}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\EVM">
+      <UniqueIdentifier>{ADD14B7D-4E17-3B3E-9DFE-11513ABFECA7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine">
+      <UniqueIdentifier>{67FDC1D8-AABB-35EC-B1A3-C20359B8239C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\M680X">
+      <UniqueIdentifier>{79B8B8E5-5870-330B-981E-A710D24E6D7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\M68K">
+      <UniqueIdentifier>{559C2ECC-A5E9-3F36-9105-5C5CDD6C9307}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MOS65XX">
+      <UniqueIdentifier>{2A8D4F01-DB5D-3505-B93B-F5A4D454F838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Mips">
+      <UniqueIdentifier>{6E735AA7-2662-37F6-A9D7-11A122CA5FC0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\PowerPC">
+      <UniqueIdentifier>{F03482F2-511C-3321-9175-222D6FFD711E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\RISCV">
+      <UniqueIdentifier>{CE653771-1C07-3476-83FD-251C63399CD2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\SH">
+      <UniqueIdentifier>{EA0B4E0B-5F98-303A-923C-F3790F01B5E2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Sparc">
+      <UniqueIdentifier>{ECDAD92C-7526-34DC-BD96-01C0394A054D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\SystemZ">
+      <UniqueIdentifier>{D4962F91-0E53-36F4-9223-6969913CCA44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TMS320C64x">
+      <UniqueIdentifier>{268ADF64-F303-3C3F-B038-EE0D24C2E659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\TriCore">
+      <UniqueIdentifier>{842B6693-8B87-39D7-A669-497348A5AEFB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\WASM">
+      <UniqueIdentifier>{FC465077-2FC9-3736-A8D7-17A2678220FD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\X86">
+      <UniqueIdentifier>{5E79102C-754E-362E-86FB-B709C536CD14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\XCore">
+      <UniqueIdentifier>{AFBADDA7-7773-369B-BA21-ED75CDEBDEE5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
