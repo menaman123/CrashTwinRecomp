@@ -22,14 +22,14 @@ function(check_file_hash has_hash hash_is_good)
   set("${has_hash}" TRUE PARENT_SCOPE)
 
   message(VERBOSE "verifying file...
-       file='C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'")
+       file='C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'")
 
-  file("" "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip" actual_value)
+  file("" "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
     message(VERBOSE " hash of
-    C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
+    C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip
   does not match expected value
     expected: ''
       actual: '${actual_value}'")
@@ -71,32 +71,32 @@ function(sleep_before_download attempt)
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
 
-if(EXISTS "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
+if(EXISTS "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
       message(VERBOSE "File already exists and hash match (skip download):
-  file='C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'
+  file='C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'
   =''"
       )
       return()
     else()
       message(VERBOSE "File already exists but hash mismatch. Removing...")
-      file(REMOVE "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
+      file(REMOVE "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
     endif()
   else()
     message(VERBOSE "File already exists but no hash specified (use URL_HASH):
-  file='C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'
+  file='C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'
 Old file will be removed and new file downloaded from URL."
     )
-    file(REMOVE "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
+    file(REMOVE "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
   endif()
 endif()
 
 set(retry_number 5)
 
 message(VERBOSE "Downloading...
-   dst='C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'
+   dst='C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip'
    timeout='none'
    inactivity timeout='none'"
 )
@@ -119,7 +119,7 @@ foreach(i RANGE ${retry_number})
 
       file(
         DOWNLOAD
-        "${url}" "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip"
+        "${url}" "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip"
         SHOW_PROGRESS
         # no TIMEOUT
         # no INACTIVITY_TIMEOUT
@@ -136,7 +136,7 @@ foreach(i RANGE ${retry_number})
         check_file_hash(has_hash hash_is_good)
         if(has_hash AND NOT hash_is_good)
           message(VERBOSE "Hash mismatch, removing...")
-          file(REMOVE "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
+          file(REMOVE "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-subbuild/googletest-populate-prefix/src/03597a01ee50ed33e9dfd640b249b4be3799d395.zip")
         else()
           message(VERBOSE "Downloading... done")
           return()

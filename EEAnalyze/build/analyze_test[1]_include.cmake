@@ -1,5 +1,5 @@
-if(EXISTS "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/analyze_test[1]_tests.cmake")
-  include("C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/analyze_test[1]_tests.cmake")
+if(EXISTS "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/analyze_test[1]_tests.cmake")
+  include("C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/analyze_test[1]_tests.cmake")
 else()
   add_test(analyze_test_NOT_BUILT analyze_test_NOT_BUILT)
 endif()

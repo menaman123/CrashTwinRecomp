@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{110E2FF8-75CE-336E-8789-044AAC0E1F44}</ProjectGuid>
+    <ProjectGuid>{AFB88D2B-C83C-355A-AA51-25CAE6FD771E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -108,11 +108,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -120,12 +120,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -133,12 +133,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -146,12 +146,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-src/googletest/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/googletest-build/googletest/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -159,26 +159,26 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\BasicConfigVersion-AnyNewerVersion.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakePackageConfigHelpers.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindPython\Support.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Internal\CheckSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\WriteBasicConfigVersionFile.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\Config.cmake.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\gtest_main.pc.in;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\cmake\internal_utils.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\ZERO_CHECK.vcxproj">
-      <Project>{5AB8AC5D-1D30-3B61-B5F1-E3D6E638CE0B}</Project>
+    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\ZERO_CHECK.vcxproj">
+      <Project>{5C941CA7-5EE0-3B9E-B501-42679D69C2F4}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\gtest.vcxproj">
-      <Project>{4FC5FA8A-8E95-3758-8BAC-E7B1B7DF254C}</Project>
+    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\gtest.vcxproj">
+      <Project>{4423D4E3-21DD-3F33-AD56-EF71864213D1}</Project>
       <Name>gtest</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\gtest_main.vcxproj">
-      <Project>{89CE931E-A6F2-38E6-A5A1-717B082C8F83}</Project>
+    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-build\googletest\gtest_main.vcxproj">
+      <Project>{2BAE6F51-47D5-323E-B722-212DF871644C}</Project>
       <Name>gtest_main</Name>
     </ProjectReference>
   </ItemGroup>

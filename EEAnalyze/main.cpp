@@ -1,4 +1,5 @@
 #include <capstone/capstone.h>
+#include <rabbitizer.h>
 #include <elfio/elfio.hpp>
 #include <iostream>
 #include <vector>
@@ -6,35 +7,30 @@
 #include <iomanip>
 
 // This function takes a blob of bytes and prints the disassembled MIPS instructions.
-static void disassemble_and_print(const uint8_t* code, size_t size, uint64_t base_address, csh handle) {
-    cs_insn* insn = cs_malloc(handle);
-    if (!insn) {
-        std::cerr << "[-] ERROR: Capstone failed to allocate instruction memory.\\n";
-        return;
-    }
+static void disassemble_and_print(const uint8_t* code, size_t size, uint64_t base_address) {
+    RabbitizerInstruction insn;
+    char buffer[256];
 
     // Manually loop through the entire section, 4 bytes at a time.
     for (size_t offset = 0; offset < size; offset += 4) {
-        const uint8_t* current_code_ptr = code + offset;
-        size_t remaining_size = 4; // We only want to process one instruction at a time.
+        // Rabbitizer expects instructions in big-endian, so we need to byte-swap.
+        uint32_t raw_data = __builtin_bswap32(*(reinterpret_cast<const uint32_t*>(code + offset)));
         uint64_t current_address = base_address + offset;
 
-        // Try to disassemble just this single 4-byte instruction
-        if (cs_disasm_iter(handle, &current_code_ptr, &remaining_size, &current_address, insn)) {
-            // Success
-            std::cout << "0x" << std::hex << insn->address
-                      << ":\\t" << std::setw(8) << std::left << insn->mnemonic
-                      << insn->op_str << std::dec << std::endl;
+        RabbitizerInstruction_disassemble(&insn, raw_data, current_address);
+
+        // Check if the instruction is valid
+        if (RabbitizerInstruction_isImplemented(&insn)) {
+            RabbitizerInstruction_toString(&insn, buffer);
+            std::cout << "0x" << std::hex << current_address
+                      << ":\t" << buffer << std::dec << std::endl;
         } else {
             // Failure - print the raw data so we can see what it is
-            uint32_t raw_data = *(reinterpret_cast<const uint32_t*>(code + offset));
-            std::cout << "0x" << std::hex << (base_address + offset)
-                      << ":\\t.word   0x" << std::setw(8) << std::setfill('0') << raw_data
+            std::cout << "0x" << std::hex << current_address
+                      << ":\t.word   0x" << std::setw(8) << std::setfill('0') << raw_data
                       << std::dec << std::setfill(' ') << "  // <invalid instruction>" << std::endl;
         }
     }
-
-    cs_free(insn, 1); // Free the single instruction structure.
 }
 
 
@@ -53,9 +49,9 @@ int main(int argc, char** argv) {
         return 1;
     }
 
-    // Initialize the Capstone disassembler for MIPS (32-bit, little-endian).
+    // Initialize the Capstone disassembler for MIPS (64-bit, little-endian).
     csh handle;
-    if (cs_open(CS_ARCH_MIPS, (cs_mode)(CS_MODE_MIPS64 | CS_MODE_LITTLE_ENDIAN), &handle) != CS_ERR_OK) {
+    if (cs_open(CS_ARCH_MIPS, (cs_mode)(CS_MODE_MIPS64 + CS_MODE_LITTLE_ENDIAN), &handle) != CS_ERR_OK) {
         std::cerr << "[-] Failed to initialize Capstone\n";
         return 1;
     }
@@ -67,7 +63,11 @@ int main(int argc, char** argv) {
 
     // Iterate through all sections in the ELF file.
     for (ELFIO::Elf_Half i = 0; i < reader.sections.size(); ++i) {
+        
         const ELFIO::section* sec = reader.sections[i];
+        if (sec->get_name().compare(".text") != 0){
+            continue;
+        }
 
         // Check if the section contains executable instructions.
 
@@ -81,7 +81,7 @@ int main(int argc, char** argv) {
                   << "' at 0x" << std::hex << addr
                   << " (Size: " << std::dec << size << " bytes)\n";
         
-        disassemble_and_print(code, static_cast<size_t>(size), static_cast<uint64_t>(addr), handle);
+        disassemble_and_print(code, static_cast<size_t>(size), static_cast<uint64_t>(addr));
         found_code = true;
     }
 

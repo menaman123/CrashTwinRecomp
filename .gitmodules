@@ -1,3 +1,9 @@
 [submodule "include/ELFIO"]
 	path = include/ELFIO
 	url = https://github.com/serge1/ELFIO.git
+[submodule "include/rabbitizer"]
+	path = MINE_Ps2Recomp/include/rabbitizer
+	url = https://github.com/Decompollaborate/rabbitizer.git
+[submodule "include/rabbitizer"]
+	path = include/rabbitizer
+	url = https://github.com/Decompollaborate/rabbitizer.git

@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-src
+# Install script for directory: C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/capstone-src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

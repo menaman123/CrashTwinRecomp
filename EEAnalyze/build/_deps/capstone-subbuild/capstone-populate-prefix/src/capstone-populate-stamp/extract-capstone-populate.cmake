@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 
 # Make file names absolute:
 #
-get_filename_component(filename "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/capstone-populate-prefix/src/5.0.1.zip" ABSOLUTE)
-get_filename_component(directory "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-src" ABSOLUTE)
+get_filename_component(filename "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/capstone-subbuild/capstone-populate-prefix/src/5.0.1.zip" ABSOLUTE)
+get_filename_component(directory "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/capstone-src" ABSOLUTE)
 
 message(VERBOSE "extracting...
      src='${filename}'

@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\CMakeFiles\cd99f2b7ad01390d1697fb6a5dd18e1f\INSTALL_force.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\2718cfae6f162ccc2dffd0ebd7808be8\INSTALL_force.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{53C336A7-816D-3F49-9CA7-DB7D05B04D56}</UniqueIdentifier>
+      <UniqueIdentifier>{BD5979D8-898F-388B-91C9-2E7B4454AD35}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

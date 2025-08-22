@@ -20,8 +20,8 @@ project(capstone-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(capstone-populate
                      "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "TRUE" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "URL" "https://github.com/capstone-engine/capstone/archive/5.0.1.zip"
-                    SOURCE_DIR          "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-src"
-                    BINARY_DIR          "C:/Users/Owner/Desktop/PS2_Recomp/MINE_Ps2Recomp/EEAnalyze/build/_deps/capstone-build"
+                    SOURCE_DIR          "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/capstone-src"
+                    BINARY_DIR          "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/_deps/capstone-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

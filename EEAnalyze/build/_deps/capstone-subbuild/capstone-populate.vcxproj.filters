@@ -1,44 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-mkdir.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-mkdir.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-download.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-download.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-update.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-update.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-patch.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-patch.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-configure.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-configure.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-build.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-build.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-install.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-install.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b349070e19467f2d5f49db5b9058d5cc\capstone-populate-test.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\f2c55286c0ae650654eeb0c986828cf8\capstone-populate-test.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\b98814ad0eb906a4cdfbff027d1573b1\capstone-populate-complete.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\16595366b5a98e58756b04b27a7801df\capstone-populate-complete.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\e42d1db08e38f149998780dcdbd524e7\capstone-populate.rule">
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\dbd08447624b835833f4848422916d4d\capstone-populate.rule">
       <Filter>CMake Rules</Filter>
     </CustomBuild>
-    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeLists.txt" />
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\MINE_Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\capstone-populate" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-subbuild\CMakeFiles\capstone-populate" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="CMake Rules">
-      <UniqueIdentifier>{FAF7DBC0-764E-377B-93C8-9810AEF54C1B}</UniqueIdentifier>
+      <UniqueIdentifier>{7AEE20F7-45E8-3D08-AB57-49325610EED1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

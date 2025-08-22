@@ -1,0 +1,953 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{6CBCC7EF-2513-301F-ADFD-E45B7CDDB327}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.26100.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>rabbitizer</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">rabbitizer.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">rabbitizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">rabbitizer.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">rabbitizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">rabbitizer.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">rabbitizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">rabbitizer.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">rabbitizer</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\GoogleTest.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\GoogleTest.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\GoogleTest.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze -BC:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build --check-stamp-file C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Compiler\MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\ExternalProject\shared_internal_commands.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\FetchContent\CMakeLists.cmake.in;C:\Program Files\CMake\share\cmake-3.30\Modules\GoogleTest.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-Initialize.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.30\Modules\Platform\WindowsPaths.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeCXXCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeRCCompiler.cmake;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\3.30.0\CMakeSystem.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.clang-format">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.clang-tidy">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.git">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.gitattributes">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\ISSUE_TEMPLATE\config.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\ISSUE_TEMPLATE\feature_suggestion.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\ISSUE_TEMPLATE\frug_report.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\check_format.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\check_tables.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\isolated_python_build.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\make.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\md_lint.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\publish_crate.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.github\workflows\pypi_upload.yml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.gitignore">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.markdownlint.jsonc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\.vscode\extensions.json">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\CHANGELOG.md">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\Cargo.lock">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\Cargo.toml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\LICENSE">
+    </None>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\MANIFEST.in" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\Makefile">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\README.md">
+    </None>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\analysis\JrRegData.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\analysis\LoPairingInfo.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\analysis\RegistersTracker.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\common\Utils.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\generated\AccessType_enum_class.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\generated\InstrIdType_enum_class.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\generated\OperandType_enum_class.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\generated\Registers_enum_classes.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\generated\UniqueId_enum_class.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\AccessType.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstrId.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstrIdType.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstructionBase.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstructionCpu.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstructionR3000GTE.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstructionR4000Allegrex.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstructionR5900.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\InstructionRsp.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\OperandType.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\instructions\Registers.hpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include\rabbitizer.hpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\analysis\JrRegData.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\analysis\LoPairingInfo.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\analysis\RegistersTracker.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstrId.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstrIdType.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstructionBase.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstructionCpu.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstructionR3000GTE.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstructionR4000Allegrex.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstructionR5900.cpp" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\src\instructions\InstructionRsp.cpp" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\docs\r3000gte\gte_macros.h" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\docs\r3000gte\gte_macros.s">
+    </None>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\docs\r3000gte\gte_macros_volatile.h" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\docs\usage_c_api.md">
+    </None>
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\analysis\RabbitizerJrRegData.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\analysis\RabbitizerLoPairingInfo.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\analysis\RabbitizerRegistersTracker.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\analysis\RabbitizerTrackedRegisterState.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\common\RabbitizerConfig.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\common\RabbitizerVersion.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\common\Utils.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\Abi_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\AccessType_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrCategory_Names_array.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrCategory_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrDescriptor_Descriptors_array.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrIdType_Names_array.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrIdType_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrId_Names_array.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrId_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\InstrSuffix_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\OperandType_enum.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\OperandType_function_declarations.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\RegisterDescriptor_Descriptors_arrays.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\Registers_Names_arrays.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\Registers_enums.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\generated\instrOpercandCallbacks_array.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerAccessType.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstrCategory.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstrDescriptor.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstrId.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstrIdType.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstrSuffix.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstruction.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstructionR3000GTE.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstructionR4000Allegrex.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstructionR5900.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerInstructionRsp.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerOperandType.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerRegister.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\instructions\RabbitizerRegisterDescriptor.h" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include\rabbitizer.h" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\pyproject.toml">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\Abi.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\AccessType.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\Config.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\Enum.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\InstrCategory.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\InstrId.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\InstrIdType.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\JrRegData.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\LoPairingInfo.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\OperandType.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\RegCop1N32.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\RegCop1N64.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\RegCop1O32.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\RegGprN32.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\RegGprO32.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\RegistersTracker.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\TrackedRegisterState.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\TrinaryValue.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\Utils.pyi">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\__init__.pyi">
+    </None>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\enums_utils.c" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\enums_utils.h" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_Abi.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_AccessType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_InstrCategory.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_InstrId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_InstrIdType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_OperandType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_enum_TrinaryValue.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\rabbitizer_type_Enum.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\registers\rabbitizer_enum_Cop1N32.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\registers\rabbitizer_enum_Cop1N64.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\registers\rabbitizer_enum_Cop1O32.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\registers\rabbitizer_enum_GprN32.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\enums\registers\rabbitizer_enum_GprO32.c" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\py.typed">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer.pyi">
+    </None>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_global_config.c" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_macro_utilities.h" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_module.c" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_module.h" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_submodule_Utils.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_type_Instruction.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_type_JrRegData.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_type_LoPairingInfo.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_type_RegistersTracker.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rabbitizer\rabbitizer_type_TrackedRegisterState.c" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\build.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\abi_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\access_type_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\config.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\instr_category_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\instr_descriptor.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\instr_id_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\instr_id_type_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\instr_suffix_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\instruction.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\lib.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\operand_type_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\opereand_type.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\register_descriptor.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\registers_enum.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\registers_methods.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\rust\src\utils.rs">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\setup.py">
+    </None>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\analysis\RabbitizerJrRegData.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\analysis\RabbitizerLoPairingInfo.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\analysis\RabbitizerRegistersTracker.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\analysis\RabbitizerTrackedRegisterState.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\common\RabbitizerConfig.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\common\RabbitizerVersion.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\common\Utils.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstrCategory.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstrDescriptor.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstrId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstrIdType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstrSuffix.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstruction\RabbitizerInstruction.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstruction\RabbitizerInstruction_Disassemble.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstruction\RabbitizerInstruction_Examination.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstruction\RabbitizerInstruction_Operand.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstruction\RabbitizerInstruction_ProcessUniqueId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionCpu\RabbitizerInstructionCpu_OperandType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR3000GTE\RabbitizerInstructionR3000GTE.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR3000GTE\RabbitizerInstructionR3000GTE_OperandType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR3000GTE\RabbitizerInstructionR3000GTE_ProcessUniqueId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR4000Allegrex\RabbitizerInstructionR4000Allegrex.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR4000Allegrex\RabbitizerInstructionR4000Allegrex_OperandType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR4000Allegrex\RabbitizerInstructionR4000Allegrex_ProcessUniqueId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR5900\RabbitizerInstructionR5900.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR5900\RabbitizerInstructionR5900_OperandType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionR5900\RabbitizerInstructionR5900_ProcessUniqueId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionRsp\RabbitizerInstructionRsp.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionRsp\RabbitizerInstructionRsp_OperandType.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerInstructionRsp\RabbitizerInstructionRsp_ProcessUniqueId.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerRegister.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\src\instructions\RabbitizerRegisterDescriptor.c" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\Makefile">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\Abi.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\AccessType.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\InstrCategory.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\InstrIdType.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\InstrIds.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\InstrSuffix.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\OperandTypes.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\RabbitizerInstrId_cpu.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\RabbitizerInstrId_r3000gte.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\RabbitizerInstrId_r4000allegrex.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\RabbitizerInstrId_r5900.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\RabbitizerInstrId_rsp.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop0_bc0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop0_tlb.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop1_bc1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop1_fpu_d.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop1_fpu_l.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop1_fpu_s.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop1_fpu_w.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_cop2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_normal.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_regimm.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\cpu\cpu_special.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r3000gte\r3000gte_cop2_gte.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop0_bc0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop0_tlb.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop1_bc1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop1_fpu_s.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop1_fpu_w.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop2_bc2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop2_mfhc2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop2_mfhc2_p.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop2_mfhc2_p_s.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_cop2_mthc2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_normal.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_quadlr.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_regimm.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_special.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_special2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_special3.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_special3_bshfl.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_special_rs.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_special_sa.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu3.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_color.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_control.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_cst.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_cvtflt.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_cvtint.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_fmt0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_fmt2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_fmt3.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_fmt8.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_fmt9.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt0_rnd.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu4_fmt2_cndmove.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu5.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu6.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu6_fmt7.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu6_fmt7_fmt0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r4000allegrex\r4000allegrex_vfpu7.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop0_tlb.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop1_fpu_s.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop2_bc2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop2_i.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop2_ni.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop2_special1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop2_special2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_cop2_viwr.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi_0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi_1.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi_2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi_3.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi_pmfhl.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_mmi_pmthl.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_normal.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_regimm.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\r5900\r5900_special.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_cop0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_cop2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_cop2_vu.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_normal.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_normal_lwc2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_normal_swc2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_regimm.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id\rsp\rsp_special.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id_types\InstrIdType_cpu.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id_types\InstrIdType_r3000gte.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id_types\InstrIdType_r4000allegrex.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id_types\InstrIdType_r5900.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\instr_id_types\InstrIdType_rsp.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\operands\RabbitizerOperandType_cpu.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\operands\RabbitizerOperandType_r3000gte.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\operands\RabbitizerOperandType_r4000allegrex.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\operands\RabbitizerOperandType_r5900.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\operands\RabbitizerOperandType_rsp.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_Cop0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_Cop1Control.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_Cop1N32.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_Cop1N64.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_Cop1O32.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_Cop2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_GprN32.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_GprO32.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexM2x2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexM3x3.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexM4x4.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexS.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexV2D.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexV3D.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexV4D.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexVConstant.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R4000AllegrexVfpuControl.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R5900VF.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_R5900VI.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_RspCop0.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_RspCop2.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_RspCop2Control.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_RspGpr.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tables\registers\RabbitizerRegister_RspVector.inc">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\Abi_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\AccessType_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrCategory_Names_array.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrCategory_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrDescriptor_Descriptors_array.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrIdType_Names_array.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrIdType_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrId_Names_array.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrId_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\InstrSuffix_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\OperandType_enum.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\OperandType_function_declarations.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\RegisterDescriptor_Descriptors_arrays.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\Registers_Names_arrays.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\Registers_enums.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\c\instrOpercandCallbacks_array.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\cplusplus\AccessType_enum_class.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\cplusplus\InstrIdType_enum_class.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\cplusplus\OperandType_enum_class.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\cplusplus\Registers_enum_classes.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\cplusplus\UniqueId_enum_class.table.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\Abi.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\AccessType.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\InstrCategory.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\InstrId.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\InstrIdType.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\OperandType.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\RegCop1N32.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\RegCop1N64.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\RegCop1O32.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\RegGprN32.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\python\RegGprO32.tablepyi.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\abi_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\access_type_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\instr_category_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\instr_id_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\instr_id_type_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\instr_suffix_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\operand_type_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\templates\rust\registers_enum.tablers.template">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tools\c_table_gen.sh">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tools\pyi_table_gen.sh">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables\tools\rs_table_gen.sh">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r3000gte\gte_instrs.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r3000gte\inline_gte_commands.inc.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\Makefile">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\README.txt">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\allegrex_instrs.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\allegrex_instrs_pspsnc.dump.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\allegrex_vfpu.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\allegrex_vfpu_expecteds.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\allegrex_vfpu_expecteds_pspsnc.dump.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\allegrex_vfpu_pspsnc.dump.s">
+    </None>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r4000allegrex\sceVfpuMatrix3Transform.c" />
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r5900\Makefile">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r5900\trunc_w_c.s">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\asm\r5900\vcallms.s">
+    </None>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\build_info_checks\version_number.c" />
+    <ClInclude Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\expected_disasm_utils.h" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\jalr.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\plain_disassembly.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\r3000gte_disasm.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\r4000allegrex_disasm.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\r4000allegrex_vfpu_disasm.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\r5900_disasm.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\instruction_checks\r5900_trunc_cvt.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\logic_checks\descriptor_logic_check.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\r3000gte.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\r4000allegrex.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\r5900test.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\registersTrackerTest.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\rsptest.c" />
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\c\test.c">
+      <ObjectFileName>$(IntDir)/C_/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/include/rabbitizer/tests/c/test.c.obj</ObjectFileName>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\cplusplus\test.cpp">
+      <ObjectFileName>$(IntDir)/C_/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/include/rabbitizer/tests/cplusplus/test.cpp.obj</ObjectFileName>
+    </ClCompile>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\run_build_info_checks.sh">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\run_instruction_checks.sh">
+    </None>
+    <None Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tests\run_logic_checks.sh">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\ZERO_CHECK.vcxproj">
+      <Project>{5C941CA7-5EE0-3B9E-B501-42679D69C2F4}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
