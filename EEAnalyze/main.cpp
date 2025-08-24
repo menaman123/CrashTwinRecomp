@@ -1,5 +1,6 @@
 #include <capstone/capstone.h>
 #include <rabbitizer.h>
+#include "instructions/RabbitizerInstructionR5900.h"
 #include <elfio/elfio.hpp>
 #include <iostream>
 #include <vector>
@@ -13,23 +14,38 @@ static void disassemble_and_print(const uint8_t* code, size_t size, uint64_t bas
 
     // Manually loop through the entire section, 4 bytes at a time.
     for (size_t offset = 0; offset < size; offset += 4) {
-        // Rabbitizer expects instructions in big-endian, so we need to byte-swap.
-        uint32_t raw_data = __builtin_bswap32(*(reinterpret_cast<const uint32_t*>(code + offset)));
+        // For the R5900 (PS2), Rabbitizer expects little-endian instruction words.
+        uint32_t raw_data = *(reinterpret_cast<const uint32_t*>(code + offset));
         uint64_t current_address = base_address + offset;
 
-        RabbitizerInstruction_disassemble(&insn, raw_data, current_address);
+        // Initialize the instruction struct with the raw data and address
+        RabbitizerInstructionR5900_init(&insn, raw_data, current_address);
+        // Decode the instruction to determine its type and properties
+        RabbitizerInstructionR5900_processUniqueId(&insn);
 
         // Check if the instruction is valid
-        if (RabbitizerInstruction_isImplemented(&insn)) {
-            RabbitizerInstruction_toString(&insn, buffer);
+        if (RabbitizerInstruction_isValid(&insn)) {
+            // Disassemble the instruction into the buffer
+            RabbitizerInstruction_disassemble(&insn, buffer, NULL, 0, 0);
             std::cout << "0x" << std::hex << current_address
                       << ":\t" << buffer << std::dec << std::endl;
         } else {
-            // Failure - print the raw data so we can see what it is
+
+            // Failure - print the raw data and a detailed breakdown
             std::cout << "0x" << std::hex << current_address
                       << ":\t.word   0x" << std::setw(8) << std::setfill('0') << raw_data
-                      << std::dec << std::setfill(' ') << "  // <invalid instruction>" << std::endl;
+                      << "  // <invalid instruction> ID: " << std::dec << insn.uniqueId
+                      << " (" << RabbitizerInstrId_getOpcodeName(insn.uniqueId) << ")"
+                      << " | opcode: 0x" << std::hex <<RAB_INSTR_GET_opcode(&insn)
+                      << " | rs: " << std::dec <<RAB_INSTR_GET_rs(&insn)
+                      << " | rt: " << std::dec <<RAB_INSTR_GET_rt(&insn)
+                      << " | rd: " << std::dec <<RAB_INSTR_GET_rd(&insn)
+                      << " | sa: " << std::dec <<RAB_INSTR_GET_sa(&insn)
+                      << " | function: 0x" << std::hex <<RAB_INSTR_GET_function(&insn)
+                      << std::dec << std::endl;
         }
+        // Clean up the instruction struct
+        RabbitizerInstruction_destroy(&insn);
     }
 }
 

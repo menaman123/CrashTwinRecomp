@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -106,10 +106,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -117,7 +117,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>Debug\rabbitizer.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Debug\rabbitizer.lib;_deps\capstone-build\Debug\capstone.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -132,7 +132,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -153,10 +153,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -164,7 +164,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>Release\rabbitizer.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>Release\rabbitizer.lib;_deps\capstone-build\Release\capstone.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -179,7 +179,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -200,10 +200,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -211,7 +211,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>MinSizeRel\rabbitizer.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>MinSizeRel\rabbitizer.lib;_deps\capstone-build\MinSizeRel\capstone.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
@@ -226,7 +226,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -246,10 +246,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\ELFIO;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\cplusplus\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -257,7 +257,7 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>RelWithDebInfo\rabbitizer.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>RelWithDebInfo\rabbitizer.lib;_deps\capstone-build\RelWithDebInfo\capstone.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -336,6 +336,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\capstone-build\capstone.vcxproj">
+      <Project>{52B66D9C-C2DE-335F-A152-A9C4AE5CE538}</Project>
+      <Name>capstone</Name>
     </ProjectReference>
     <ProjectReference Include="C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\rabbitizer.vcxproj">
       <Project>{6CBCC7EF-2513-301F-ADFD-E45B7CDDB327}</Project>

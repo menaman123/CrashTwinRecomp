@@ -78,7 +78,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -105,10 +105,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -121,7 +121,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -149,10 +149,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -165,7 +165,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -193,10 +193,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -209,7 +209,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) -J -utf-8</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
@@ -236,10 +236,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_UNICODE;UNICODE;_WIN32;STRICT;WIN32_LEAN_AND_MEAN;GTEST_HAS_PTHREAD=0;_HAS_EXCEPTIONS=1;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

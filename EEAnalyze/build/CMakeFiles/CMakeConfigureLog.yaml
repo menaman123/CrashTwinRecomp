@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-      Build started 8/21/2025 7:39:16 PM.
+      Build started 8/24/2025 6:22:37 PM.
       
       Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\3.30.0\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -62,7 +62,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.82
+      Time Elapsed 00:00:00.78
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -81,8 +81,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-lqbh89"
-      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-lqbh89"
+      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-8n2y9p"
+      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-8n2y9p"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -92,49 +92,49 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-lqbh89'
+        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-8n2y9p'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_95d4a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_49ae3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-        Build started 8/21/2025 7:39:17 PM.
+        Build started 8/24/2025 6:22:38 PM.
         
-        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\cmTC_95d4a.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\cmTC_49ae3.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_95d4a.dir\\Debug\\".
+          Creating directory "cmTC_49ae3.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\Debug\\".
-          Creating directory "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\".
+          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\Debug\\".
+          Creating directory "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\unsuccessfulbuild".
+          Creating "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_95d4a.dir\\Debug\\\\" /Fd"cmTC_95d4a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_49ae3.dir\\Debug\\\\" /Fd"cmTC_49ae3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.40.33812 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_95d4a.dir\\Debug\\\\" /Fd"cmTC_95d4a.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_49ae3.dir\\Debug\\\\" /Fd"cmTC_49ae3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\Debug\\cmTC_95d4a.exe" /INCREMENTAL /ILK:"cmTC_95d4a.dir\\Debug\\cmTC_95d4a.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-lqbh89/Debug/cmTC_95d4a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-lqbh89/Debug/cmTC_95d4a.lib" /MACHINE:X64  /machine:x64 cmTC_95d4a.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_95d4a.vcxproj -> C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\Debug\\cmTC_95d4a.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\Debug\\cmTC_49ae3.exe" /INCREMENTAL /ILK:"cmTC_49ae3.dir\\Debug\\cmTC_49ae3.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-8n2y9p/Debug/cmTC_49ae3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-8n2y9p/Debug/cmTC_49ae3.lib" /MACHINE:X64  /machine:x64 cmTC_49ae3.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_49ae3.vcxproj -> C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\Debug\\cmTC_49ae3.exe
         AppLocalFromInstalled:
-          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\Debug\\cmTC_95d4a.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\cmTC_95d4a.write.1u.tlog" "cmTC_95d4a.dir\\Debug\\vcpkg.applocal.log"
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\Debug\\cmTC_49ae3.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\cmTC_49ae3.write.1u.tlog" "cmTC_49ae3.dir\\Debug\\vcpkg.applocal.log"
           'pwsh.exe' is not recognized as an internal or external command,
           operable program or batch file.
-          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\Debug\\cmTC_95d4a.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\cmTC_95d4a.write.1u.tlog" "cmTC_95d4a.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
-          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\Debug\\cmTC_95d4a.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\cmTC_95d4a.write.1u.tlog" "cmTC_95d4a.dir\\Debug\\vcpkg.applocal.log"
+          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\Debug\\cmTC_49ae3.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\cmTC_49ae3.write.1u.tlog" "cmTC_49ae3.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
+          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\Debug\\cmTC_49ae3.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\cmTC_49ae3.write.1u.tlog" "cmTC_49ae3.dir\\Debug\\vcpkg.applocal.log"
         FinalizeBuildStatus:
-          Deleting file "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\unsuccessfulbuild".
-          Touching "cmTC_95d4a.dir\\Debug\\cmTC_95d4a.tlog\\cmTC_95d4a.lastbuildstate".
-        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-lqbh89\\cmTC_95d4a.vcxproj" (default targets).
+          Deleting file "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\unsuccessfulbuild".
+          Touching "cmTC_49ae3.dir\\Debug\\cmTC_49ae3.tlog\\cmTC_49ae3.lastbuildstate".
+        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8n2y9p\\cmTC_49ae3.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.78
+        Time Elapsed 00:00:00.75
         
       exitCode: 0
   -
@@ -181,7 +181,7 @@ events:
       The output was:
       0
       MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-      Build started 8/21/2025 7:39:21 PM.
+      Build started 8/24/2025 6:22:43 PM.
       
       Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\3.30.0\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -219,7 +219,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.77
+      Time Elapsed 00:00:00.76
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -238,8 +238,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-co330w"
-      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-co330w"
+      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-3n4dax"
+      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-3n4dax"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_C_FLAGS_DEBUG: "/Zi /Ob0 /Od /RTC1"
@@ -248,49 +248,49 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-co330w'
+        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-3n4dax'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_fc3b3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_89224.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-        Build started 8/21/2025 7:39:22 PM.
+        Build started 8/24/2025 6:22:43 PM.
         
-        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\cmTC_fc3b3.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\cmTC_89224.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_fc3b3.dir\\Debug\\".
+          Creating directory "cmTC_89224.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\Debug\\".
-          Creating directory "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\".
+          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\Debug\\".
+          Creating directory "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\unsuccessfulbuild".
+          Creating "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fc3b3.dir\\Debug\\\\" /Fd"cmTC_fc3b3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_89224.dir\\Debug\\\\" /Fd"cmTC_89224.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.40.33812 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fc3b3.dir\\Debug\\\\" /Fd"cmTC_fc3b3.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
+          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_89224.dir\\Debug\\\\" /Fd"cmTC_89224.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.30\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\Debug\\cmTC_fc3b3.exe" /INCREMENTAL /ILK:"cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-co330w/Debug/cmTC_fc3b3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-co330w/Debug/cmTC_fc3b3.lib" /MACHINE:X64  /machine:x64 cmTC_fc3b3.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_fc3b3.vcxproj -> C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\Debug\\cmTC_fc3b3.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\Debug\\cmTC_89224.exe" /INCREMENTAL /ILK:"cmTC_89224.dir\\Debug\\cmTC_89224.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-3n4dax/Debug/cmTC_89224.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-3n4dax/Debug/cmTC_89224.lib" /MACHINE:X64  /machine:x64 cmTC_89224.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_89224.vcxproj -> C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\Debug\\cmTC_89224.exe
         AppLocalFromInstalled:
-          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\Debug\\cmTC_fc3b3.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\cmTC_fc3b3.write.1u.tlog" "cmTC_fc3b3.dir\\Debug\\vcpkg.applocal.log"
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\Debug\\cmTC_89224.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\cmTC_89224.write.1u.tlog" "cmTC_89224.dir\\Debug\\vcpkg.applocal.log"
           'pwsh.exe' is not recognized as an internal or external command,
           operable program or batch file.
-          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\Debug\\cmTC_fc3b3.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\cmTC_fc3b3.write.1u.tlog" "cmTC_fc3b3.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
-          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\Debug\\cmTC_fc3b3.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\cmTC_fc3b3.write.1u.tlog" "cmTC_fc3b3.dir\\Debug\\vcpkg.applocal.log"
+          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\Debug\\cmTC_89224.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\cmTC_89224.write.1u.tlog" "cmTC_89224.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
+          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "C:\\vcpkg\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\Debug\\cmTC_89224.exe" "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\cmTC_89224.write.1u.tlog" "cmTC_89224.dir\\Debug\\vcpkg.applocal.log"
         FinalizeBuildStatus:
-          Deleting file "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\unsuccessfulbuild".
-          Touching "cmTC_fc3b3.dir\\Debug\\cmTC_fc3b3.tlog\\cmTC_fc3b3.lastbuildstate".
-        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-co330w\\cmTC_fc3b3.vcxproj" (default targets).
+          Deleting file "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\unsuccessfulbuild".
+          Touching "cmTC_89224.dir\\Debug\\cmTC_89224.tlog\\cmTC_89224.lastbuildstate".
+        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-3n4dax\\cmTC_89224.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.76
+        Time Elapsed 00:00:00.74
         
       exitCode: 0
   -
@@ -333,8 +333,8 @@ events:
     checks:
       - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
     directories:
-      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-tbdi1e"
-      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-tbdi1e"
+      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-bgl2lh"
+      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-bgl2lh"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -342,43 +342,43 @@ events:
       variable: "CMAKE_HAVE_LIBC_PTHREAD"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-tbdi1e'
+        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-bgl2lh'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_2782f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6f049.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-        Build started 8/21/2025 7:39:25 PM.
+        Build started 8/24/2025 6:22:47 PM.
         
-        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\cmTC_2782f.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\cmTC_6f049.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_2782f.dir\\Debug\\".
+          Creating directory "cmTC_6f049.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\Debug\\".
-          Creating directory "cmTC_2782f.dir\\Debug\\cmTC_2782f.tlog\\".
+          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\Debug\\".
+          Creating directory "cmTC_6f049.dir\\Debug\\cmTC_6f049.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_2782f.dir\\Debug\\cmTC_2782f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_2782f.dir\\Debug\\cmTC_2782f.tlog\\unsuccessfulbuild".
+          Creating "cmTC_6f049.dir\\Debug\\cmTC_6f049.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6f049.dir\\Debug\\cmTC_6f049.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2782f.dir\\Debug\\\\" /Fd"cmTC_2782f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\src.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6f049.dir\\Debug\\\\" /Fd"cmTC_6f049.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\src.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.40.33812 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2782f.dir\\Debug\\\\" /Fd"cmTC_2782f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\src.c"
+          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6f049.dir\\Debug\\\\" /Fd"cmTC_6f049.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\src.c"
           src.c
-        C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\cmTC_2782f.vcxproj]
-        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\cmTC_2782f.vcxproj" (default targets) -- FAILED.
+        C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\cmTC_6f049.vcxproj]
+        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\cmTC_6f049.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\cmTC_2782f.vcxproj" (default target) (1) ->
+        "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\cmTC_6f049.vcxproj" (default target) (1) ->
         (ClCompile target) -> 
-          C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-tbdi1e\\cmTC_2782f.vcxproj]
+          C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\src.c(1,10): error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-bgl2lh\\cmTC_6f049.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.26
+        Time Elapsed 00:00:00.22
         
       exitCode: 1
   -
@@ -392,8 +392,8 @@ events:
     checks:
       - "Looking for pthread_create in pthreads"
     directories:
-      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-s142k1"
-      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-s142k1"
+      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-m99l2g"
+      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-m99l2g"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -401,45 +401,45 @@ events:
       variable: "CMAKE_HAVE_PTHREADS_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-s142k1'
+        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-m99l2g'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1cc02.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_44005.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-        Build started 8/21/2025 7:39:26 PM.
+        Build started 8/24/2025 6:22:47 PM.
         
-        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\cmTC_1cc02.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\cmTC_44005.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_1cc02.dir\\Debug\\".
+          Creating directory "cmTC_44005.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\Debug\\".
-          Creating directory "cmTC_1cc02.dir\\Debug\\cmTC_1cc02.tlog\\".
+          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\Debug\\".
+          Creating directory "cmTC_44005.dir\\Debug\\cmTC_44005.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_1cc02.dir\\Debug\\cmTC_1cc02.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_1cc02.dir\\Debug\\cmTC_1cc02.tlog\\unsuccessfulbuild".
+          Creating "cmTC_44005.dir\\Debug\\cmTC_44005.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_44005.dir\\Debug\\cmTC_44005.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1cc02.dir\\Debug\\\\" /Fd"cmTC_1cc02.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_44005.dir\\Debug\\\\" /Fd"cmTC_44005.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.40.33812 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1cc02.dir\\Debug\\\\" /Fd"cmTC_1cc02.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\CheckFunctionExists.c"
+          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_44005.dir\\Debug\\\\" /Fd"cmTC_44005.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\Debug\\cmTC_1cc02.exe" /INCREMENTAL /ILK:"cmTC_1cc02.dir\\Debug\\cmTC_1cc02.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-s142k1/Debug/cmTC_1cc02.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-s142k1/Debug/cmTC_1cc02.lib" /MACHINE:X64  /machine:x64 cmTC_1cc02.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\cmTC_1cc02.vcxproj]
-        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\cmTC_1cc02.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\Debug\\cmTC_44005.exe" /INCREMENTAL /ILK:"cmTC_44005.dir\\Debug\\cmTC_44005.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-m99l2g/Debug/cmTC_44005.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-m99l2g/Debug/cmTC_44005.lib" /MACHINE:X64  /machine:x64 cmTC_44005.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\cmTC_44005.vcxproj]
+        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\cmTC_44005.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\cmTC_1cc02.vcxproj" (default target) (1) ->
+        "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\cmTC_44005.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-s142k1\\cmTC_1cc02.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-m99l2g\\cmTC_44005.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.30
+        Time Elapsed 00:00:00.29
         
       exitCode: 1
   -
@@ -453,8 +453,8 @@ events:
     checks:
       - "Looking for pthread_create in pthread"
     directories:
-      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-l0syqz"
-      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-l0syqz"
+      source: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-ytxadn"
+      binary: "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-ytxadn"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
       CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
@@ -462,45 +462,45 @@ events:
       variable: "CMAKE_HAVE_PTHREAD_CREATE"
       cached: true
       stdout: |
-        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-l0syqz'
+        Change Dir: 'C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-ytxadn'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_43cc2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6f1c4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.10.4+10fbfbf2e for .NET Framework
-        Build started 8/21/2025 7:39:26 PM.
+        Build started 8/24/2025 6:22:47 PM.
         
-        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\cmTC_43cc2.vcxproj" on node 1 (default targets).
+        Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\cmTC_6f1c4.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_43cc2.dir\\Debug\\".
+          Creating directory "cmTC_6f1c4.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\Debug\\".
-          Creating directory "cmTC_43cc2.dir\\Debug\\cmTC_43cc2.tlog\\".
+          Creating directory "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\Debug\\".
+          Creating directory "cmTC_6f1c4.dir\\Debug\\cmTC_6f1c4.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_43cc2.dir\\Debug\\cmTC_43cc2.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_43cc2.dir\\Debug\\cmTC_43cc2.tlog\\unsuccessfulbuild".
+          Creating "cmTC_6f1c4.dir\\Debug\\cmTC_6f1c4.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6f1c4.dir\\Debug\\cmTC_6f1c4.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_43cc2.dir\\Debug\\\\" /Fd"cmTC_43cc2.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\CheckFunctionExists.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\CL.exe /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6f1c4.dir\\Debug\\\\" /Fd"cmTC_6f1c4.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\CheckFunctionExists.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.40.33812 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_43cc2.dir\\Debug\\\\" /Fd"cmTC_43cc2.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\CheckFunctionExists.c"
+          cl /c /I"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\include" /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6f1c4.dir\\Debug\\\\" /Fd"cmTC_6f1c4.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\CheckFunctionExists.c"
           CheckFunctionExists.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\Debug\\cmTC_43cc2.exe" /INCREMENTAL /ILK:"cmTC_43cc2.dir\\Debug\\cmTC_43cc2.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-l0syqz/Debug/cmTC_43cc2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-l0syqz/Debug/cmTC_43cc2.lib" /MACHINE:X64  /machine:x64 cmTC_43cc2.dir\\Debug\\CheckFunctionExists.obj
-        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\cmTC_43cc2.vcxproj]
-        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\cmTC_43cc2.vcxproj" (default targets) -- FAILED.
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.40.33807\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\Debug\\cmTC_6f1c4.exe" /INCREMENTAL /ILK:"cmTC_6f1c4.dir\\Debug\\cmTC_6f1c4.ilk" /NOLOGO /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "C:\\vcpkg\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-ytxadn/Debug/cmTC_6f1c4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/EEAnalyze/build/CMakeFiles/CMakeScratch/TryCompile-ytxadn/Debug/cmTC_6f1c4.lib" /MACHINE:X64  /machine:x64 cmTC_6f1c4.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\cmTC_6f1c4.vcxproj]
+        Done Building Project "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\cmTC_6f1c4.vcxproj" (default targets) -- FAILED.
         
         Build FAILED.
         
-        "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\cmTC_43cc2.vcxproj" (default target) (1) ->
+        "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\cmTC_6f1c4.vcxproj" (default target) (1) ->
         (Link target) -> 
-          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-l0syqz\\cmTC_43cc2.vcxproj]
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\Owner\\Desktop\\PS2_Recomp\\Ps2Recomp\\EEAnalyze\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ytxadn\\cmTC_6f1c4.vcxproj]
         
             0 Warning(s)
             1 Error(s)
         
-        Time Elapsed 00:00:00.30
+        Time Elapsed 00:00:00.29
         
       exitCode: 1
 ...

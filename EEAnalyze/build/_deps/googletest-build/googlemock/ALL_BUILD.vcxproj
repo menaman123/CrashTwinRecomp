@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -79,7 +79,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -89,7 +89,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\include\rabbitizer\tables;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googlemock;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest\include;C:\Users\Owner\Desktop\PS2_Recomp\Ps2Recomp\EEAnalyze\build\_deps\googletest-src\googletest;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>

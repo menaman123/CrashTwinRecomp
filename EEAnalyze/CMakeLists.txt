@@ -15,13 +15,25 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(capstone)
 
 # Add Rabbitizer from the include directory
-set(RABBITIZER_ROOT_PATH "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/include/rabbitizer")
-file(GLOB_RECURSE RABBITIZER_SOURCES "${RABBITIZER_ROOT_PATH}/*")
-# Create a library target for rabbitizer from its source files
+set(RABBITIZER_ROOT "C:/Users/Owner/Desktop/PS2_Recomp/Ps2Recomp/include/rabbitizer")
+
+# Add the root of rabbitizer to the include path for all subsequent targets
+include_directories("${RABBITIZER_ROOT}/tables")
+
+# Find all the C++ and C source files for the library
+file(GLOB_RECURSE RABBITIZER_SOURCES 
+    "${RABBITIZER_ROOT}/cplusplus/src/*.cpp"
+    "${RABBITIZER_ROOT}/src/*.c"
+)
+
+# Create a library target for rabbitizer
 add_library(rabbitizer STATIC ${RABBITIZER_SOURCES})
 
-# Tell CMake that the rabbitizer library's header files are in its directory
-target_include_directories(rabbitizer PUBLIC ${RABBITIZER_PATH})
+# Tell CMake where to find the rabbitizer library's public header files
+target_include_directories(rabbitizer PUBLIC
+    "${RABBITIZER_ROOT}/cplusplus/include"
+    "${RABBITIZER_ROOT}/include"
+)
 
 # Fetch GoogleTest automatically
 FetchContent_Declare(
@@ -46,5 +58,5 @@ gtest_discover_tests(analyze_test)
 # --- Disassembler Executable ---
 
 add_executable(disasm main.cpp)
-target_link_libraries(disasm PRIVATE rabbitizer)
+target_link_libraries(disasm PRIVATE rabbitizer capstone)
 target_include_directories(disasm PRIVATE "C:\\Users\\Owner\\Desktop\\PS2_Recomp\\ELFIO")

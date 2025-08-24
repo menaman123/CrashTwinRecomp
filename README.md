@@ -62,3 +62,10 @@ When we ran the `host_app` executable, it successfully showed that the value of 
 ### Next Steps
 
 The project is now ready to proceed to **Phase 2: Building the Recompiler Tool**. This will involve creating a program that can automatically read PS2 assembly instructions and translate them into the equivalent C++ code, automating the manual process we just completed.
+
+
+### RUN 
+cd Ps2Recomp\EEAnalyze\build
+cmake ..
+cmake --build . --config Release
+.\Release\disasm.exe C:\Users\Owner\Desktop\PS2_Recomp\Crash_TwinSanity.rep\SLUS_209.09 > disassembly_output2.txt   
